@@ -21,6 +21,7 @@ Task4:
 Task5:
 
 Чтобы было запущено оба файла конфигурации добавили в файл compose.yaml:
+
 include:
  - docker-compose.yaml
 

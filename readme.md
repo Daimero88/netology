@@ -14,3 +14,6 @@ Task3: ![CTRL+C](https://github.com/user-attachments/assets/29727593-9246-41e8-8
 
 Удаление запущенного контейнера без остановки:
 ![delete_container](https://github.com/user-attachments/assets/de2e2f0e-c7f3-4d13-a951-1a71ae1a771e)
+
+Task4:
+![task4](https://github.com/user-attachments/assets/6e2dfc68-27aa-49c8-b602-50d2f7a89f70)

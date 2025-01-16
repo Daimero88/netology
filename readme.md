@@ -21,5 +21,6 @@ Task4:
 Task5:
 
 Container inspect:
+
 ![Container inspect](https://github.com/user-attachments/assets/fa2f0004-4b96-40cc-b7d7-346e9cc1d5e0)
 

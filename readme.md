@@ -8,7 +8,8 @@ Task3: ![CTRL+C](https://github.com/user-attachments/assets/29727593-9246-41e8-8
 Замена порта с 80 на 81:
 ![change_port](https://github.com/user-attachments/assets/9e8d0a4c-cbc3-4f3e-a5e4-6e6f0777afc6)
 
+Получаем ошибку сброса соединения, т.к. был изменен порт сервиса nginx с 80 на 81 внутри контейнера, а контейнер был запущен с перенаправлением порта хоста 8080 на 80 порт внутри контейнера.
 ![connection_reset](https://github.com/user-attachments/assets/f8bf9dae-6722-4b29-83b1-b76a6fd34bab)
 
-Получаем ошибку сброса соединения, т.к. был изменен порт сервиса nginx с 80 на 81 внутри контейнера, а контейнер был запущен с перенаправлением порта хоста 8080 на 80 порт внутри контейнера.
-Удаление запущенного контейнера без остановки: docker rm -f custom-nginx-t2
+Удаление запущенного контейнера без остановки:
+![delete_container](https://github.com/user-attachments/assets/de2e2f0e-c7f3-4d13-a951-1a71ae1a771e)

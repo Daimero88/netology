@@ -36,3 +36,8 @@ Container inspect:
 заливка образа custom-nginx как custom-nginx:latest в запущенное локальное registry:
 
 ![commands](https://github.com/user-attachments/assets/bc91c4ee-3b90-429b-98d2-20b6b732799d)
+
+После удаления файла compose.yaml остались контейнеры, которые больее не связаны с актуальными сервисами в текущем compose файле. Удалить эти контейнеры можно выполнив команду docker compose up -d --remove-orphans
+
+![remove_compose](https://github.com/user-attachments/assets/d5f33da8-efba-4ed3-99ea-90283a7df8b7)
+

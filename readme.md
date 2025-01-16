@@ -20,7 +20,18 @@ Task4:
 
 Task5:
 
+Чтобы было запущено оба файла конфигурации добавили в файл compose.yaml:
+include:
+ - docker-compose.yaml
+
 Container inspect:
 
 ![Container inspect](https://github.com/user-attachments/assets/fa2f0004-4b96-40cc-b7d7-346e9cc1d5e0)
 
+Поскольку настройка производилась на ubuntu server, пришлось пробросить порты для настройки с другого ПК в браузере:
+
+![compose.yaml](https://github.com/user-attachments/assets/cf7d3d64-2fde-48c6-b1e9-375dc37cdad9)
+
+заливка образ custom-nginx как custom-nginx:latest в запущенное локальное registry:
+
+![commands](https://github.com/user-attachments/assets/bc91c4ee-3b90-429b-98d2-20b6b732799d)

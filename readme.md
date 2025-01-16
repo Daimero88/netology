@@ -17,3 +17,9 @@ Task3: ![CTRL+C](https://github.com/user-attachments/assets/29727593-9246-41e8-8
 
 Task4:
 ![task4](https://github.com/user-attachments/assets/6e2dfc68-27aa-49c8-b602-50d2f7a89f70)
+
+Task5:
+
+Container inspect:
+![Container inspect](https://github.com/user-attachments/assets/fa2f0004-4b96-40cc-b7d7-346e9cc1d5e0)
+

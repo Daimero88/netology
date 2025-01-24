@@ -2,7 +2,7 @@
 ## Задача 1 
 
 1. Сделайте в своем github пространстве fork репозитория:
-![image](https://github.com/user-attachments/assets/e8304c50-4ee9-4184-93ae-aca9fb69e0dd)
+![fork](https://github.com/user-attachments/assets/e8304c50-4ee9-4184-93ae-aca9fb69e0dd)
 
 2. Создайте файл с именем Dockerfile.python для сборки данного проекта. Используйте базовый образ python:3.9-slim. Обязательно используйте конструкцию COPY . . в Dockerfile. Не забудьте исключить ненужные в имадже файлы с помощью dockerignore:
 
@@ -17,3 +17,4 @@
 5. В качестве ответа приложите отчет сканирования
 Отчет сканирования:
 [vulnerabilities.csv](https://github.com/user-attachments/files/18538770/vulnerabilities.csv)
+   [vulnerabilities](https://github.com/user-attachments/assets/4338320c-c7a3-4241-b4aa-75c3335cee53)

@@ -9,12 +9,32 @@
  ![dockerfile](https://github.com/user-attachments/assets/f6673d6c-4640-4d5a-8dc7-6fa95c4145ac)
  ![dockerignore](https://github.com/user-attachments/assets/12e79021-b398-4ba3-a6f3-1e0d1c61d3ca)
 
+ [ссылка на репозиторий](https://github.com/Daimero88/shvirtd-example-python/tree/main)
+
 ## Задача 2 (*)
 1. Создайте в yandex cloud container registry с именем "test" с помощью "yc tool" . [Инструкция](https://cloud.yandex.ru/ru/docs/container-registry/quickstart/?from=int-console-help)
 2. Настройте аутентификацию вашего локального docker в yandex container registry.
 3. Соберите и залейте в него образ с python приложением из задания №1.
 4. Просканируйте образ на уязвимости.
 5. В качестве ответа приложите отчет сканирования
+
 Отчет сканирования:
 [vulnerabilities.csv](https://github.com/user-attachments/files/18538770/vulnerabilities.csv)
-   [vulnerabilities](https://github.com/user-attachments/assets/4338320c-c7a3-4241-b4aa-75c3335cee53)
+
+![vulnerabilities](https://github.com/user-attachments/assets/4338320c-c7a3-4241-b4aa-75c3335cee53)
+
+## Задача 3
+1. Изучите файл "proxy.yaml"
+2. Создайте в репозитории с проектом файл ```compose.yaml```. С помощью директивы "include" подключите к нему файл "proxy.yaml".
+3. Опишите в файле ```compose.yaml``` следующие сервисы: 
+
+- ```web```. Образ приложения должен ИЛИ собираться при запуске compose из файла ```Dockerfile.python``` ИЛИ скачиваться из yandex cloud container registry(из задание №2 со *). Контейнер должен работать в bridge-сети с названием ```backend``` и иметь фиксированный ipv4-адрес ```172.20.0.5```. Сервис должен всегда перезапускаться в случае ошибок.
+Передайте необходимые ENV-переменные для подключения к Mysql базе данных по сетевому имени сервиса ```web``` 
+
+- ```db```. image=mysql:8. Контейнер должен работать в bridge-сети с названием ```backend``` и иметь фиксированный ipv4-адрес ```172.20.0.10```. Явно перезапуск сервиса в случае ошибок. Передайте необходимые ENV-переменные для создания: пароля root пользователя, создания базы данных, пользователя и пароля для web-приложения.Обязательно используйте уже существующий .env file для назначения секретных ENV-переменных!
+
+2. Запустите проект локально с помощью docker compose , добейтесь его стабильной работы: команда ```curl -L http://127.0.0.1:8090``` должна возвращать в качестве ответа время и локальный IP-адрес. Если сервисы не стартуют воспользуйтесь командами: ```docker ps -a ``` и ```docker logs <container_name>``` . Если вместо IP-адреса вы получаете ```NULL``` --убедитесь, что вы шлете запрос на порт ```8090```, а не 5000.
+
+5. Подключитесь к БД mysql с помощью команды ```docker exec -ti <имя_контейнера> mysql -uroot -p<пароль root-пользователя>```(обратите внимание что между ключем -u и логином root нет пробела. это важно!!! тоже самое с паролем) . Введите последовательно команды (не забываем в конце символ ; ): ```show databases; use <имя вашей базы данных(по-умолчанию example)>; show tables; SELECT * from requests LIMIT 10;```.
+
+6. Остановите проект. В качестве ответа приложите скриншот sql-запроса.

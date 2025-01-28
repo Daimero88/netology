@@ -52,7 +52,11 @@ resource "docker_container" "nginx" {
 8. Уничтожьте созданные ресурсы с помощью **terraform**. Убедитесь, что все ресурсы удалены. Приложите содержимое файла **terraform.tfstate**.  
  ![destroy](https://github.com/user-attachments/assets/b8860270-d8ab-4566-9941-bb204916736c)  
 
-9. Объясните, почему при этом не был удалён docker-образ **nginx:latest**. Ответ **ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ**, а затем **ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ** строчкой из документации [**terraform провайдера docker**](https://docs.comcloud.xyz/providers/kreuzwerker/docker/latest/docs).  (ищите в классификаторе resource docker_image )
+9. Объясните, почему при этом не был удалён docker-образ **nginx:latest**. Ответ **ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ**, а затем **ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ** строчкой из документации [**terraform провайдера docker**](https://docs.comcloud.xyz/providers/kreuzwerker/docker/latest/docs).  (ищите в классификаторе resource docker_image)  
+![keep](https://github.com/user-attachments/assets/73b3970e-f233-49ed-a206-d232f06ef8ba)  
+Чтобы docker-образ удалился, необходимо строку ```keep_locally = true``` заменить на ```keep_locally = false```  
+![keep-doc](https://github.com/user-attachments/assets/13050f72-1520-4feb-a3f2-9bfa3d00bd24)
+
 
 ------
 

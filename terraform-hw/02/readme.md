@@ -101,3 +101,38 @@ Core Fraction позволяет ограничить процент мощно�
 4. Напишите interpolation-выражение, результатом которого будет: "John is admin for production server based on OS ubuntu-20-04 with X vcpu, Y ram and Z virtual disks", используйте данные из переменных test_list, test_map, servers и функцию length() для подстановки значений.  
 В качестве решения предоставьте необходимые команды и их вывод.
 ![console](https://github.com/user-attachments/assets/090c14bb-c580-40c6-9f6e-9f4e5b8ea07d)  
+
+
+### Задание 8*
+1. Напишите и проверьте переменную test и полное описание ее type в соответствии со значением из terraform.tfvars:
+```
+test = [
+  {
+    "dev1" = [
+      "ssh -o 'StrictHostKeyChecking=no' ubuntu@62.84.124.117",
+      "10.0.1.7",
+    ]
+  },
+  {
+    "dev2" = [
+      "ssh -o 'StrictHostKeyChecking=no' ubuntu@84.252.140.88",
+      "10.0.2.29",
+    ]
+  },
+  {
+    "prod1" = [
+      "ssh -o 'StrictHostKeyChecking=no' ubuntu@51.250.2.101",
+      "10.0.1.30",
+    ]
+  },
+]
+```  
+Описание типа переменной:
+```
+variable "test" {
+  type = list(map(list(string)))
+}
+```
+2. Напишите выражение в terraform console, которое позволит вычленить строку "ssh -o 'StrictHostKeyChecking=no' ubuntu@62.84.124.117" из этой переменной.  
+```var.test[0]["dev1"][0]```  
+![image](https://github.com/user-attachments/assets/b8986864-cf9c-43eb-9707-27c621eb436f)

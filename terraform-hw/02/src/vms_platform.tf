@@ -82,3 +82,7 @@ variable "metadata" {
   type = map(string)
   description = "Metadata"
 }
+
+variable "test" {
+  type = list(map(list(string)))
+}

@@ -11,19 +11,29 @@
 
 ### Задание 2
 
-1. Создайте файл count-vm.tf. Опишите в нём создание двух **одинаковых** ВМ  web-1 и web-2 (не web-0 и web-1) с минимальными параметрами, используя мета-аргумент **count loop**. Назначьте ВМ созданную в первом задании группу безопасности.
+1. Создайте файл count-vm.tf. Опишите в нём создание двух **одинаковых** ВМ  web-1 и web-2 (не web-0 и web-1) с минимальными параметрами, используя мета-аргумент **count loop**. Назначьте ВМ созданную в первом задании группу безопасности:
 
+[count-vm](https://github.com/Daimero88/netology/blob/main/terraform-hw/03/src/count-vm.tf)
 
-3. Создайте файл for_each-vm.tf. Опишите в нём создание двух ВМ для баз данных с именами "main" и "replica" **разных** по cpu/ram/disk_volume , используя мета-аргумент **for_each loop**. Используйте для обеих ВМ одну общую переменную типа:
+2. Создайте файл for_each-vm.tf. Опишите в нём создание двух ВМ для баз данных с именами "main" и "replica" **разных** по cpu/ram/disk_volume , используя мета-аргумент **for_each loop**. Используйте для обеих ВМ одну общую переменную типа:
 ```
 variable "each_vm" {
   type = list(object({  vm_name=string, cpu=number, ram=number, disk_volume=number }))
 }
 ```  
-При желании внесите в переменную все возможные параметры.
-4. ВМ из пункта 2.1 должны создаваться после создания ВМ из пункта 2.2.
-5. Используйте функцию file в local-переменной для считывания ключа ~/.ssh/id_rsa.pub и его последующего использования в блоке metadata, взятому из ДЗ 2.
-6. Инициализируйте проект, выполните код.
+При желании внесите в переменную все возможные параметры: 
+
+[for_each-vm.tf](https://github.com/Daimero88/netology/blob/main/terraform-hw/03/src/for_each-vm.tf)  
+
+3. ВМ из пункта 2.1 должны создаваться после создания ВМ из пункта 2.2.
+
+Для этого добавляем в ресурс создания ВМ из пункта 2.1 ```resource "yandex_compute_instance" "web"``` строку ```depends_on = [ yandex_compute_instance.db ]``` где yandex_compute_instance.db - ресурс создания ВМ из пункта 2.2
+
+4. Используйте функцию file в local-переменной для считывания ключа ~/.ssh/id_rsa.pub и его последующего использования в блоке metadata, взятому из ДЗ 2.
+
+В файле [locals.tf](https://github.com/Daimero88/netology/blob/main/terraform-hw/03/src/locals.tf) описываем переменную metadata, где обращаемся через функцию file к ключу, который находится в [terraform.tfvars](https://github.com/Daimero88/netology/blob/main/terraform-hw/03/src/terraform.tfvars), затем можно присваивать значение переменной: ```metadata = local.metadata```
+  
+5. Инициализируйте проект, выполните код.
 
 ------
 

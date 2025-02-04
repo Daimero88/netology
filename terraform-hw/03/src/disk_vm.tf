@@ -41,9 +41,6 @@ resource "yandex_compute_disk" "vm_disk" {
   type = var.vm_settings_disk.type
   zone = var.default_zone
   size = var.vm_settings_disk.size
-  labels = {
-    environment = "test"
-  }
 }
 
 

@@ -4,8 +4,8 @@
 
 1. Возьмите из [демонстрации к лекции готовый код](https://github.com/netology-code/ter-homeworks/tree/main/04/demonstration1) для создания с помощью двух вызовов remote-модуля -> двух ВМ, относящихся к разным проектам(marketing и analytics) используйте labels для обозначения принадлежности.  В файле cloud-init.yml необходимо использовать переменную для ssh-ключа вместо хардкода. Передайте ssh-ключ в функцию template_file в блоке vars ={} .  
 Воспользуйтесь [**примером**](https://grantorchard.com/dynamic-cloudinit-content-with-terraform-file-templates/). Обратите внимание, что ssh-authorized-keys принимает в себя список, а не строку.
-2. Добавьте в файл cloud-init.yml установку nginx.
-   Для этого необходимо в packages добавить ```- nginx```  
+2. Добавьте в файл cloud-init.yml установку nginx.  
+   Для этого в [**cloud-init.yml**](https://github.com/Daimero88/netology/blob/main/terraform-hw/04/src/cloud-init.yml) необходимо в packages добавить ```- nginx```  
 3. Предоставьте скриншот подключения к консоли и вывод команды ```sudo nginx -t```, скриншот консоли ВМ yandex cloud с их метками. Откройте terraform console и предоставьте скриншот содержимого модуля. Пример: > module.marketing_vm  
 ![nginx](https://github.com/user-attachments/assets/1cbd132f-3ee5-42b9-ace7-ea1c1f1277b8)
 

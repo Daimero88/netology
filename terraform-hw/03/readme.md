@@ -45,8 +45,8 @@ variable "each_vm" {
    
 2. Создайте в том же файле **одиночную**(использовать count или for_each запрещено из-за задания №4) ВМ c именем "storage"  . Используйте блок **dynamic secondary_disk{..}** и мета-аргумент for_each для подключения созданных вами дополнительных дисков.
 
-![add-disk](https://github.com/user-attachments/assets/fdc93169-9fe8-420d-bb1c-aca38bfa05c0)
-
+![add-disk](https://github.com/user-attachments/assets/fdc93169-9fe8-420d-bb1c-aca38bfa05c0)  
+![yandex-disks](https://github.com/user-attachments/assets/894f8c9d-ac9c-4fdd-a665-46a5624a0c21)
 
 ------
 

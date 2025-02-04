@@ -33,7 +33,9 @@ variable "each_vm" {
 
 В файле [locals.tf](https://github.com/Daimero88/netology/blob/main/terraform-hw/03/src/locals.tf) описываем переменную metadata, где обращаемся через функцию file к ключу, который находится в [terraform.tfvars](https://github.com/Daimero88/netology/blob/main/terraform-hw/03/src/terraform.tfvars), затем можно присваивать значение переменной: ```metadata = local.metadata```
   
-5. Инициализируйте проект, выполните код.
+5. Инициализируйте проект, выполните код.  
+![create-vms](https://github.com/user-attachments/assets/19831faf-f1f0-4519-beaa-778999c79abd)
+
 
 ------
 

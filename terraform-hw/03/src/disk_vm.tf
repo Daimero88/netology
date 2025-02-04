@@ -43,7 +43,6 @@ resource "yandex_compute_disk" "vm_disk" {
   size = var.vm_settings_disk.size
 }
 
-
 resource "yandex_compute_instance" "storage" {
   name        = var.vm_settings_storage.name
   hostname    = var.vm_settings_storage.name
@@ -75,13 +74,10 @@ resource "yandex_compute_instance" "storage" {
 
   dynamic "secondary_disk" {
     for_each = toset(yandex_compute_disk.vm_disk.*.id)
-
     content {
       disk_id = secondary_disk.key
     }
   }
-
-  allow_stopping_for_update = true
 
   metadata = local.metadata
 }

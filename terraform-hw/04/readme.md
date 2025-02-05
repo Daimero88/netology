@@ -84,6 +84,9 @@ module "vpc_dev" {
     { zone = "ru-central1-a", cidr = "10.0.1.0/24" },
   ]
 }
-```
+```  
+Предоставьте код, план выполнения, результат из консоли YC.  
 
-Предоставьте код, план выполнения, результат из консоли YC.
+![apply](https://github.com/user-attachments/assets/dca54fe9-018a-4cef-8e80-a1c05fc4abb1)  
+![cloud](https://github.com/user-attachments/assets/0020d679-f444-47a6-8715-6433c67f939a)
+

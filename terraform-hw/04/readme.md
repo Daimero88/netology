@@ -52,6 +52,10 @@
 Приложите список выполненных команд и скриншоты процессы.
 
 Импортируем командной ```terraform import module.<module_name> <id>```  
+![import1](https://github.com/user-attachments/assets/15856b90-d84e-4fb5-80a3-74b95ea109c2)  
+![import2](https://github.com/user-attachments/assets/193278da-47f3-4018-a8f3-1e2758c78051)
+
+
 После импортирования модулей изменений нет.
 
 

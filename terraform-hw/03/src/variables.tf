@@ -6,13 +6,11 @@
 
 variable "cloud_id" {
   type        = string
-  default = "b1gutnkqmso25ie96r20"
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/cloud/get-id"
 }
 
 variable "folder_id" {
   type        = string
-  default = "b1gq6j5ndke5qjs67m85"
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
 }
 
@@ -31,4 +29,19 @@ variable "vpc_name" {
   type        = string
   default     = "develop"
   description = "VPC network&subnet name"
+}
+
+variable "vm_web_user" {
+  type        = string
+  default     = "ubuntu"
+  description = "user"
+}
+
+variable "ssh_key" {
+  type        = string
+  description = "Path to the SSH key file"
+}
+
+data "yandex_compute_image" "ubuntu" {
+  family = "ubuntu-2004-lts" 
 }

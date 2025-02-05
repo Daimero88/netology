@@ -1,9 +1,4 @@
 ###cloud vars
-variable "token" {
-  type        = string
-  description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
-}
-
 variable "cloud_id" {
   type        = string
   description = "https://cloud.yandex.ru/docs/resource-manager/operations/cloud/get-id"
@@ -53,5 +48,8 @@ variable "vm_db_name" {
   description = "example vm_db_ prefix"
 }
 
-
-
+variable "ssh-authorized-keys" {
+  description = "Path to public SSH key file"
+  type        = list(string)
+  default     = ["~/.ssh/id_ed25519.pub"]
+}

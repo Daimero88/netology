@@ -88,5 +88,8 @@ module "vpc_dev" {
 Предоставьте код, план выполнения, результат из консоли YC.  
 
 ![apply](https://github.com/user-attachments/assets/dca54fe9-018a-4cef-8e80-a1c05fc4abb1)  
-![cloud](https://github.com/user-attachments/assets/0020d679-f444-47a6-8715-6433c67f939a)
+![cloud1](https://github.com/user-attachments/assets/dc04cc61-22fe-4f55-8dfd-15212a954f1a)  
+![cloud2](https://github.com/user-attachments/assets/c8c7b807-0328-48af-bea1-1e6b12c439e3)
+
+
 

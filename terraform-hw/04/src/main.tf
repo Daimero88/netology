@@ -70,4 +70,3 @@ data "template_file" "cloudinit" {
     ssh-authorized-keys = file(var.ssh-authorized-keys[0])
   }
 }
-test

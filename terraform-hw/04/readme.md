@@ -29,6 +29,9 @@
    ![moduleconsole](https://github.com/user-attachments/assets/a795ffa3-1666-40f9-bd2e-add9c4c2dbd1)
 
 4. Замените ресурсы yandex_vpc_network и yandex_vpc_subnet созданным модулем. Не забудьте передать необходимые параметры сети из модуля vpc в модуль с виртуальной машиной.
+   ![1](https://github.com/user-attachments/assets/9d5b3504-c0d2-48c0-be0e-fdac83f8d98f)
+   ![2](https://github.com/user-attachments/assets/c2c1e061-6bd5-45eb-a4f5-724dd0a7e28a)  
+
 5. Сгенерируйте документацию к модулю с помощью terraform-docs.
 
 Генерируем документацию с помощью контейнера:  
@@ -36,11 +39,21 @@
 В результате получаем файл [**doc**](https://github.com/Daimero88/netology/blob/main/terraform-hw/04/src/vpc/doc.md)
 
 ### Задание 3
-1. Выведите список ресурсов в стейте.
-2. Полностью удалите из стейта модуль vpc.
-3. Полностью удалите из стейта модуль vm.
+1. Выведите список ресурсов в стейте.  
+![state](https://github.com/user-attachments/assets/51c88145-5041-486a-befc-b3aa9640e62c)  
+
+2. Полностью удалите из стейта модуль vpc.  
+![rm](https://github.com/user-attachments/assets/b813b93f-e5c9-4b78-98a3-62c5a2be9bca)  
+
+3. Полностью удалите из стейта модуль vm.  
+![rmvm](https://github.com/user-attachments/assets/03cde188-e200-438c-8618-10a5cbf956c4)  
+
 4. Импортируйте всё обратно. Проверьте terraform plan. Значимых(!!) изменений быть не должно.
 Приложите список выполненных команд и скриншоты процессы.
+
+Импортируем командной ```terraform import module.<module_name> <id>```  
+После импортирования модулей изменений нет.
+
 
 ## Дополнительные задания (со звёздочкой*)
 

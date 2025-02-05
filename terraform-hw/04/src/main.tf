@@ -57,16 +57,22 @@ module "analytics-vm" {
      }
 
   metadata = {
-    user-data          = data.template_file.cloudinit.rendered #Для демонстрации №3
+    user-data          = data.template_file.cloudinit.rendered
     serial-port-enable = 1
   }
 
 }
 
-#Пример передачи cloud-config в ВМ для демонстрации №3
 data "template_file" "cloudinit" {
   template = file("./cloud-init.yml")
   vars     = {
     ssh-authorized-keys = file(var.ssh-authorized-keys[0])
   }
+}
+
+module "vpc_dev" {
+  source   = "./vpc"
+  vpc_name = "develop"
+  zone     = "ru-central1-a"
+  cidr     = "10.0.1.0/24"
 }

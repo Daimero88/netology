@@ -1,7 +1,7 @@
 #создаем облачную сеть
-resource "yandex_vpc_network" "develop" {
-  name = "develop"
-}
+#resource "yandex_vpc_network" "develop" {
+#  name = "develop"
+#}
 
 #создаем подсеть
 #resource "yandex_vpc_subnet" "develop_a" {
@@ -71,7 +71,7 @@ data "template_file" "cloudinit" {
 
 module "vpc_dev" {
   source   = "./vpc"
-  vpc_name = "develop"
+  env_name = "develop"
   zone     = "ru-central1-a"
   cidr     = "10.0.1.0/24"
 }

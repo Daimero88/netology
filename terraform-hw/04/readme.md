@@ -29,18 +29,9 @@
    ![moduleconsole](https://github.com/user-attachments/assets/a795ffa3-1666-40f9-bd2e-add9c4c2dbd1)
 
 4. Замените ресурсы yandex_vpc_network и yandex_vpc_subnet созданным модулем. Не забудьте передать необходимые параметры сети из модуля vpc в модуль с виртуальной машиной.
-5. Сгенерируйте документацию к модулю с помощью terraform-docs.
- 
-Пример вызова
-
-```
-module "vpc_dev" {
-  source       = "./vpc"
-  env_name     = "develop"
-  zone = "ru-central1-a"
-  cidr = "10.0.1.0/24"
-}
-```
+5. Сгенерируйте документацию к модулю с помощью terraform-docs.  
+Генерируем документацию с помощью контейнера: ```docker run --rm --volume "$(pwd):/terraform-docs" -u $(id -u) quay.io/terraform-docs/terraform-docs:0.19.0 markdown /terraform-docs > doc.md```  
+В результате получаем файл [**doc**](https://github.com/Daimero88/netology/blob/main/terraform-hw/04/src/vpc/doc.md)
 
 ### Задание 3
 1. Выведите список ресурсов в стейте.

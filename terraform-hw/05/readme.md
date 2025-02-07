@@ -44,14 +44,15 @@
 ### Задание 3  
 
 1. Сделайте в GitHub из ветки 'terraform-05' новую ветку 'terraform-hotfix'.  
-[**terraform-hotfix**](https://github.com/Daimero88/netology/tree/terraform-hotfix)  
-2. Проверье код с помощью tflint и checkov, исправьте все предупреждения и ошибки в 'terraform-hotfix', сделайте коммит.
-   
-![checkov](https://github.com/user-attachments/assets/289f1843-bbf3-49d5-97cd-adc94aa11af7)  
+[**terraform-hotfix**](https://github.com/Daimero88/netology/tree/terraform-hotfix)
 
-5. Откройте новый pull request 'terraform-hotfix' --> 'terraform-05'. 
-6. Вставьте в комментарий PR результат анализа tflint и checkov, план изменений инфраструктуры из вывода команды terraform plan.
-7. Пришлите ссылку на PR для ревью. Вливать код в 'terraform-05' не нужно.
+2. Проверье код с помощью tflint и checkov, исправьте все предупреждения и ошибки в 'terraform-hotfix', сделайте коммит.  
+![tflint2](https://github.com/user-attachments/assets/d79af286-88e4-4aa0-8832-2e72af523688)  
+![checkov2](https://github.com/user-attachments/assets/289f1843-bbf3-49d5-97cd-adc94aa11af7)  
+
+3. Откройте новый pull request 'terraform-hotfix' --> 'terraform-05'. 
+4. Вставьте в комментарий PR результат анализа tflint и checkov, план изменений инфраструктуры из вывода команды terraform plan.
+5. Пришлите ссылку на PR для ревью. Вливать код в 'terraform-05' не нужно.
 
 ------
 ### Задание 4

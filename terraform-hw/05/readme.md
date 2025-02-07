@@ -23,14 +23,14 @@
 ### Задание 2
 
 1. Возьмите ваш GitHub-репозиторий с **выполненным ДЗ 4** в ветке 'terraform-04' и сделайте из него ветку 'terraform-05'.  
-   [**новая ветка**](https://github.com/Daimero88/netology/tree/terraform-05/terraform-hw/04)  
-2. Повторите демонстрацию лекции: настройте YDB, S3 bucket, yandex service account, права доступа и мигрируйте state проекта в S3 с блокировками. Предоставьте скриншоты процесса в качестве ответа.
+   [**новая ветка**](https://github.com/Daimero88/netology/tree/terraform-05/terraform-hw/04)
+   
+3. Повторите демонстрацию лекции: настройте YDB, S3 bucket, yandex service account, права доступа и мигрируйте state проекта в S3 с блокировками. Предоставьте скриншоты процесса в качестве ответа.
     ![s3](https://github.com/user-attachments/assets/b0cd035f-1eb8-4bcb-897d-d62a2ffecc9e)  
     ![ydb](https://github.com/user-attachments/assets/1a5e6616-baec-4104-ba11-968aa8828f86)
     ![table](https://github.com/user-attachments/assets/92e2f42e-fb03-4fcc-adc7-2c402f1c47a8)  
-
-
-
+    ![tfstate](https://github.com/user-attachments/assets/02df5fb3-9a40-42b0-9b88-3633d510470b)
+   
 4. Закоммитьте в ветку 'terraform-05' все изменения.
 5. Откройте в проекте terraform console, а в другом окне из этой же директории попробуйте запустить terraform apply.
 6. Пришлите ответ об ошибке доступа к state.

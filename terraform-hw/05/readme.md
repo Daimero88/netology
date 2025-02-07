@@ -49,6 +49,7 @@
 2. Проверье код с помощью tflint и checkov, исправьте все предупреждения и ошибки в 'terraform-hotfix', сделайте коммит.  
 ![tflint2](https://github.com/user-attachments/assets/d79af286-88e4-4aa0-8832-2e72af523688)  
 ![checkov2](https://github.com/user-attachments/assets/289f1843-bbf3-49d5-97cd-adc94aa11af7)  
+![commit](https://github.com/user-attachments/assets/74ecb1fb-8c0e-4064-8a2c-13834fdb7933)  
 
 3. Откройте новый pull request 'terraform-hotfix' --> 'terraform-05'. 
 4. Вставьте в комментарий PR результат анализа tflint и checkov, план изменений инфраструктуры из вывода команды terraform plan.

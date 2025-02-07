@@ -23,7 +23,7 @@
 ### Задание 2
 
 1. Возьмите ваш GitHub-репозиторий с **выполненным ДЗ 4** в ветке 'terraform-04' и сделайте из него ветку 'terraform-05'.  
-   [**новая ветка**](https://github.com/Daimero88/netology/tree/terraform-05/terraform-hw/04)
+   [**terraform-05**](https://github.com/Daimero88/netology/tree/terraform-05/terraform-hw/04)
    
 2. Повторите демонстрацию лекции: настройте YDB, S3 bucket, yandex service account, права доступа и мигрируйте state проекта в S3 с блокировками. Предоставьте скриншоты процесса в качестве ответа.  
     ![s3](https://github.com/user-attachments/assets/b0cd035f-1eb8-4bcb-897d-d62a2ffecc9e)  

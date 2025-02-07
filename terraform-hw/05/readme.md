@@ -70,6 +70,9 @@
 ### Задание 5*
 1. Напишите переменные с валидацией:
 - type=string, description="любая строка" — проверка, что строка не содержит символов верхнего регистра;
+```condition = can(regex("^[^A-Z]*$", var.uppercase_symbol))```  
+![image](https://github.com/user-attachments/assets/738bfa45-0726-4a44-ae66-fc10d5e5880d)  
+
 - type=object — проверка, что одно из значений равно true, а второе false, т. е. не допускается false false и true true:
 ```
 variable "in_the_end_there_can_be_only_one" {
@@ -89,4 +92,6 @@ variable "in_the_end_there_can_be_only_one" {
         condition = <проверка>
     }
 }
-```
+```  
+
+```condition = var.in_the_end_there_can_be_only_one.Dunkan != var.in_the_end_there_can_be_only_one.Connor```

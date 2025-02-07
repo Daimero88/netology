@@ -26,7 +26,9 @@
    [**новая ветка**](https://github.com/Daimero88/netology/tree/terraform-05/terraform-hw/05)  
 2. Повторите демонстрацию лекции: настройте YDB, S3 bucket, yandex service account, права доступа и мигрируйте state проекта в S3 с блокировками. Предоставьте скриншоты процесса в качестве ответа.
     ![s3](https://github.com/user-attachments/assets/70214002-45cb-4c9a-95a3-2242a087ed86)  
-    ![ydb](https://github.com/user-attachments/assets/1a5e6616-baec-4104-ba11-968aa8828f86)  
+    ![ydb](https://github.com/user-attachments/assets/1a5e6616-baec-4104-ba11-968aa8828f86)
+    ![table](https://github.com/user-attachments/assets/92e2f42e-fb03-4fcc-adc7-2c402f1c47a8)  
+
 
 
 4. Закоммитьте в ветку 'terraform-05' все изменения.

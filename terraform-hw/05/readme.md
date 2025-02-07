@@ -34,9 +34,11 @@
 3. Закоммитьте в ветку 'terraform-05' все изменения.  
 Изменения были только в [providers.tf](https://github.com/Daimero88/netology/blob/terraform-05/terraform-hw/04/src/providers.tf), куда добавился backend
 4. Откройте в проекте terraform console, а в другом окне из этой же директории попробуйте запустить terraform apply.
-5. Пришлите ответ об ошибке доступа к state.
-6. Принудительно разблокируйте state. Пришлите команду и вывод.
+5. Пришлите ответ об ошибке доступа к state.  
+   ![error](https://github.com/user-attachments/assets/9f7916ef-713b-4c2e-a883-166ce9e100dd)  
 
+6. Принудительно разблокируйте state. Пришлите команду и вывод.
+   ![force-unlock](https://github.com/user-attachments/assets/6aad905f-8c6f-4a39-a717-89190617affa)  
 
 ------
 ### Задание 3  

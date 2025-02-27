@@ -12,10 +12,19 @@
    Переменная находится в ```group_vars/all/examp.yml```  
    ![image2](https://github.com/user-attachments/assets/69438948-80f7-42ae-8bec-d6dec31bf91e)
 
-4. Воспользуйтесь подготовленным (используется `docker`) или создайте собственное окружение для проведения дальнейших испытаний.
-5. Проведите запуск playbook на окружении из `prod.yml`. Зафиксируйте полученные значения `some_fact` для каждого из `managed host`.
-6. Добавьте факты в `group_vars` каждой из групп хостов так, чтобы для `some_fact` получились значения: для `deb` — `deb default fact`, для `el` — `el default fact`.
-7.  Повторите запуск playbook на окружении `prod.yml`. Убедитесь, что выдаются корректные значения для всех хостов.
+3. Воспользуйтесь подготовленным (используется `docker`) или создайте собственное окружение для проведения дальнейших испытаний.  
+   ![image3](https://github.com/user-attachments/assets/44b50b2c-5f97-4722-9657-a707151203ab)
+
+4. Проведите запуск playbook на окружении из `prod.yml`. Зафиксируйте полученные значения `some_fact` для каждого из `managed host`.  
+   ![image4](https://github.com/user-attachments/assets/d7de6d88-aae7-422c-9a7f-a50f6c465db3)  
+   Значение `some_fact` для managed host "centos7": `el`, для "ubuntu": `deb`  
+   
+5. Добавьте факты в `group_vars` каждой из групп хостов так, чтобы для `some_fact` получились значения: для `deb` — `deb default fact`, для `el` — `el default fact`.  
+   ![image5](https://github.com/user-attachments/assets/c298675b-7889-4930-baa7-2f0601364d5b)  
+
+6.  Повторите запуск playbook на окружении `prod.yml`. Убедитесь, что выдаются корректные значения для всех хостов.  
+   ![image6](https://github.com/user-attachments/assets/dace034c-3b52-405c-9972-0be96a615989)  
+
 8. При помощи `ansible-vault` зашифруйте факты в `group_vars/deb` и `group_vars/el` с паролем `netology`.
 9. Запустите playbook на окружении `prod.yml`. При запуске `ansible` должен запросить у вас пароль. Убедитесь в работоспособности.
 10. Посмотрите при помощи `ansible-doc` список плагинов для подключения. Выберите подходящий для работы на `control node`.

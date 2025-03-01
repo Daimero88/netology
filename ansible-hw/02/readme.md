@@ -25,4 +25,5 @@
 
 9. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги. Пример качественной документации ansible playbook по [ссылке](https://github.com/opensearch-project/ansible-playbook). Так же приложите скриншоты выполнения заданий №5-8  
      [**readme.md**](https://github.com/Daimero88/netology/blob/main/ansible-hw/02/playbook/readme.md)   
-10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.  
+10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
+   [**https://github.com/Daimero88/netology/releases/tag/08-ansible-02-playbook**](https://github.com/Daimero88/netology/releases/tag/08-ansible-02-playbook)

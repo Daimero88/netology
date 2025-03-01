@@ -40,6 +40,7 @@
       register: create_db
       failed_when: create_db.rc != 0 and create_db.rc != 82
       changed_when: create_db.rc == 0
+  tags: clickhouse
 - name: Install vector
   hosts: vector
   handlers:
@@ -48,6 +49,7 @@
       ansible.builtin.service:
         name: vector
         state: restarted
+        enabled: true
   tasks:
     - name: Get vector distrib
       ansible.builtin.get_url:
@@ -75,3 +77,4 @@
         src: "template/vector_conf.j2"
         dest: "{{ vector_config_dir }}/vector.yml"
         mode: "0777"
+  tags: vector

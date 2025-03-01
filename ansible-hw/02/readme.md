@@ -1,7 +1,5 @@
 # Домашнее задание к занятию 2 «Работа с Playbook» - Сильчин Сергей
 
-## Основная часть
-
 1. Подготовьте свой inventory-файл `prod.yml`.  
    [**prod.yml**](https://github.com/Daimero88/netology/blob/main/ansible-hw/02/playbook/inventory/prod.yml)  
 2. Допишите playbook: нужно сделать ещё один play, который устанавливает и настраивает [vector](https://vector.dev). Конфигурация vector должна деплоиться через template файл jinja2. От вас не требуется использовать все возможности шаблонизатора, просто вставьте стандартный конфиг в template файл. Информация по шаблонам по [ссылке](https://www.dmosk.ru/instruktions.php?object=ansible-nginx-install). не забудьте сделать handler на перезапуск vector в случае изменения конфигурации!  

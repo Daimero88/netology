@@ -9,10 +9,13 @@
 4. Tasks должны: скачать дистрибутив нужной версии, выполнить распаковку в выбранную директорию, установить vector.  
   [**site.yml**](https://github.com/Daimero88/netology/blob/main/ansible-hw/02/playbook/site.yml)
 5. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.  
-   Все ошибки были исправлены:
-  ![image](https://github.com/user-attachments/assets/694cae18-4cf0-4205-9346-058aba290690)
+   Все ошибки были исправлены:  
+  ![image1](https://github.com/user-attachments/assets/694cae18-4cf0-4205-9346-058aba290690)
 
-8. Попробуйте запустить playbook на этом окружении с флагом `--check`.  
+6. Попробуйте запустить playbook на этом окружении с флагом `--check`.  
+   Так как установочные пакеты еще не были скачаны, то получаем ошибки:  
+   ![image2](https://github.com/user-attachments/assets/26143bb4-e442-4a5d-8f4d-1d06a20df9b0)
+ 
 9. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.  
 10. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.  
 11. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги. Пример качественной документации ansible playbook по [ссылке](https://github.com/opensearch-project/ansible-playbook). Так же приложите скриншоты выполнения заданий №5-8  

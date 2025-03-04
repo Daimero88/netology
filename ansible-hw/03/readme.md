@@ -16,8 +16,8 @@
 7. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.  
    ![image4](https://github.com/user-attachments/assets/bcc61283-0350-444c-b140-bffd4cff0e0e)
 
-8. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
-   Три task Vector. `Install vector binary file`, `Vector. Create daemon` и `Lighthouse. Clone source code by git client` в статусе `skipped`, т.к. в playbook были добавлены проверки `when`. Playbook идемпотентен:  
+8. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.  
+   Три задачи `Vector. Install vector binary file`, `Vector. Create daemon` и `Lighthouse. Clone source code by git client` в статусе `skipped`, т.к. в playbook были добавлены проверки `when`. Playbook идемпотентен:  
    ![image5](https://github.com/user-attachments/assets/29e490f6-3880-47d3-81d9-8ba211ea426b)
 
 11. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.  

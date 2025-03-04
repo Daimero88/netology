@@ -36,7 +36,7 @@ Playbook разворачивает на хостах приложения:
 Плейбук использует 4 файла с переменными: 3 файла для каждой из групп хостов индивидуально:  
 - [playbook/group_vars/clickhouse/vars.yml](https://github.com/Daimero88/netology/blob/main/ansible-hw/03/playbook/group_vars/clickhouse/vars.yml)  
 - [playbook/group_vars/vector/vars.yaml](https://github.com/Daimero88/netology/blob/main/ansible-hw/03/playbook/group_vars/vector/vars.yml)
-- [playbook/group_vars/lighthouse/vars.yaml](https://github.com/Daimero88/netology/blob/main/ansible-hw/03/playbook/group_vars/lighthouse/vars.yml)
+- [playbook/group_vars/lighthouse/vars.yaml](https://github.com/Daimero88/netology/blob/main/ansible-hw/03/playbook/group_vars/lighthouse/vars.yml)  
 и один файл, применяемый для всех групп хостов:  
 - [playbook/group_vars/all/vars.yml](https://github.com/Daimero88/netology/blob/main/ansible-hw/03/playbook/group_vars/all/vars.yml)   
 

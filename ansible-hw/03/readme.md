@@ -27,6 +27,7 @@
    Три задачи `Vector. Install vector binary file`, `Vector. Create daemon` и `Lighthouse. Clone source code by git client` в статусе `skipped`, т.к. в playbook были добавлены проверки `when`. Playbook идемпотентен:  
    ![image5](https://github.com/user-attachments/assets/29e490f6-3880-47d3-81d9-8ba211ea426b)  
 
-9. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.  
+9. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.
+   [**readme.md**](https://github.com/Daimero88/netology/blob/main/ansible-hw/03/playbook/readme.md)  
 10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-03-yandex` на фиксирующий коммит, в ответ предоставьте ссылку на него.  
     [**08-ansible-03-yandex**](https://github.com/Daimero88/netology/releases/tag/08-ansible-03-yandex)

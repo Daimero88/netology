@@ -34,13 +34,13 @@ Playbook разворачивает на хостах приложения:
 Каждый play содержит в себе tasks по установке Clickhouse, Vector и Lighthouse соответственно. 
 Каждый play можно выполнить отдельно, используя тэги: `clickhouse`, `vector`, `lighthouse`.  
 Плейбук использует 4 файла с переменными: 3 файла для каждой из групп хостов индивидуально:  
-- [playbook/group_vars/clickhouse/clickhouse_vars.yml](playbook/group_vars/clickhouse/vars.yml)  
-- [playbook/group_vars/vector/vector_vars.yaml](playbook/group_vars/vector/vars.yaml)  
-- [playbook/group_vars/lighthouse/lighthouse_vars.yaml](playbook/group_vars/lighthouse/vars.yaml)  
+- [playbook/group_vars/clickhouse/vars.yml](https://github.com/Daimero88/netology/blob/main/ansible-hw/03/playbook/group_vars/clickhouse/vars.yml)  
+- [playbook/group_vars/vector/vars.yaml](https://github.com/Daimero88/netology/blob/main/ansible-hw/03/playbook/group_vars/vector/vars.yml)
+- [playbook/group_vars/lighthouse/vars.yaml](https://github.com/Daimero88/netology/blob/main/ansible-hw/03/playbook/group_vars/lighthouse/vars.yml)
 и один файл, применяемый для всех групп хостов:  
-- [playbook/group_vars/all/all_vars.yml](playbook/group_vars/all/vars.yml)    
+- [playbook/group_vars/all/vars.yml](https://github.com/Daimero88/netology/blob/main/ansible-hw/03/playbook/group_vars/all/vars.yml)   
 
 Для конфигурации Vector и Nginx используются шаблоны конфигов:  
-- [playbook/templates/vector/vector.yaml.j2](playbook/templates/vector/vector.yaml.j2)
-- [playbook/templates/nginx/ligthouse.conf.j2](playbook/templates/nginx/ligthouse.conf.j2)   
+- [playbook/templates/vector/vector.yaml.j2](https://github.com/Daimero88/netology/blob/main/ansible-hw/03/playbook/template/vector/vector.yaml.j2)
+- [playbook/templates/nginx/ligthouse.conf.j2](https://github.com/Daimero88/netology/blob/main/ansible-hw/03/playbook/template/nginx/lighthouse.conf.j2)
    

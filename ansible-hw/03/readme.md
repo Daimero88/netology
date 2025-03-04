@@ -3,9 +3,13 @@
 1. Допишите playbook: нужно сделать ещё один play, который устанавливает и настраивает LightHouse.  
 2. При создании tasks рекомендую использовать модули: `get_url`, `template`, `yum`, `apt`.  
 3. Tasks должны: скачать статику LightHouse, установить Nginx или любой другой веб-сервер, настроить его конфиг для открытия LightHouse, запустить веб-сервер.  
-4. Подготовьте свой inventory-файл `prod.yml`.  
-5. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.  
-6. Попробуйте запустить playbook на этом окружении с флагом `--check`.
+4. Подготовьте свой inventory-файл `prod.yml`.
+   
+6. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.
+   Все ошибки были исправлены:
+   ![image](https://github.com/user-attachments/assets/7e64e889-4c90-4b19-b327-eb965f453323)  
+
+7. Попробуйте запустить playbook на этом окружении с флагом `--check`.
    При запуске плэйбука с флагом `--check` получим ошибку во время установки, так как дистрибутивы ClickHouse не скачаны:  
    ![image1](https://github.com/user-attachments/assets/bb352ef8-6018-4ba2-9fb2-8eb1922996d5)
    Vector выдаст ошибку о невозможности скачивание архива в директорию, т.к. она не была создана:  
@@ -13,10 +17,10 @@
    Lighthouse выдаст ошибку на старте сервиса, т.к. сервис nginx не был установлен:
    ![image3](https://github.com/user-attachments/assets/289a8f4e-ddf2-45ea-8ac9-310d879d75eb)
 
-7. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.  
+8. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.  
    ![image4](https://github.com/user-attachments/assets/bcc61283-0350-444c-b140-bffd4cff0e0e)
 
-8. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.  
+9. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.  
    Три задачи `Vector. Install vector binary file`, `Vector. Create daemon` и `Lighthouse. Clone source code by git client` в статусе `skipped`, т.к. в playbook были добавлены проверки `when`. Playbook идемпотентен:  
    ![image5](https://github.com/user-attachments/assets/29e490f6-3880-47d3-81d9-8ba211ea426b)
 

@@ -30,9 +30,9 @@ Playbook разворачивает на хостах приложения:
 - Для запуска playbook нужно выполнить команду
 ```ansible-playbook -i inventory/prod.yml site.yml```, где ```inventory/prod.yml``` - путь к inventory файлу, ```site.yml``` - файл playbook.
 
-[playbook/site.yml](https://github.com/Daimero88/netology/blob/main/ansible-hw/03/playbook/site.yml) содержит 3 play'я task'ов. 
-Каждый Play содержит в себе task'и по установке Clickhouse, Vector и Lighthouse соответственно. 
-Каждый play можно выполнить отдельно, используя тэги: `clickhouse`, `vector` и `lighthouse`.  
+[playbook/site.yml](https://github.com/Daimero88/netology/blob/main/ansible-hw/03/playbook/site.yml) содержит 3 play tasks. 
+Каждый play содержит в себе tasks по установке Clickhouse, Vector и Lighthouse соответственно. 
+Каждый play можно выполнить отдельно, используя тэги: `clickhouse`, `vector`, `lighthouse`.  
 Плейбук использует 4 файла с переменными: 3 файла для каждой из групп хостов индивидуально:  
 - [playbook/group_vars/clickhouse/clickhouse_vars.yml](playbook/group_vars/clickhouse/vars.yml)  
 - [playbook/group_vars/vector/vector_vars.yaml](playbook/group_vars/vector/vars.yaml)  

@@ -24,15 +24,18 @@
        scm: git
        version: "1.13"
        name: clickhouse 
-   ```
+   ```  
+   ![image1](https://github.com/user-attachments/assets/c418905e-c424-47fe-8fb7-e51d9fae985a)  
 
-2. При помощи `ansible-galaxy` скачайте себе эту роль.
-3. Создайте новый каталог с ролью при помощи `ansible-galaxy role init vector-role`.
-4. На основе tasks из старого playbook заполните новую role. Разнесите переменные между `vars` и `default`. 
-5. Перенести нужные шаблоны конфигов в `templates`.
-6. Опишите в `README.md` обе роли и их параметры. Пример качественной документации ansible role [по ссылке](https://github.com/cloudalchemy/ansible-prometheus).
-7. Повторите шаги 3–6 для LightHouse. Помните, что одна роль должна настраивать один продукт.
-8. Выложите все roles в репозитории. Проставьте теги, используя семантическую нумерацию. Добавьте roles в `requirements.yml` в playbook.
-9. Переработайте playbook на использование roles. Не забудьте про зависимости LightHouse и возможности совмещения `roles` с `tasks`.
-10. Выложите playbook в репозиторий.
-11. В ответе дайте ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
+2. При помощи `ansible-galaxy` скачайте себе эту роль.  
+   ![image2](https://github.com/user-attachments/assets/31e6eaa5-8ce0-4081-ba79-3800dbf1633e)  
+
+4. Создайте новый каталог с ролью при помощи `ansible-galaxy role init vector-role`.
+5. На основе tasks из старого playbook заполните новую role. Разнесите переменные между `vars` и `default`. 
+6. Перенести нужные шаблоны конфигов в `templates`.
+7. Опишите в `README.md` обе роли и их параметры. Пример качественной документации ansible role [по ссылке](https://github.com/cloudalchemy/ansible-prometheus).
+8. Повторите шаги 3–6 для LightHouse. Помните, что одна роль должна настраивать один продукт.
+9. Выложите все roles в репозитории. Проставьте теги, используя семантическую нумерацию. Добавьте roles в `requirements.yml` в playbook.
+10. Переработайте playbook на использование roles. Не забудьте про зависимости LightHouse и возможности совмещения `roles` с `tasks`.
+11. Выложите playbook в репозиторий.
+12. В ответе дайте ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.

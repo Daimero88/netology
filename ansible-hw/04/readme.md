@@ -37,6 +37,7 @@
    [**vars**](https://github.com/Daimero88/netology/blob/main/ansible-hw/04/playbook/vector-role/vars/main.yml)  
    [**defaults**](https://github.com/Daimero88/netology/blob/main/ansible-hw/04/playbook/vector-role/defaults/main.yml)  
 5. Перенести нужные шаблоны конфигов в `templates`.
+   [**templates**](https://github.com/Daimero88/netology/blob/main/ansible-hw/04/playbook/vector-role/templates/vector.yaml.j2)  
 6. Опишите в `README.md` обе роли и их параметры. Пример качественной документации ansible role [по ссылке](https://github.com/cloudalchemy/ansible-prometheus).
 7. Повторите шаги 3–6 для LightHouse. Помните, что одна роль должна настраивать один продукт.
 8. Выложите все roles в репозитории. Проставьте теги, используя семантическую нумерацию. Добавьте roles в `requirements.yml` в playbook.

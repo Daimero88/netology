@@ -42,9 +42,9 @@
 7. Повторите шаги 3–6 для LightHouse. Помните, что одна роль должна настраивать один продукт.  
    [**vars**](https://github.com/Daimero88/lighthouse-role/blob/main/vars/main.yml), [**defaults**](https://github.com/Daimero88/lighthouse-role/blob/main/defaults/main.yml), [**templates**](https://github.com/Daimero88/lighthouse-role/blob/main/templates/lighthouse.conf.j2), [**README.md**](https://github.com/Daimero88/lighthouse-role/blob/main/README.md)
 8. Выложите все roles в репозитории. Проставьте теги, используя семантическую нумерацию. Добавьте roles в `requirements.yml` в playbook.  
-  [**vector-role**](https://github.com/Daimero88/vector-role)  
-  [**lighthouse-role**](https://github.com/Daimero88/lighthouse-role)  
-  [**requirements.yml**](https://github.com/Daimero88/netology/blob/main/ansible-hw/04/playbook/requirements.yml)  
+  [**vector-role**](https://github.com/Daimero88/vector-role), [**lighthouse-role**](https://github.com/Daimero88/lighthouse-role), [**requirements.yml**](https://github.com/Daimero88/netology/blob/main/ansible-hw/04/playbook/requirements.yml)  
 9. Переработайте playbook на использование roles. Не забудьте про зависимости LightHouse и возможности совмещения `roles` с `tasks`.  
 10. Выложите playbook в репозиторий.  
+    [**site.yml**](https://github.com/Daimero88/netology/blob/main/ansible-hw/04/playbook/site.yml)
 11. В ответе дайте ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.  
+    [**vector-role**](https://github.com/Daimero88/vector-role), [**lighthouse-role**](https://github.com/Daimero88/lighthouse-role), [**playbook**](https://github.com/Daimero88/netology/tree/main/ansible-hw/04/playbook)

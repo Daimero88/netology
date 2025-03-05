@@ -36,7 +36,7 @@
 4. На основе tasks из старого playbook заполните новую role. Разнесите переменные между `vars` и `default`.  
    [**vars**](https://github.com/Daimero88/netology/blob/main/ansible-hw/04/playbook/vector-role/vars/main.yml)  
    [**defaults**](https://github.com/Daimero88/netology/blob/main/ansible-hw/04/playbook/vector-role/defaults/main.yml)  
-5. Перенести нужные шаблоны конфигов в `templates`.
+5. Перенести нужные шаблоны конфигов в `templates`.  
    [**templates**](https://github.com/Daimero88/netology/blob/main/ansible-hw/04/playbook/vector-role/templates/vector.yaml.j2)  
 6. Опишите в `README.md` обе роли и их параметры. Пример качественной документации ansible role [по ссылке](https://github.com/cloudalchemy/ansible-prometheus).
 7. Повторите шаги 3–6 для LightHouse. Помните, что одна роль должна настраивать один продукт.

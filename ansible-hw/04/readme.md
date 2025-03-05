@@ -30,7 +30,9 @@
 2. При помощи `ansible-galaxy` скачайте себе эту роль.  
    ![image2](https://github.com/user-attachments/assets/31e6eaa5-8ce0-4081-ba79-3800dbf1633e)  
 
-4. Создайте новый каталог с ролью при помощи `ansible-galaxy role init vector-role`.
+3. Создайте новый каталог с ролью при помощи `ansible-galaxy role init vector-role`.
+   ![image3](https://github.com/user-attachments/assets/2a9d2169-27cd-4b26-90cf-f47b823ef8b0)
+   
 5. На основе tasks из старого playbook заполните новую role. Разнесите переменные между `vars` и `default`. 
 6. Перенести нужные шаблоны конфигов в `templates`.
 7. Опишите в `README.md` обе роли и их параметры. Пример качественной документации ansible role [по ссылке](https://github.com/cloudalchemy/ansible-prometheus).

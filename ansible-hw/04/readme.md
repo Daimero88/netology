@@ -34,8 +34,8 @@
    ![image3](https://github.com/user-attachments/assets/2a9d2169-27cd-4b26-90cf-f47b823ef8b0)
    
 4. На основе tasks из старого playbook заполните новую role. Разнесите переменные между `vars` и `default`.  
-   [**vars**](https://github.com/Daimero88/netology/blob/main/ansible-hw/04/playbook/vector-role/vars/main.yml)  
-   [**defaults**](https://github.com/Daimero88/netology/blob/main/ansible-hw/04/playbook/vector-role/defaults/main.yml)  
+   [**vars**](https://github.com/Daimero88/vector-role/blob/main/vars/main.yml)  
+   [**defaults**](https://github.com/Daimero88/vector-role/blob/main/defaults/main.yml)  
 5. Перенести нужные шаблоны конфигов в `templates`.  
    [**templates**](https://github.com/Daimero88/netology/blob/main/ansible-hw/04/playbook/vector-role/templates/vector.yaml.j2)  
 6. Опишите в `README.md` обе роли и их параметры. Пример качественной документации ansible role [по ссылке](https://github.com/cloudalchemy/ansible-prometheus).

@@ -3,8 +3,8 @@
 ### Molecule
 
 1. Запустите  `molecule test -s ubuntu_xenial` (или с любым другим сценарием, не имеет значения) внутри корневой директории clickhouse-role, посмотрите на вывод команды. Данная команда может отработать с ошибками или не отработать вовсе, это нормально. Наша цель - посмотреть как другие в реальном мире используют молекулу И из чего может состоять сценарий тестирования.  
-   На Debian12 (bookworm) команда отработала с ошибками при вызове:
-   ![image1](https://github.com/user-attachments/assets/1648de81-18b7-4534-a053-9d933a5c7d8a)  
+   Команда отработала с ошибками при вызове, т.к. необходимо переписать файл `molecule.yml` (Molecule больше не использует параметр playbooks):
+   ![image](https://github.com/user-attachments/assets/1efb3d9d-d1f6-4d29-a384-671a55f8150c)
  
 2. Перейдите в каталог с ролью vector-role и создайте сценарий тестирования по умолчанию при помощи `molecule init scenario --driver-name docker`.  
    ![image2](https://github.com/user-attachments/assets/439c7669-8dc3-4d80-9f67-57966447df47)  

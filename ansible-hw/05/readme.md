@@ -46,13 +46,19 @@
 ### Tox
 
 1. Добавьте в директорию с vector-role файлы из [директории](https://github.com/netology-code/mnt-homeworks/tree/MNT-video/08-ansible-05-testing/example).  
-2. Запустите `docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash`, где path_to_repo — путь до корня репозитория с vector-role на вашей файловой системе.
+2. Запустите `docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash`, где path_to_repo — путь до корня репозитория с vector-role на вашей файловой системе.  
    ![image6](https://github.com/user-attachments/assets/6ebb9a9b-ef62-4011-a2df-5fd9a3a13590)  
 
-3. Внутри контейнера выполните команду `tox`, посмотрите на вывод.  
+3. Внутри контейнера выполните команду `tox`, посмотрите на вывод.
+   В контейнере указаны старые версии ansible и python:
    ![image7](https://github.com/user-attachments/assets/f520adb2-86f4-47e9-a971-8050629a21af)  
 
 4. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.  
+   Создание сценария:  
+   ![image8](https://github.com/user-attachments/assets/4146f1ef-2fed-4c28-9871-2f84e16f7ff8)  
+   Запуск сценария командой `molecule test --scenario-name podman`. Вывод play Converge:  
+   ![image9](https://github.com/user-attachments/assets/76e0dac3-fe2d-4828-8eff-621ecfe29798)  
+
 5. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.  
 6. Запустите команду `tox`. Убедитесь, что всё отработало успешно.  
 7. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.  

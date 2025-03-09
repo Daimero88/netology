@@ -49,7 +49,7 @@
 2. Запустите `docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash`, где path_to_repo — путь до корня репозитория с vector-role на вашей файловой системе.  
    ![image6](https://github.com/user-attachments/assets/6ebb9a9b-ef62-4011-a2df-5fd9a3a13590)  
 
-3. Внутри контейнера выполните команду `tox`, посмотрите на вывод.
+3. Внутри контейнера выполните команду `tox`, посмотрите на вывод.  
    В контейнере указаны старые версии ansible и python:
    ![image7](https://github.com/user-attachments/assets/f520adb2-86f4-47e9-a971-8050629a21af)  
 

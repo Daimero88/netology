@@ -38,8 +38,9 @@
           success_msg: "Vector configuration validation succeeded"
         
 6. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.  
-   ![image5](https://github.com/user-attachments/assets/97c4b0f3-3692-4d96-8228-354c3359d642) 
-7. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
+   ![image5](https://github.com/user-attachments/assets/97c4b0f3-3692-4d96-8228-354c3359d642)  
+7. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.  
+   [0.42.1](https://github.com/Daimero88/vector-role/releases/tag/0.42.1)  
    
 
 ### Tox

@@ -20,22 +20,22 @@
    файл расположен по пути molecule/default/verify.yml:
       ```
       - name: Verify
-  hosts: all
-  gather_facts: false
-  vars:
-    vector_config_path: /etc/vector/vector.yaml
-  tasks:
-    - name: Get Vector validation
-      ansible.builtin.command: "vector validate"
-      changed_when: false
-      register: vector_check
+        hosts: all
+        gather_facts: false
+        vars:
+          vector_config_path: /etc/vector/vector.yaml
+        tasks:
+          - name: Get Vector validation
+            ansible.builtin.command: "vector validate"
+            changed_when: false
+            register: vector_check
 
-    - name: Assert Vector validation
-      ansible.builtin.assert:
-        that:
-          - vector_check.rc == 0
-        fail_msg: "Vector configuration validation failed"
-        success_msg: "Vector configuration validation succeeded"
+      - name: Assert Vector validation
+        ansible.builtin.assert:
+          that:
+            - vector_check.rc == 0
+          fail_msg: "Vector configuration validation failed"
+          success_msg: "Vector configuration validation succeeded"
         ```
 6. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.  
    ![image5](https://github.com/user-attachments/assets/97c4b0f3-3692-4d96-8228-354c3359d642) 

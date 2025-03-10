@@ -49,7 +49,8 @@
       path: './daimero88_playbook.txt'
       content: "This file was created by ansible-playbook"
 ```
-**Шаг 6.** Проверьте через playbook на идемпотентность.
+**Шаг 6.** Проверьте через playbook на идемпотентность.  
+![image1](https://github.com/user-attachments/assets/d25fede7-5059-42ce-baa5-d5b9c417b83f)
 
 **Шаг 7.** Выйдите из виртуального окружения.
 

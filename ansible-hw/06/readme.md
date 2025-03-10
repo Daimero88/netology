@@ -38,8 +38,17 @@
 Второй запуск: ```{"changed": false, "invocation": {"module_args": {"path": "daimero88.md", "content": "Silchin Sergey - ansible-hw-06"}}}```  
 Т.к. файл уже создан результат `changed": false`.  
 
-**Шаг 5.** Напишите single task playbook и используйте module в нём.
-
+**Шаг 5.** Напишите single task playbook и используйте module в нём.  
+```
+---
+- name: Test Module
+  hosts: localhost
+  tasks:
+  - name: Create file with context
+    my_own_module:
+      path: './daimero88_playbook.txt'
+      content: "This file was created by ansible-playbook"
+```
 **Шаг 6.** Проверьте через playbook на идемпотентность.
 
 **Шаг 7.** Выйдите из виртуального окружения.

@@ -35,9 +35,10 @@
 ```
 **Шаг 4.** Проверьте module на исполняемость локально.  
 Первый запуск: ```{"changed": true, "invocation": {"module_args": {"path": "daimero88.md", "content": "Silchin Sergey - ansible-hw-06"}}}```  
-Файл создался, результат `changed": true`.
+Файл создался, результат `changed": true`.  
 Второй запуск: ```{"changed": false, "invocation": {"module_args": {"path": "daimero88.md", "content": "Silchin Sergey - ansible-hw-06"}}}```  
-Т.к. файл уже создан результат `changed": false`.
+Т.к. файл уже создан результат `changed": false`.  
+
 **Шаг 5.** Напишите single task playbook и используйте module в нём.
 
 **Шаг 6.** Проверьте через playbook на идемпотентность.

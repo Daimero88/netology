@@ -88,7 +88,8 @@ content: "Hello world =)"
     - role: daimero88.yandex_cloud_elk.my_module
 ```
 
-**Шаг 12.** Заполните всю документацию по collection, выложите в свой репозиторий, поставьте тег `1.0.0` на этот коммит.
+**Шаг 12.** Заполните всю документацию по collection, выложите в свой репозиторий, поставьте тег `1.0.0` на этот коммит.  
+[**1.0.0**](https://github.com/Daimero88/my_own_collection/releases/tag/1.0.0)
 
 **Шаг 13.** Создайте .tar.gz этой collection: `ansible-galaxy collection build` в корневой директории collection.  
 ![image4](https://github.com/user-attachments/assets/e305179f-a6c7-4682-bee4-5008294820ca)
@@ -102,4 +103,6 @@ content: "Hello world =)"
 Playbook работает и идемпотентен:
 ![image2](https://github.com/user-attachments/assets/612f6934-6ab9-477a-86e8-6416e6fa3a9f)
 
-**Шаг 17.** В ответ необходимо прислать ссылки на collection и tar.gz архив, а также скриншоты выполнения пунктов 4, 6, 15 и 16.
+**Шаг 17.** В ответ необходимо прислать ссылки на collection и tar.gz архив, а также скриншоты выполнения пунктов 4, 6, 15 и 16.  
+[**collection**](https://github.com/Daimero88/my_own_collection/tree/main/daimero88/yandex_cloud_elk)
+[**daimero88-yandex_cloud_elk-1.0.0.tar.gz**](https://github.com/Daimero88/my_own_collection/blob/main/daimero88/yandex_cloud_elk/daimero88-yandex_cloud_elk-1.0.0.tar.gz)

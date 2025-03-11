@@ -1,0 +1,9 @@
+---
+- name: Test Module
+  hosts: localhost
+  tasks:
+  - name: Create file with context
+    my_own_module:
+      path: './daimero88_playbook.txt'
+      content: "This file was created by ansible-playbook"
+

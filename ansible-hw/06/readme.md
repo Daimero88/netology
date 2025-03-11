@@ -88,5 +88,4 @@ Playbook работает и идемпотентен:
 ![image2](https://github.com/user-attachments/assets/612f6934-6ab9-477a-86e8-6416e6fa3a9f)
 
 **Шаг 17.** В ответ необходимо прислать ссылки на collection и tar.gz архив, а также скриншоты выполнения пунктов 4, 6, 15 и 16.  
-[**collection**](https://github.com/Daimero88/my_own_collection/tree/main/daimero88/yandex_cloud_elk)
-[**daimero88-yandex_cloud_elk-1.0.0.tar.gz**](https://github.com/Daimero88/my_own_collection/blob/main/daimero88/yandex_cloud_elk/daimero88-yandex_cloud_elk-1.0.0.tar.gz)
+[**collection**](https://github.com/Daimero88/my_own_collection/tree/main/daimero88/yandex_cloud_elk), [**daimero88-yandex_cloud_elk-1.0.0.tar.gz**](https://github.com/Daimero88/my_own_collection/blob/main/daimero88/yandex_cloud_elk/daimero88-yandex_cloud_elk-1.0.0.tar.gz)

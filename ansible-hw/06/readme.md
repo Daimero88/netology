@@ -59,11 +59,34 @@
 **Шаг 8.** Инициализируйте новую collection: `ansible-galaxy collection init my_own_namespace.yandex_cloud_elk`.  
 ![image6](https://github.com/user-attachments/assets/63118e5c-a6b3-4fc3-9508-45cc8985da3b)  
 
-**Шаг 9.** В эту collection перенесите свой module в соответствующую директорию.
+**Шаг 9.** В эту collection перенесите свой module в соответствующую директорию.  
+Переносим файл `my_own_module.py` в папку `daimero88/yandex_cloud_elk/plugins/modules/`  
 
-**Шаг 10.** Single task playbook преобразуйте в single task role и перенесите в collection. У role должны быть default всех параметров module.
-
-**Шаг 11.** Создайте playbook для использования этой role.
+**Шаг 10.** Single task playbook преобразуйте в single task role и перенесите в collection. У role должны быть default всех параметров module.  
+tasks/main.yml:
+```
+---
+- name: Create file with content
+  my_own_module:
+    path: "{{ path }}"
+    content: "{{ content }}"
+```
+defaults/main.yml:
+```
+---
+path: './file.txt'
+content: "Hello world =)"
+```
+**Шаг 11.** Создайте playbook для использования этой role.  
+```
+---
+- name: Test playbook
+  hosts: localhost
+  gather_facts: false
+  remote_user: root
+  roles:
+    - role: daimero88.yandex_cloud_elk.my_module
+```
 
 **Шаг 12.** Заполните всю документацию по collection, выложите в свой репозиторий, поставьте тег `1.0.0` на этот коммит.
 

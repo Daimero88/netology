@@ -50,11 +50,14 @@
       content: "This file was created by ansible-playbook"
 ```
 **Шаг 6.** Проверьте через playbook на идемпотентность.  
-![image1](https://github.com/user-attachments/assets/d25fede7-5059-42ce-baa5-d5b9c417b83f)
+![image1](https://github.com/user-attachments/assets/d25fede7-5059-42ce-baa5-d5b9c417b83f)  
 
-**Шаг 7.** Выйдите из виртуального окружения.
+**Шаг 7.** Выйдите из виртуального окружения.  
+Команда `deactivate`:  
+![image5](https://github.com/user-attachments/assets/b0cfbbdc-6af0-45a5-86ec-638ecd5ee779)  
 
-**Шаг 8.** Инициализируйте новую collection: `ansible-galaxy collection init my_own_namespace.yandex_cloud_elk`.
+**Шаг 8.** Инициализируйте новую collection: `ansible-galaxy collection init my_own_namespace.yandex_cloud_elk`.  
+![image6](https://github.com/user-attachments/assets/63118e5c-a6b3-4fc3-9508-45cc8985da3b)  
 
 **Шаг 9.** В эту collection перенесите свой module в соответствующую директорию.
 
@@ -64,12 +67,16 @@
 
 **Шаг 12.** Заполните всю документацию по collection, выложите в свой репозиторий, поставьте тег `1.0.0` на этот коммит.
 
-**Шаг 13.** Создайте .tar.gz этой collection: `ansible-galaxy collection build` в корневой директории collection.
+**Шаг 13.** Создайте .tar.gz этой collection: `ansible-galaxy collection build` в корневой директории collection.  
+![image4](https://github.com/user-attachments/assets/e305179f-a6c7-4682-bee4-5008294820ca)
 
 **Шаг 14.** Создайте ещё одну директорию любого наименования, перенесите туда single task playbook и архив c collection.
 
-**Шаг 15.** Установите collection из локального архива: `ansible-galaxy collection install <archivename>.tar.gz`.
+**Шаг 15.** Установите collection из локального архива: `ansible-galaxy collection install <archivename>.tar.gz`.  
+![image3](https://github.com/user-attachments/assets/fe0c23c8-d62b-408a-85f3-563709cc0b5d)
 
-**Шаг 16.** Запустите playbook, убедитесь, что он работает.
+**Шаг 16.** Запустите playbook, убедитесь, что он работает.  
+Playbook работает и идемпотентен:
+![image2](https://github.com/user-attachments/assets/612f6934-6ab9-477a-86e8-6416e6fa3a9f)
 
 **Шаг 17.** В ответ необходимо прислать ссылки на collection и tar.gz архив, а также скриншоты выполнения пунктов 4, 6, 15 и 16.

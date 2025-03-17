@@ -11,6 +11,10 @@
 5. Done fix -> On test.
 6. On test -> On fix, Done.
 7. Done -> Closed, Open.
+   
+Заходим по пути `settings -> Issues -> Workflows -> Add workflow -> bug`:
+![image1](https://github.com/user-attachments/assets/841596f5-53fc-4574-8f94-2451ac3ff98b)
+
 
 Остальные задачи должны проходить по упрощённому workflow:
 

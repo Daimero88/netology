@@ -35,12 +35,14 @@
    Проводим по всему workflow до Done:
    ![image4](https://github.com/user-attachments/assets/648df1a7-5b95-4dde-bf2d-378655dda79c)  
 
-2. Создайте задачу с типом epic, к ней привяжите несколько задач с типом task, проведите их по всему workflow до Done.
+2. Создайте задачу с типом epic, к ней привяжите несколько задач с типом task, проведите их по всему workflow до Done.  
    Создаем epic и несколько задач, указывая parent на epic, и проводим их по workflow:  
    ![image5](https://github.com/user-attachments/assets/56e7a95a-934a-493c-ae12-9d2bf6b00255)  
 
-3. При проведении обеих задач по статусам используйте kanban. 
-4. Верните задачи в статус Open.
-5. Перейдите в Scrum, запланируйте новый спринт, состоящий из задач эпика и одного бага, стартуйте спринт, проведите задачи до состояния Closed. Закройте спринт.
+3. При проведении обеих задач по статусам используйте kanban.  
+4. Верните задачи в статус Open.  
+5. Перейдите в Scrum, запланируйте новый спринт, состоящий из задач эпика и одного бага, стартуйте спринт, проведите задачи до состояния Closed. Закройте спринт:  
+   ![image6](https://github.com/user-attachments/assets/b786a173-3694-4a9a-a68b-f523e1065abf)
+
 6. Если всё отработалось в рамках ожидания — выгрузите схемы workflow для импорта в XML. Файлы с workflow и скриншоты workflow приложите к решению задания.  
 [**bug**](https://github.com/Daimero88/netology/blob/main/ci-hw/01/bug.xml), [**simple_workflow**](https://github.com/Daimero88/netology/blob/main/ci-hw/01/simple_workflow.xml)

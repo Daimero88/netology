@@ -12,7 +12,7 @@
 6. On test -> On fix, Done.
 7. Done -> Closed, Open.
    
-Заходим по пути `settings -> Issues -> Workflows -> Add workflow -> bug`:
+Создаем новый workflow по пути `settings > issues > workflows > add workflow > bug`:
 ![image1](https://github.com/user-attachments/assets/841596f5-53fc-4574-8f94-2451ac3ff98b)
 
 
@@ -23,6 +23,10 @@
 3. Done develop -> On test.
 4. On test -> On develop, Done.
 5. Done -> Closed, Open.
+
+Создаем новый workflow по пути `settings > issues > workflows > add workflow > simple_workflow`
+![image2](https://github.com/user-attachments/assets/d64b8f73-7808-49dd-a6a5-06fb456df77f)
+
 
 **Что нужно сделать**
 

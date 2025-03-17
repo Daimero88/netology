@@ -25,8 +25,7 @@
 5. Done -> Closed, Open.
 
 Создаем новый workflow по пути `settings > issues > workflows > add workflow > simple_workflow`
-![image2](https://github.com/user-attachments/assets/d64b8f73-7808-49dd-a6a5-06fb456df77f)
-
+![image2](https://github.com/user-attachments/assets/06064490-7873-4116-9067-35a181e80c6f)  
 
 **Что нужно сделать**
 

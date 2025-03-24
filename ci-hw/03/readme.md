@@ -54,10 +54,13 @@ while index < 10:
  *    artifactId: java;
  *    version: 8_282;
  *    classifier: distrib;
- *    type: tar.gz.
+ *    type: tar.gz.  
+![image4](https://github.com/user-attachments/assets/6b152264-79fa-4844-82f0-5c17d701ff5a)  
    
 2. В него же загрузите такой же артефакт, но с version: 8_102.
-3. Проверьте, что все файлы загрузились успешно.
+3. Проверьте, что все файлы загрузились успешно.  
+![image5](https://github.com/user-attachments/assets/eae3f597-8b6f-4970-ae66-a777270c7228)  
+
 4. В ответе пришлите файл `maven-metadata.xml` для этого артефекта.
 
 ### Знакомство с Maven

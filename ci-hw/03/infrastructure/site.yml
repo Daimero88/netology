@@ -55,13 +55,16 @@
 
     - name: Install PostgreSQL repos
       yum:
-        name: https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+ #       name: https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+        name: https://download.postgresql.org/pub/repos/yum/reporpms/F-39-x86_64/pgdg-fedora-repo-latest.noarch.rpm
+        disable_gpg_check: yes
         state: present
         validate_certs: false
 
     - name: Install PostgreSQL
       yum:
-        name: "postgresql{{ postgresql_version }}-server"
+#        name: "postgresql{{ postgresql_version }}-server"
+        name: "postgresql-server"
         state: present
 
     - name: Init template1 DB
@@ -70,7 +73,8 @@
 
     - name: Start pgsql service
       systemd:
-        name: "postgresql-{{ postgresql_version }}"
+#        name: "postgresql-{{ postgresql_version }}"
+        name: "postgresql"
         state: started
         enabled: true
 
@@ -138,7 +142,7 @@
 
 - name: Get Sonarqube installed
   hosts: sonarqube
-  vars: 
+  vars:
     ansible_user: "{{ sonarqube_db_user }}"
   tasks:
     - name: Get distrib ZIP
@@ -180,7 +184,7 @@
           line: "sonar.jdbc.url=jdbc:postgresql://localhost:{{ sonar_db_port }}/{{ sonarqube_db_name }}?useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true&useConfigs=maxPerformance"
         - regexp: "^sonar.web.context"
           line: "sonar.web.context={{ sonar_web_context }}"
-    
+
     - name: Generate wrapper.conf
       template:
         src: wrapper.conf.j2

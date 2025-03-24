@@ -61,7 +61,7 @@ while index < 10:
 3. Проверьте, что все файлы загрузились успешно.  
 ![image5](https://github.com/user-attachments/assets/eae3f597-8b6f-4970-ae66-a777270c7228)  
 
-4. В ответе пришлите файл `maven-metadata.xml` для этого артефекта.
+4. В ответе пришлите файл `maven-metadata.xml` для этого артефекта.  
 [**maven-metadata.xml**](https://github.com/Daimero88/netology/blob/main/ci-hw/03/maven-metadata.xml)
 
 ### Знакомство с Maven

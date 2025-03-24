@@ -55,7 +55,6 @@ while index < 10:
  *    version: 8_282;
  *    classifier: distrib;
  *    type: tar.gz.  
-![image4](https://github.com/user-attachments/assets/6b152264-79fa-4844-82f0-5c17d701ff5a)  
    
 2. В него же загрузите такой же артефакт, но с version: 8_102.
 3. Проверьте, что все файлы загрузились успешно.  
@@ -71,13 +70,19 @@ while index < 10:
 1. Скачайте дистрибутив с [maven](https://maven.apache.org/download.cgi).
 2. Разархивируйте, сделайте так, чтобы binary был доступен через вызов в shell (или поменяйте переменную PATH, или любой другой, удобный вам способ).
 3. Удалите из `apache-maven-<version>/conf/settings.xml` упоминание о правиле, отвергающем HTTP- соединение — раздел mirrors —> id: my-repository-http-unblocker.
-4. Проверьте `mvn --version`.
+4. Проверьте `mvn --version`.  
+   ![image6](https://github.com/user-attachments/assets/a9f0afbb-abba-41ba-8589-9639bf5f636d)  
 5. Заберите директорию [mvn](./mvn) с pom.
 
 ### Основная часть
 
 1. Поменяйте в `pom.xml` блок с зависимостями под ваш артефакт из первого пункта задания для Nexus (java с версией 8_282).
 2. Запустите команду `mvn package` в директории с `pom.xml`, ожидайте успешного окончания.
+   ![image7](https://github.com/user-attachments/assets/f486ab7d-da5d-414a-9705-3557fd43c9b4)  
+
 3. Проверьте директорию `~/.m2/repository/`, найдите ваш артефакт.
+   ![image8](https://github.com/user-attachments/assets/34fbc4a7-effe-4b68-a84f-c2d61ec2bc4c)  
+
 4. В ответе пришлите исправленный файл `pom.xml`.
+   
 

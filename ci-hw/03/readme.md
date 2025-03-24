@@ -26,13 +26,13 @@
    Исправленный вариант:  
 ```
 def increment(index):
-    return index + 1  # Исправлено: просто возвращаем index + 1
+    return index + 1
 
 def get_square(numb):
     return numb * numb
 
 def print_numb(numb):
-    print("Number is {}".format(numb))  # Удалён лишний 'pass'
+    print("Number is {}".format(numb))
 
 index = 0
 while index < 10:

@@ -83,6 +83,6 @@ while index < 10:
 3. Проверьте директорию `~/.m2/repository/`, найдите ваш артефакт.
    ![image8](https://github.com/user-attachments/assets/34fbc4a7-effe-4b68-a84f-c2d61ec2bc4c)  
 
-4. В ответе пришлите исправленный файл `pom.xml`.
-   
+4. В ответе пришлите исправленный файл `pom.xml`.  
+   [**pom.xml**](https://github.com/Daimero88/netology/blob/main/ci-hw/03/mvn/pom.xml)
 

@@ -10,12 +10,14 @@
 4. Проверьте `sonar-scanner --version`.
    ![image1](https://github.com/user-attachments/assets/49a05d54-14a6-4ef2-a97d-3ff78874e1eb)  
 5. Запустите анализатор против кода из директории [example](./example) с дополнительным ключом `-Dsonar.coverage.exclusions=fail.py`.
-   ```sonar-scanner \
+   ```
+   sonar-scanner \
 >   -Dsonar.projectKey=netology \
 >   -Dsonar.sources=. \
 >   -Dsonar.host.url=http://localhost:9000 \
 >   -Dsonar.login=cea98921d53bbe1d6fb461973b68c6a50812exxx \
->   -Dsonar.coverage.exclusions=fail.py```
+>   -Dsonar.coverage.exclusions=fail.py
+   ```
 6. Посмотрите результат в интерфейсе.  
 ![image2](https://github.com/user-attachments/assets/4d8343c0-5d06-447a-a994-391402ce9760)  
 

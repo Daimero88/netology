@@ -22,7 +22,7 @@
    Было найдено 3 ошибки:  
 ![image2](https://github.com/user-attachments/assets/4d8343c0-5d06-447a-a994-391402ce9760)  
 
-8. Исправьте ошибки, которые он выявил, включая warnings.  
+7. Исправьте ошибки, которые он выявил, включая warnings.  
    Исправленный вариант:  
 ```
 def increment(index):
@@ -39,8 +39,8 @@ while index < 10:
     index = increment(index)
     print(get_square(index))
 ```
-9. Запустите анализатор повторно — проверьте, что QG пройдены успешно.  
-10. Сделайте скриншот успешного прохождения анализа, приложите к решению ДЗ.  
+8. Запустите анализатор повторно — проверьте, что QG пройдены успешно.  
+9. Сделайте скриншот успешного прохождения анализа, приложите к решению ДЗ.  
 ![image3](https://github.com/user-attachments/assets/9dd17213-658d-4f34-a9e4-bf559e2cd02b)
 
 
@@ -54,11 +54,15 @@ while index < 10:
  *    artifactId: java;
  *    version: 8_282;
  *    classifier: distrib;
- *    type: tar.gz.
+ *    type: tar.gz.  
+![image4](https://github.com/user-attachments/assets/6b152264-79fa-4844-82f0-5c17d701ff5a)  
    
 2. В него же загрузите такой же артефакт, но с version: 8_102.
-3. Проверьте, что все файлы загрузились успешно.
-4. В ответе пришлите файл `maven-metadata.xml` для этого артефекта.
+3. Проверьте, что все файлы загрузились успешно.  
+![image5](https://github.com/user-attachments/assets/eae3f597-8b6f-4970-ae66-a777270c7228)  
+
+4. В ответе пришлите файл `maven-metadata.xml` для этого артефекта.  
+[**maven-metadata.xml**](https://github.com/Daimero88/netology/blob/main/ci-hw/03/maven-metadata.xml)
 
 ### Знакомство с Maven
 

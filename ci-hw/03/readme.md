@@ -18,13 +18,13 @@
    -Dsonar.login=cea98921d53bbe1d6fb461973b68c6a50812exxx \
    -Dsonar.coverage.exclusions=fail.py
    ```
-6. Посмотрите результат в интерфейсе.
+6. Посмотрите результат в интерфейсе.  
    Было найдено 3 ошибки:  
 ![image2](https://github.com/user-attachments/assets/4d8343c0-5d06-447a-a994-391402ce9760)  
 
-8. Исправьте ошибки, которые он выявил, включая warnings.
-   Исправленный вариант:
-   ```
+8. Исправьте ошибки, которые он выявил, включая warnings.  
+   Исправленный вариант:  
+```
 def increment(index):
     return index + 1  # Исправлено: просто возвращаем index + 1
 
@@ -38,7 +38,7 @@ index = 0
 while index < 10:
     index = increment(index)
     print(get_square(index))
-    ```
+```
 9. Запустите анализатор повторно — проверьте, что QG пройдены успешно.  
 10. Сделайте скриншот успешного прохождения анализа, приложите к решению ДЗ.  
 ![image3](https://github.com/user-attachments/assets/9dd17213-658d-4f34-a9e4-bf559e2cd02b)

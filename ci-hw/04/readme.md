@@ -6,8 +6,31 @@
    ![image1](https://github.com/user-attachments/assets/f8627cde-b9df-4f60-95e9-c0450d2b87bd)  
    ![image2](https://github.com/user-attachments/assets/f08d758d-b67b-4255-812a-1f9ad0a83514)  
 
-2. Сделать Declarative Pipeline Job, который будет запускать `molecule test` из любого вашего репозитория с ролью.  
-   ![image3](https://github.com/user-attachments/assets/ada02d07-7f77-4630-aab8-46d34ac56591)  
+2. Сделать Declarative Pipeline Job, который будет запускать `molecule test` из любого вашего репозитория с ролью.
+   Pipeline script:  
+```
+   pipeline {
+    agent{
+        label 'jenkins-agent'
+    }
+    stages {
+        stage ('Copy Git repo') {
+            steps {
+                sh 'sudo -i'
+                sh 'git clone https://github.com/Daimero88/vector-role.git'
+            }
+        }
+        stage ('Run molecule test') {
+            steps {
+                dir('vector-role') {
+                    sh 'molecule test'
+                }
+            }
+        }
+    }
+}
+```
+   ![image4](https://github.com/user-attachments/assets/d4fadfe3-6de2-4797-a1a5-4670efc305b3)
 
 3. Перенести Declarative Pipeline в репозиторий в файл `Jenkinsfile`.
 4. Создать Multibranch Pipeline на запуск `Jenkinsfile` из репозитория.

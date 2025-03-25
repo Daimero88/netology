@@ -6,7 +6,9 @@
    ![image1](https://github.com/user-attachments/assets/f8627cde-b9df-4f60-95e9-c0450d2b87bd)  
    ![image2](https://github.com/user-attachments/assets/f08d758d-b67b-4255-812a-1f9ad0a83514)  
 
-2. Сделать Declarative Pipeline Job, который будет запускать `molecule test` из любого вашего репозитория с ролью.
+2. Сделать Declarative Pipeline Job, который будет запускать `molecule test` из любого вашего репозитория с ролью.  
+   ![image3](https://github.com/user-attachments/assets/ada02d07-7f77-4630-aab8-46d34ac56591)  
+
 3. Перенести Declarative Pipeline в репозиторий в файл `Jenkinsfile`.
 4. Создать Multibranch Pipeline на запуск `Jenkinsfile` из репозитория.
 5. Создать Scripted Pipeline, наполнить его скриптом из [pipeline](./pipeline).

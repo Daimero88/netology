@@ -9,8 +9,8 @@
 2. Сделать Declarative Pipeline Job, который будет запускать `molecule test` из любого вашего репозитория с ролью.
    Pipeline script:  
 ```
-   pipeline {
-    agent{
+pipeline {
+    agent {
         label 'jenkins-agent'
     }
     stages {

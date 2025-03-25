@@ -29,8 +29,9 @@ pipeline {
         }
     }
 }
-```
-   ![image3](https://github.com/user-attachments/assets/d4fadfe3-6de2-4797-a1a5-4670efc305b3)  
+```  
+![image3](https://github.com/user-attachments/assets/7a114ed4-495e-4eda-a8cf-9101af9df8cb)  
+
 
 3. Перенести Declarative Pipeline в репозиторий в файл `Jenkinsfile`.
 4. Создать Multibranch Pipeline на запуск `Jenkinsfile` из репозитория.

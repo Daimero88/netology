@@ -39,7 +39,9 @@ pipeline {
 ![image4](https://github.com/user-attachments/assets/c567307b-b966-4b8e-94c1-be98d862c27d)  
 
 5. Создать Scripted Pipeline, наполнить его скриптом из [pipeline](./pipeline).
-6. Внести необходимые изменения, чтобы Pipeline запускал `ansible-playbook` без флагов `--check --diff`, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и запускает прогон с флагами `--check --diff`.
+6. Внести необходимые изменения, чтобы Pipeline запускал `ansible-playbook` без флагов `--check --diff`, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и запускает прогон с флагами `--check --diff`.  
+![image5](https://github.com/user-attachments/assets/17ea73fa-8cc9-4dcc-ba1b-bcc560d6fb7a)  
+
 7. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
 8. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.
 9. Сопроводите процесс настройки скриншотами для каждого пункта задания!!

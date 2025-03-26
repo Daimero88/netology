@@ -42,6 +42,9 @@ pipeline {
 6. Внести необходимые изменения, чтобы Pipeline запускал `ansible-playbook` без флагов `--check --diff`, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и запускает прогон с флагами `--check --diff`.  
 ![image5](https://github.com/user-attachments/assets/17ea73fa-8cc9-4dcc-ba1b-bcc560d6fb7a)  
 
-7. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
-8. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.
+7. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.  
+![image6](https://github.com/user-attachments/assets/a910a6f8-ca2f-48bd-8417-1ed5e9eb3e71)  
+[**ScriptedJenkinsfile**](https://github.com/Daimero88/vector-role/blob/main/ScriptedJenkinsfile)  
+8. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.  
+[**vector-role**](https://github.com/Daimero88/vector-role)  
 9. Сопроводите процесс настройки скриншотами для каждого пункта задания!!

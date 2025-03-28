@@ -55,7 +55,9 @@
     ![image](https://github.com/user-attachments/assets/7515c972-1558-4d9d-9338-ee11549b448e)
 
 16. Настройте конфигурацию так, чтобы она собирала `.jar` в артефакты сборки.  
-    ![image10](https://github.com/user-attachments/assets/92482fc0-3016-46da-a7d4-7030f7846d39)
+    ![image10](https://github.com/user-attachments/assets/92482fc0-3016-46da-a7d4-7030f7846d39)  
 17. Проведите повторную сборку мастера, убедитесь, что сбора прошла успешно и артефакты собраны.  
-18. Проверьте, что конфигурация в репозитории содержит все настройки конфигурации из teamcity.  
-19. В ответе пришлите ссылку на репозиторий.
+    ![image11](https://github.com/user-attachments/assets/60521c2d-1c3a-4545-91bc-4624a3a77947)  
+18. Проверьте, что конфигурация в репозитории содержит все настройки конфигурации из teamcity.
+19. В ответе пришлите ссылку на репозиторий.  
+[**example-teamcity**](https://github.com/Daimero88/example-teamcity)

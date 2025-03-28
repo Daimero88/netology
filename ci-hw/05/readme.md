@@ -36,14 +36,14 @@
     ```
     	public String sayHunterwho() {
 	    return "Who is the hunter?";
-	    }	
+	}	
     ```
 12. Дополните тест для нового метода на поиск слова `hunter` в новой реплике.  
     ```
     	@Test
-	    public void welcomerSaysHunterwho() {
-	    assertThat(welcomer.sayHunterwho(), containsString("hunter"));
-	    }
+	public void welcomerSaysHunterwho() {
+		assertThat(welcomer.sayHunterwho(), containsString("hunter"));
+	}
     ```  
 14. Сделайте push всех изменений в новую ветку репозитория.
 15. Убедитесь, что сборка самостоятельно запустилась, тесты прошли успешно.

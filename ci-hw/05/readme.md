@@ -3,7 +3,7 @@
 ## Основная часть
 
 1. Создайте новый проект в teamcity на основе fork.   
-  ![image](https://github.com/user-attachments/assets/c5de5f11-18e1-425e-8ca5-7b1420e3dd49)  
+  ![image1](https://github.com/user-attachments/assets/c5de5f11-18e1-425e-8ca5-7b1420e3dd49)  
 
 2. Сделайте autodetect конфигурации.  
   ![image2](https://github.com/user-attachments/assets/f7eef7dc-12b3-4651-a41c-7cacd8df25d3)  
@@ -24,8 +24,11 @@
    Создаем новый build с условиями по ветке:  
   ![image5](https://github.com/user-attachments/assets/e1c5f808-26bf-4335-a55a-9b76cd666030)  
 
-5. Для deploy будет необходимо загрузить [settings.xml](./teamcity/settings.xml) в набор конфигураций maven у teamcity, предварительно записав туда креды для подключения к nexus.
-6. В pom.xml необходимо поменять ссылки на репозиторий и nexus.
+5. Для deploy будет необходимо загрузить [settings.xml](./teamcity/settings.xml) в набор конфигураций maven у teamcity, предварительно записав туда креды для подключения к nexus.  
+  ![image6](https://github.com/user-attachments/assets/159414bc-ab75-416c-b7cd-a56a14a02f29)  
+
+6. В pom.xml необходимо поменять ссылки на репозиторий и nexus.  
+   [**pom.xml**](https://github.com/Daimero88/example-teamcity/blob/master/pom.xml)  
 7. Запустите сборку по master, убедитесь, что всё прошло успешно и артефакт появился в nexus.
 8. Мигрируйте `build configuration` в репозиторий.
 9. Создайте отдельную ветку `feature/add_reply` в репозитории.

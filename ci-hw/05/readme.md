@@ -34,9 +34,9 @@
 
 10. Напишите новый метод для класса Welcomer: метод должен возвращать произвольную реплику, содержащую слово `hunter`.  
     ```
-    	public String sayHunterwho() {
-	    return "Who is the hunter?";
-	}	
+    public String sayHunterwho() {
+        return "Who is the hunter?";
+    }	
     ```
 12. Дополните тест для нового метода на поиск слова `hunter` в новой реплике.  
     ```

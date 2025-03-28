@@ -29,7 +29,7 @@
 
 8. Мигрируйте `build configuration` в репозиторий.  
   [**build configuration**](https://github.com/Daimero88/example-teamcity/blob/master/.teamcity/settings.kts)  
-9. Создайте отдельную ветку `feature/add_reply` в репозитории.
+9. Создайте отдельную ветку `feature/add_reply` в репозитории.  
   [**feature/add_reply**](https://github.com/Daimero88/example-teamcity/tree/feature/add_reply)
 
 10. Напишите новый метод для класса Welcomer: метод должен возвращать произвольную реплику, содержащую слово `hunter`.

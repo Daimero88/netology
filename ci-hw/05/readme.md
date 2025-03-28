@@ -11,16 +11,7 @@
 3. Сохраните необходимые шаги, запустите первую сборку master.  
   ![image3](https://github.com/user-attachments/assets/4ae1d8a5-4a1e-4ad7-b9d6-59557ec8f085)  
 
-4. Поменяйте условия сборки: если сборка по ветке `master`, то должен происходит `mvn clean deploy`, иначе `mvn clean test`.
-   
-   Создаем новую ветку dev:
-   ```
-   git clone git@github.com:Daimero88/example-teamcity.git
-   cd example-teamcity
-   git checkout -b "dev"
-   git push origin dev
-   ```
-  ![image4](https://github.com/user-attachments/assets/5d736f37-7f37-4e77-97d5-2f520fcf5938)  
+4. Поменяйте условия сборки: если сборка по ветке `master`, то должен происходит `mvn clean deploy`, иначе `mvn clean test`.  
    Создаем новый build с условиями по ветке:  
   ![image5](https://github.com/user-attachments/assets/e1c5f808-26bf-4335-a55a-9b76cd666030)  
 
@@ -28,14 +19,15 @@
   ![image6](https://github.com/user-attachments/assets/159414bc-ab75-416c-b7cd-a56a14a02f29)  
 
 6. В pom.xml необходимо поменять ссылки на репозиторий и nexus.  
-   [**pom.xml**](https://github.com/Daimero88/example-teamcity/blob/master/pom.xml)  
+   [**pom.xml**](https://github.com/Daimero88/example-teamcity/blob/master/pom.xml)
+   
 7. Запустите сборку по master, убедитесь, что всё прошло успешно и артефакт появился в nexus.  
   Build прошел успешно:  
   ![image7](https://github.com/user-attachments/assets/b1d13808-4c80-4819-87ce-41e7fe27ecba)
   Артефакт появился в nexus:  
   ![image8](https://github.com/user-attachments/assets/4d4fd1c5-f59b-4527-82ad-863e29d16af6)  
 
-9. Мигрируйте `build configuration` в репозиторий.  
+8. Мигрируйте `build configuration` в репозиторий.  
 [**build configuration**](https://github.com/Daimero88/example-teamcity/blob/master/.teamcity/settings.kts)  
 11. Создайте отдельную ветку `feature/add_reply` в репозитории.
 12. Напишите новый метод для класса Welcomer: метод должен возвращать произвольную реплику, содержащую слово `hunter`.

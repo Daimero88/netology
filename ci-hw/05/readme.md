@@ -6,7 +6,7 @@
   ![image](https://github.com/user-attachments/assets/c5de5f11-18e1-425e-8ca5-7b1420e3dd49)  
 
 2. Сделайте autodetect конфигурации.  
-  ![image2(https://github.com/user-attachments/assets/f7eef7dc-12b3-4651-a41c-7cacd8df25d3)  
+  ![image2](https://github.com/user-attachments/assets/f7eef7dc-12b3-4651-a41c-7cacd8df25d3)  
    
 3. Сохраните необходимые шаги, запустите первую сборку master.  
   ![image3](https://github.com/user-attachments/assets/4ae1d8a5-4a1e-4ad7-b9d6-59557ec8f085)  

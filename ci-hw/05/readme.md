@@ -19,6 +19,8 @@
    git checkout -b "dev"
    git push origin dev
    ```
+   ![image4](https://github.com/user-attachments/assets/5d736f37-7f37-4e77-97d5-2f520fcf5938)
+
 7. Для deploy будет необходимо загрузить [settings.xml](./teamcity/settings.xml) в набор конфигураций maven у teamcity, предварительно записав туда креды для подключения к nexus.
 8. В pom.xml необходимо поменять ссылки на репозиторий и nexus.
 9. Запустите сборку по master, убедитесь, что всё прошло успешно и артефакт появился в nexus.

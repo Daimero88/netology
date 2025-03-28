@@ -20,7 +20,8 @@
    git checkout -b "dev"
    git push origin dev
    ```
-   ![image4](https://github.com/user-attachments/assets/5d736f37-7f37-4e77-97d5-2f520fcf5938)  
+   ![image4](https://github.com/user-attachments/assets/5d736f37-7f37-4e77-97d5-2f520fcf5938)
+   Создаем новый build с условиями по ветке:  
    ![image5](https://github.com/user-attachments/assets/d0f882d7-afa2-451b-8e56-1d8451f1a9e1)  
 
 

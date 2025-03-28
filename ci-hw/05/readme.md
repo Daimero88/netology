@@ -11,7 +11,14 @@
 3. Сохраните необходимые шаги, запустите первую сборку master.  
   ![image3](https://github.com/user-attachments/assets/4ae1d8a5-4a1e-4ad7-b9d6-59557ec8f085)  
 
-6. Поменяйте условия сборки: если сборка по ветке `master`, то должен происходит `mvn clean deploy`, иначе `mvn clean test`.
+4. Поменяйте условия сборки: если сборка по ветке `master`, то должен происходит `mvn clean deploy`, иначе `mvn clean test`.  
+   Создаем новую ветку dev:
+   ```
+   git clone git@github.com:Daimero88/example-teamcity.git
+   cd example-teamcity
+   git checkout -b "dev"
+   git push origin dev
+   ```
 7. Для deploy будет необходимо загрузить [settings.xml](./teamcity/settings.xml) в набор конфигураций maven у teamcity, предварительно записав туда креды для подключения к nexus.
 8. В pom.xml необходимо поменять ссылки на репозиторий и nexus.
 9. Запустите сборку по master, убедитесь, что всё прошло успешно и артефакт появился в nexus.

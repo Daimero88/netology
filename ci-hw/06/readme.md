@@ -48,8 +48,12 @@
 Разработчики выполнили новый Issue, необходимо проверить валидность изменений:
 
 1. Поднять докер-контейнер с образом `python-api:latest` и проверить возврат метода на корректность.
-2. Закрыть Issue с комментарием об успешности прохождения, указав желаемый результат и фактически достигнутый.
-   
+   Запускаем контейнер с образом:  `docker run -d --name netology -p 5290:5290 daimero.gitlab.yandexcloud.net:5050/daimero/netology/python-api`  
+   Проверяем `curl localhost:5290/get_info`, что метод работает:  
+   ![image6](https://github.com/user-attachments/assets/bc7e4ebe-ba79-4d54-b448-0ad4edb13cae)
+2. Закрыть Issue с комментарием об успешности прохождения, указав желаемый результат и фактически достигнутый.  
+   Закрываем issue и делаем merge:  
+   ![image7](https://github.com/user-attachments/assets/a61bfabd-82fd-43f1-b8c4-82ccb5b52641)
 
 ## Итог
 

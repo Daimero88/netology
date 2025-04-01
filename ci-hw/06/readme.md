@@ -20,7 +20,9 @@
 
 1. Какой метод необходимо исправить.
 2. Текст с `{ "message": "Already started" }` на `{ "message": "Running"}`.
-3. Issue поставить label: feature.
+3. Issue поставить label: feature.  
+   ![image](https://github.com/user-attachments/assets/81667ad2-e76e-434f-b467-def81b1a40b7)
+
 
 ### Developer
 

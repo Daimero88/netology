@@ -1,0 +1,21 @@
+image: docker:20.10.5
+services:
+  - docker:20.10.5-dind
+stages:
+  - build
+  - deploy
+build:
+  stage: build
+  script:
+  - docker build -t $CI_REGISTRY/daimero/netology/image:latest .
+  except:
+     - main
+build_and_deploy:
+  stage: deploy
+  script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+    - docker build -t $CI_REGISTRY/daimero/netology/python-api:latest .
+    - docker push $CI_REGISTRY/daimero/netology/python-api:latest
+  only:
+    - main
+    

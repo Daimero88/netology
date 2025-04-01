@@ -1,0 +1,117 @@
+[0KRunning with gitlab-runner 17.10.1 (ef334dcc)[0;m
+[0K  on gitlab-runner-01 t3_Aybysw, system ID: s_b04620583391[0;m
+section_start:1743505849:prepare_executor
+[0K[0K[36;1mPreparing the "docker" executor[0;m[0;m
+[0KUsing Docker executor with image docker:20.10.5 ...[0;m
+[0KStarting service docker:20.10.5-dind...[0;m
+[0KPulling docker image docker:20.10.5-dind ...[0;m
+[0KUsing docker image sha256:0a9822c8848df3eb0a1562e553fdd54215939ef0a528434ee026c64ff645148c for docker:20.10.5-dind with digest docker@sha256:e4ecd4e9ad5140d584669451b05e406d8cf7603e51972b862178ad93c38b2b08 ...[0;m
+[0KWaiting for services to be up and running (timeout 30 seconds)...[0;m
+
+[0;33m*** WARNING:[0;m Service runner-t3aybysw-project-1-concurrent-0-88e30e8acb076643-docker-0 probably didn't start properly.
+
+Health check error:
+service "runner-t3aybysw-project-1-concurrent-0-88e30e8acb076643-docker-0-wait-for-service" timeout
+
+Health check container logs:
+2025-04-01T11:10:53.565651698Z waiting for TCP connection to 172.17.0.2 on [2375 2376]...
+2025-04-01T11:10:53.565847590Z dialing 172.17.0.2:2376...
+2025-04-01T11:10:53.566154413Z dialing 172.17.0.2:2375...
+2025-04-01T11:10:54.566855838Z dialing 172.17.0.2:2375...
+2025-04-01T11:10:54.566883544Z dialing 172.17.0.2:2376...
+2025-04-01T11:10:55.567918993Z dialing 172.17.0.2:2376...
+2025-04-01T11:10:55.567950932Z dialing 172.17.0.2:2375...
+
+Service container logs:
+2025-04-01T11:10:52.874740460Z Generating RSA private key, 4096 bit long modulus (2 primes)
+2025-04-01T11:10:53.530506992Z ...........................................................................................................................................++++
+2025-04-01T11:10:53.937673392Z ..................................................................................................................++++
+2025-04-01T11:10:53.938133234Z e is 65537 (0x010001)
+2025-04-01T11:10:53.951974626Z Generating RSA private key, 4096 bit long modulus (2 primes)
+2025-04-01T11:10:53.999416868Z ...........++++
+2025-04-01T11:10:54.251319798Z ....................................................................++++
+2025-04-01T11:10:54.251787490Z e is 65537 (0x010001)
+2025-04-01T11:10:54.279057542Z Signature ok
+2025-04-01T11:10:54.279079221Z subject=CN = docker:dind server
+2025-04-01T11:10:54.279293494Z Getting CA Private Key
+2025-04-01T11:10:54.291849003Z /certs/server/cert.pem: OK
+2025-04-01T11:10:54.296007739Z Generating RSA private key, 4096 bit long modulus (2 primes)
+2025-04-01T11:10:54.343796330Z ...........++++
+2025-04-01T11:10:55.151762295Z ...................................................................................................................................................................................................................................++++
+2025-04-01T11:10:55.152220443Z e is 65537 (0x010001)
+2025-04-01T11:10:55.175421010Z Signature ok
+2025-04-01T11:10:55.175449952Z subject=CN = docker:dind client
+2025-04-01T11:10:55.175586450Z Getting CA Private Key
+2025-04-01T11:10:55.187159294Z /certs/client/cert.pem: OK
+2025-04-01T11:10:55.243687797Z time="2025-04-01T11:10:55.243565162Z" level=info msg="Starting up"
+2025-04-01T11:10:55.244912140Z time="2025-04-01T11:10:55.244821862Z" level=warning msg="could not change group /var/run/docker.sock to docker: group docker not found"
+2025-04-01T11:10:55.244982831Z failed to load listeners: can't create unix socket /var/run/docker.sock: device or resource busy
+
+[0;33m*********[0;m
+
+[0KPulling docker image docker:20.10.5 ...[0;m
+[0KUsing docker image sha256:1588477122de4fdfe9fcb9ddeeee6ac6b93e9e05a65c68a6e22add0a98b8e0fe for docker:20.10.5 with digest docker@sha256:7ed427295687586039ff3433bb9b4419c5cf1e6294025dadf7641126665a78f5 ...[0;m
+section_end:1743505885:prepare_executor
+[0Ksection_start:1743505885:prepare_script
+[0K[0K[36;1mPreparing environment[0;m[0;m
+Running on runner-t3aybysw-project-1-concurrent-0 via gitlab-runner-01...
+section_end:1743505886:prepare_script
+[0Ksection_start:1743505886:get_sources
+[0K[0K[36;1mGetting source from Git repository[0;m[0;m
+[32;1mFetching changes with git depth set to 20...[0;m
+Reinitialized existing Git repository in /builds/Daimero/netology/.git/
+[32;1mCreated fresh repository.[0;m
+[32;1mChecking out e1f419c9 as detached HEAD (ref is main)...[0;m
+
+[32;1mSkipping Git submodules setup[0;m
+section_end:1743505887:get_sources
+[0Ksection_start:1743505887:step_script
+[0K[0K[36;1mExecuting "step_script" stage of the job script[0;m[0;m
+[0KUsing docker image sha256:1588477122de4fdfe9fcb9ddeeee6ac6b93e9e05a65c68a6e22add0a98b8e0fe for docker:20.10.5 with digest docker@sha256:7ed427295687586039ff3433bb9b4419c5cf1e6294025dadf7641126665a78f5 ...[0;m
+[32;1m$ docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY[0;m
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+[32;1m$ docker build -t $CI_REGISTRY/daimero/netology/python-api:latest .[0;m
+Sending build context to Docker daemon  84.99kB
+
+Step 1/6 : FROM fedora:latest
+ ---> 9645f4e2280d
+Step 2/6 : RUN yum update -y && yum install -y python3 python3-pip
+ ---> Using cache
+ ---> f525400a4fc1
+Step 3/6 : RUN pip3 install flask flask_restful flask_jsonpify
+ ---> Using cache
+ ---> 3f1aea91f173
+Step 4/6 : WORKDIR /app
+ ---> Using cache
+ ---> 861902e41177
+Step 5/6 : COPY python-api.py .
+ ---> Using cache
+ ---> 36883070ff12
+Step 6/6 : ENTRYPOINT ["python3", "/app/python-api.py"]
+ ---> Using cache
+ ---> fc74841d61d2
+Successfully built fc74841d61d2
+Successfully tagged daimero.gitlab.yandexcloud.net:5050/daimero/netology/python-api:latest
+[32;1m$ docker push $CI_REGISTRY/daimero/netology/python-api:latest[0;m
+The push refers to repository [daimero.gitlab.yandexcloud.net:5050/daimero/netology/python-api]
+ca7fe6ac75de: Preparing
+fffef9646828: Preparing
+22ad420cd873: Preparing
+b4286574b295: Preparing
+954e67ef1fbb: Preparing
+ca7fe6ac75de: Pushed
+954e67ef1fbb: Layer already exists
+fffef9646828: Layer already exists
+b4286574b295: Layer already exists
+22ad420cd873: Layer already exists
+latest: digest: sha256:42c5bd72652d9451562391c5683d8279c1a4183c5dba9ad4a9ff04a0db362f5a size: 1365
+section_end:1743505889:step_script
+[0Ksection_start:1743505889:cleanup_file_variables
+[0K[0K[36;1mCleaning up project directory and file based variables[0;m[0;m
+section_end:1743505889:cleanup_file_variables
+[0K[32;1mJob succeeded[0;m

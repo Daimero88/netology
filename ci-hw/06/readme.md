@@ -6,13 +6,19 @@
 
 В репозитории содержится код проекта на Python. Проект — RESTful API сервис. Ваша задача — автоматизировать сборку образа с выполнением python-скрипта:
 
-1. Образ собирается на основе [centos:7](https://hub.docker.com/_/centos?tab=tags&page=1&ordering=last_updated).
-2. Python версии не ниже 3.7.
-3. Установлены зависимости: `flask` `flask-jsonpify` `flask-restful`.
-4. Создана директория `/python_api`.
-5. Скрипт из репозитория размещён в /python_api.
-6. Точка вызова: запуск скрипта.
-7. При комите в любую ветку должен собираться docker image с форматом имени hello:gitlab-$CI_COMMIT_SHORT_SHA . Образ должен быть выложен в Gitlab registry или yandex registry.   
+1. Образ собирается на основе [centos:7](https://hub.docker.com/_/centos?tab=tags&page=1&ordering=last_updated).  
+   Образ переделал на `fedora:latest`
+3. Python версии не ниже 3.7.
+4. Установлены зависимости: `flask` `flask-jsonpify` `flask-restful`.
+5. Создана директория `/python_api`.
+6. Скрипт из репозитория размещён в /python_api.
+7. Точка вызова: запуск скрипта.
+8. При комите в любую ветку должен собираться docker image с форматом имени hello:gitlab-$CI_COMMIT_SHORT_SHA . Образ должен быть выложен в Gitlab registry или yandex registry.
+
+   Сборка прошла успешно:  
+   ![image1](https://github.com/user-attachments/assets/72b8197c-e828-4620-933b-b0b16600d425)
+   Контейнер посвился в Gitlab registry:
+   ![image2](https://github.com/user-attachments/assets/d65e2e1d-dbd0-42ed-981e-bb950c66ec7a)
 
 ### Product Owner
 
@@ -21,8 +27,8 @@
 1. Какой метод необходимо исправить.
 2. Текст с `{ "message": "Already started" }` на `{ "message": "Running"}`.
 3. Issue поставить label: feature.  
-   ![image](https://github.com/user-attachments/assets/81667ad2-e76e-434f-b467-def81b1a40b7)
 
+   ![image3](https://github.com/user-attachments/assets/81667ad2-e76e-434f-b467-def81b1a40b7)
 
 ### Developer
 

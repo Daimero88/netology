@@ -59,8 +59,10 @@
 
 В качестве ответа пришлите подробные скриншоты по каждому пункту задания:
 
-- файл gitlab-ci.yml;
-- Dockerfile; 
-- лог успешного выполнения пайплайна;
-- решённый Issue.
+- файл [**gitlab-ci.yml**](https://github.com/Daimero88/netology/blob/main/ci-hw/06/.gitlab-ci.yml);  
+- [**Dockerfile**](https://github.com/Daimero88/netology/blob/main/ci-hw/06/Dockerfile);  
+- [**лог**](https://github.com/Daimero88/netology/blob/main/ci-hw/06/log.raw) успешного выполнения пайплайна;
+- решённый Issue:  
+  ![image8](https://github.com/user-attachments/assets/44936026-09df-4ee4-bbf1-0076c53efe90)
+
 

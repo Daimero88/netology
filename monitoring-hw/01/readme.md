@@ -96,7 +96,7 @@
 7. Склонируйте себе [репозиторий](https://github.com/influxdata/sandbox/tree/master) и запустите TICK-стэк, 
 используя технологии docker и docker-compose.
 
-В виде решения на это упражнение приведите скриншот веб-интерфейса ПО chronograf (`http://localhost:8888`).  
+    В виде решения на это упражнение приведите скриншот веб-интерфейса ПО chronograf (`http://localhost:8888`).  
     ![image1](https://github.com/user-attachments/assets/7e0873a2-ad50-4de0-a02b-45f1d7030787)  
 
 #

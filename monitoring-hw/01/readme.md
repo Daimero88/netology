@@ -87,11 +87,11 @@
 #
 6. Какие из ниже перечисленных систем относятся к push модели, а какие к pull? А может есть гибридные?
 
-    - Prometheus 
-    - TICK
-    - Zabbix
-    - VictoriaMetrics
-    - Nagios
+    - Prometheus - pull
+    - TICK - push
+    - Zabbix - гибридная
+    - VictoriaMetrics - гибридная
+    - Nagios - pull
 #
 7. Склонируйте себе [репозиторий](https://github.com/influxdata/sandbox/tree/master) и запустите TICK-стэк, 
 используя технологии docker и docker-compose.

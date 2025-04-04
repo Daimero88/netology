@@ -107,7 +107,9 @@
     - В `measurments` выберите cpu->host->telegraf-getting-started, а в `fields` выберите usage_system. Внизу появится график утилизации cpu.
     - Вверху вы можете увидеть запрос, аналогичный SQL-синтаксису. Поэкспериментируйте с запросом, попробуйте изменить группировку и интервал наблюдений.
 
-Для выполнения задания приведите скриншот с отображением метрик утилизации cpu из веб-интерфейса.
+Для выполнения задания приведите скриншот с отображением метрик утилизации cpu из веб-интерфейса.  
+    ![image2](https://github.com/user-attachments/assets/f553980e-40bc-4ccd-9f3a-e09e1a75cb4f)  
+
 #
 9. Изучите список [telegraf inputs](https://github.com/influxdata/telegraf/tree/master/plugins/inputs). 
 Добавьте в конфигурацию telegraf следующий плагин - [docker](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/docker):

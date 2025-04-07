@@ -21,7 +21,7 @@
 
 Создайте Dashboard и в ней создайте Panels:
 
-- утилизация CPU для nodeexporter (в процентах, 100-idle);
+- утилизация CPU для nodeexporter (в процентах, 100-idle);  
   Metrics: `100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[1m]))) * 100`  
 - CPULA 1/5/15;  
   Metrics:

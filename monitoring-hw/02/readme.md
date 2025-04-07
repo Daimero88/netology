@@ -31,9 +31,9 @@
   node_load15{instance="nodeexporter:9100"}
   ```
 - количество свободной оперативной памяти;  
-  `node_memory_MemFree_bytes{instance="nodeexporter:9100"}`
+  Metrics: `node_memory_MemFree_bytes{instance="nodeexporter:9100"}`
 - количество места на файловой системе.  
-   `node_filesystem_avail_bytes{instance="nodeexporter:9100", mountpoint="/"}`
+  Metrics: `node_filesystem_avail_bytes{instance="nodeexporter:9100", mountpoint="/"}`
 
 Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.  
 ![image2](https://github.com/user-attachments/assets/f8bfdcb4-a08c-41f7-b4d4-56fd0511f394)
@@ -42,7 +42,16 @@
 ## Задание 3
 
 1. Создайте для каждой Dashboard подходящее правило alert — можно обратиться к первой лекции в блоке «Мониторинг».
+   Создаем оповещение через email:  
+   ![image3](https://github.com/user-attachments/assets/48b26709-30a6-4617-828d-f8950fb815fc)
+   Создаем alerts:
+   ![image4](https://github.com/user-attachments/assets/dd567e28-cb79-4fc9-a77c-107b03c6db10)
+   ![image5](https://github.com/user-attachments/assets/b8161d5e-9277-4187-a0ee-f150cb5103e7)
+   ![image6](https://github.com/user-attachments/assets/3c23f85c-96e4-458c-b5b9-6b0b58ab4e24)
+
 2. В качестве решения задания приведите скриншот вашей итоговой Dashboard.
+   ![image](https://github.com/user-attachments/assets/e4ed217e-2249-471d-ae49-7b1a318e9842)
+
 
 ## Задание 4
 

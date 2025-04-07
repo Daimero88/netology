@@ -41,8 +41,8 @@
 
 ## Задание 3
 
-1. Создайте для каждой Dashboard подходящее правило alert — можно обратиться к первой лекции в блоке «Мониторинг».
-   Создаем alerts:
+1. Создайте для каждой Dashboard подходящее правило alert — можно обратиться к первой лекции в блоке «Мониторинг».  
+   Создаем alerts:  
    ![image4](https://github.com/user-attachments/assets/dd567e28-cb79-4fc9-a77c-107b03c6db10)  
    ![image5](https://github.com/user-attachments/assets/78c9929f-68c3-4564-b56e-b48e8a0e5f91)  
    ![image6](https://github.com/user-attachments/assets/3c23f85c-96e4-458c-b5b9-6b0b58ab4e24)  

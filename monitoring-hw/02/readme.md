@@ -30,10 +30,14 @@
   node_load5{instance="nodeexporter:9100"}
   node_load15{instance="nodeexporter:9100"}
   ```
-- количество свободной оперативной памяти;
-- количество места на файловой системе.
+- количество свободной оперативной памяти;  
+  `node_memory_MemFree_bytes{instance="nodeexporter:9100"}`
+- количество места на файловой системе.  
+   `node_filesystem_avail_bytes{instance="nodeexporter:9100", mountpoint="/"}`
 
-Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
+Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.  
+![image2](https://github.com/user-attachments/assets/f8bfdcb4-a08c-41f7-b4d4-56fd0511f394)
+
 
 ## Задание 3
 

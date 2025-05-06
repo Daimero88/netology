@@ -145,12 +145,12 @@ Kafka сохраняет данные до их обработки Elasticsearch
 Elasticsearch реплицирует данные между узлами  
 
 Покрытие требований:  
-Сбор из stdout:	Vector docker_logs source  
-Централизованное хранилище:	Elasticsearch  
-Гарантированная доставка:	Vector + Kafka  
-Поиск и фильтрация:	Elasticsearch + Kibana  
-UI для разработчиков:	Kibana  
-Ссылки на поисковые запросы:	Kibana Saved Searches  
+- Сбор из stdout:	Vector docker_logs source  
+- Централизованное хранилище:	Elasticsearch  
+- Гарантированная доставка:	Vector + Kafka  
+- Поиск и фильтрация:	Elasticsearch + Kibana  
+- UI для разработчиков:	Kibana  
+- Ссылки на поисковые запросы:	Kibana Saved Searches  
 
 
 Предложенное решение (Vector → Kafka → Elasticsearch → Kibana):  
@@ -206,12 +206,12 @@ UI для разработчиков:	Kibana
 - Сетевой трафик
 
 Покрытие требований:  
-Сбор метрик со всех хостов:	Node Exporter + Prometheus  
-Метрики ресурсов хостов: Node Exporter  
-Метрики ресурсов сервисов: cAdvisor  
-Специфичные метрики сервисов:	Индивидуальные экспортеры  
-UI для запросов и агрегации: Grafana + PromQL  
-Настраиваемые панели мониторинга:	Grafana dashboards  
+- Сбор метрик со всех хостов:	Node Exporter + Prometheus  
+- Метрики ресурсов хостов: Node Exporter  
+- Метрики ресурсов сервисов: cAdvisor  
+- Специфичные метрики сервисов:	Индивидуальные экспортеры  
+- UI для запросов и агрегации: Grafana + PromQL  
+- Настраиваемые панели мониторинга:	Grafana dashboards  
 
 Преимущества решения:  
 - Полнота данных - охват всех уровней инфраструктуры

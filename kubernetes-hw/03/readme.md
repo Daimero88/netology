@@ -9,7 +9,7 @@
 5. Создать отдельный Pod с приложением multitool и убедиться с помощью `curl`, что из пода есть доступ до приложений из п.1.
 
 **Решение**  
-1. Создали [**deployment.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/03/deployment.yaml) и запустили командой ```kubectl apply -f deployment.yaml```  
+1. Создаем [**deployment.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/03/deployment.yaml) и запустили командой ```kubectl apply -f deployment.yaml```  
   Команда ```kubectl get pods``` выдает статус одного из контейнеров CrashLoopBackOff:  
   ![image1](https://github.com/user-attachments/assets/3717a180-282d-4147-8b1f-0785e687e219)  
   Это происходит из-за того, что контейнер multitool завершает свою работу после запуска, так как не имеет долгоживущего процесса. Для решения проблемы добавляем команду ```command: ["/bin/sh", "-c", "sleep infinity"]``` для поддержания работы контейнера. После применяем изменения и убеждаемся, что статус поменялся на running:  
@@ -30,4 +30,13 @@
 2. Убедиться, что nginx не стартует. В качестве Init-контейнера взять busybox.
 3. Создать и запустить Service. Убедиться, что Init запустился.
 4. Продемонстрировать состояние пода до и после запуска сервиса.
+
+**Решение**  
+1. Создаем [**init-deployment.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/03/init-deployment.yaml) и применяем его командой ```kubectl apply -f init-deployment.yaml```.  
+2. Убеждаемся командой ```kubectl get pods```, что контейнер с nginx не стартует (статус Init):  
+  ![image6](https://github.com/user-attachments/assets/1d29c380-f9f9-4c3c-b2d1-0c527965fe0f)  
+3. Создаем [**init-service.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/03/init-service.yaml) c selector ```app: nginx-init``` и запускаем командой ```kubectl apply -f init-service.yaml```:  
+  ![image7](https://github.com/user-attachments/assets/35712492-ec8a-403a-b9fc-866d85662098)  
+4. Проверяем, что под перешел в статус running после запуска сервиса:  
+  ![image8](https://github.com/user-attachments/assets/dc712034-224b-43be-ad44-d545da0f9b43)
 

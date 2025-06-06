@@ -18,7 +18,6 @@
 Также берем любой frontend pod и проверяем с него доступность backend pod командой ```kubectl exec frontend-54758c4c55-2lm6z -- curl -s http://backend-service:8080```:  
   ![image2](https://github.com/user-attachments/assets/ebf04a35-6bc4-4772-a266-b4259fd4cc7d)
 
-
 ------
 
 ### Задание 2. Создать Ingress и обеспечить доступ к приложениям снаружи кластера
@@ -27,3 +26,11 @@
 2. Создать Ingress, обеспечивающий доступ снаружи по IP-адресу кластера MicroK8S так, чтобы при запросе только по адресу открывался _frontend_ а при добавлении /api - _backend_.
 3. Продемонстрировать доступ с помощью браузера или `curl` с локального компьютера.
 4. Предоставить манифесты и скриншоты или вывод команды п.2.
+
+
+**Решение**  
+1. Включаем Ingress-controller в MicroK8S командой ```microk8s enable ingress```:  
+  ![image3](https://github.com/user-attachments/assets/fec99c84-cf41-46ec-8a3e-1e9b0e71a55a)  
+2. Создаем [**ingress.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/05/ingress.yaml) и применяем его командой ```kubectl apply -f ingress.yaml```
+3. Проверяем curl по IP-адресу хоста:   
+![image](https://github.com/user-attachments/assets/38271f6a-1bcb-4a58-b790-8b34640a4fd3)

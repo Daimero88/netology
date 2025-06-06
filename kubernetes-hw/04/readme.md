@@ -13,7 +13,7 @@
   ![image1](https://github.com/user-attachments/assets/eb17bf72-85b0-4ec6-8d47-b1d787ca6c8c)  
 2. Создаем [**service.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/04/service.yaml) с необходимыми портами:  
   ![image2](https://github.com/user-attachments/assets/b233593f-1a6a-464b-9edd-c23d51b2dd86)  
-3. Создаем pod для тестирования и проверяем доступ через curl:  
+3. Создаем pod для тестирования командой ```kubectl run test-multitool --image=wbitt/network-multitool --restart=Never -- sleep infinity``` и проверяем с него доступ до подов через сервис curl командами ```kubectl exec test-multitool -- curl -s http://nginx-multitool-service:9001``` и ```kubectl exec test-multitool -- curl -s http://nginx-multitool-service:9002```:  
   ![image3](https://github.com/user-attachments/assets/3ce19a42-890a-4893-aa0e-3a02204d095d)
 
 ------

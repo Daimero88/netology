@@ -8,6 +8,14 @@
 4. Продемонстрировать доступ с помощью `curl` по доменному имени сервиса.
 5. Предоставить манифесты Deployment и Service в решении, а также скриншоты или вывод команды п.4.
 
+**Решение**  
+1. Создаем [**deployment.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/04/deployment.yaml) с двумя контейнерами и тремя репликами:  
+  ![image1](https://github.com/user-attachments/assets/eb17bf72-85b0-4ec6-8d47-b1d787ca6c8c)  
+2. Создаем [**service.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/04/service.yaml) с необходимыми портами:  
+  ![image2](https://github.com/user-attachments/assets/b233593f-1a6a-464b-9edd-c23d51b2dd86)  
+3. Создаем pod для тестирования и проверяем доступ через curl:  
+  ![image3](https://github.com/user-attachments/assets/3ce19a42-890a-4893-aa0e-3a02204d095d)
+
 ------
 
 ### Задание 2. Создать Service и обеспечить доступ к приложениям снаружи кластера

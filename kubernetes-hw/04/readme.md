@@ -23,3 +23,9 @@
 1. Создать отдельный Service приложения из Задания 1 с возможностью доступа снаружи кластера к nginx, используя тип NodePort.
 2. Продемонстрировать доступ с помощью браузера или `curl` с локального компьютера.
 3. Предоставить манифест и Service в решении, а также скриншоты или вывод команды п.2.
+
+**Решение**  
+1. Создаем отдельный [**nodeport-service**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/04/nodeport-service.yaml) с типом NodePort:
+  ![image4](https://github.com/user-attachments/assets/ef8ef626-eb13-4513-aecf-18b01ec6f68e)  
+2. Проверяем curl по IP-адресу самой ноды с использованием порта 30080, указанного в манифесте:  
+  ![image5](https://github.com/user-attachments/assets/3ec91645-2d17-4f13-b274-b64d80347238)

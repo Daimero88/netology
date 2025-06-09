@@ -12,6 +12,13 @@
 4. Продемонстрировать, что multitool может читать файл, который периодоически обновляется.
 5. Предоставить манифесты Deployment в решении, а также скриншоты или вывод команды из п. 4.
 
+**Решение**
+1. Создаем [**deployment.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/06/deployment.yaml)
+2. Чтобы контейнер busybox писал дату каждые 5 секунд добавляем в манифест ```command: ["/bin/sh", "-c"]``` и ```args: ["while true; do echo $(date) >> /shared-data/log.txt; sleep 5; done"]```
+3. Для чтения из контейнера multitool добавляем в манифест ```command: ["/bin/sh", "-c"]``` и ```args: ["tail -f /shared-data/log.txt"]```
+4. Проверяем, что multitool читает файл, который периодически обновляется командой ```kubectl logs -l app=shared-volume -c multitool```:  
+![image1](https://github.com/user-attachments/assets/b0fa12c5-2e5d-4bf4-ae40-c96876153ba1)
+
 ------
 
 ### Задание 2

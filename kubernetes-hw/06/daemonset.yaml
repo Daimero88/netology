@@ -17,7 +17,7 @@ spec:
       - name: multitool
         image: wbitt/network-multitool
         command: ["/bin/sh", "-c"]
-        args: ["tail -f /host/var/log/syslog"]
+        args: ["tail -f /host/var/log/journal/*/system.journal"]
         volumeMounts:
         - name: host-log
           mountPath: /host/var/log
@@ -26,4 +26,4 @@ spec:
       - name: host-log
         hostPath:
           path: /var/log
-          type: File
+          type: Directory

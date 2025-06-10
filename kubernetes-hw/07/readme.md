@@ -20,7 +20,7 @@
   ![image2](https://github.com/user-attachments/assets/8edc2332-4c84-4bfe-bfba-e61a38c42f63)  
 5. Проверяем файл на ноде, видим, что он сохранился со всеми записями:  
   ![image3](https://github.com/user-attachments/assets/c7aca2e5-6b97-4359-ba61-8f6e964ce387)
-  Удаляем PV и видим, что файл и данные в нем остались, т.к. удаление PV, созданным вручную, не удаляет данные на диске и локальные тома требуют ручного управления жизненным циклом данных:
+  Удаляем PV и видим, что файл и данные в нем остались, т.к. удаление PV не удаляет данные на диске и является по сути лишь ссылкой на существующую директорию:
   ![image4](https://github.com/user-attachments/assets/e399cc16-8d28-488b-8a3d-1e64ff1ed337)
 
 
@@ -34,3 +34,27 @@
 2. Создать Deployment приложения состоящего из multitool, и подключить к нему PV, созданный автоматически на сервере NFS.
 3. Продемонстрировать возможность чтения и записи файла изнутри пода. 
 4. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
+
+
+**Решение**  
+1. Включаем и настраиваем NFS-сервер на MicroK8S:
+```
+  microk8s enable helm3 rbac
+  microk8s helm3 repo add nfs-subdir-external-provisioner https://kubernetes-sigs.github.io/nfs-subdir-external-provisioner/
+  microk8s helm3 install nfs-subdir-external-provisioner nfs-subdir-external-provisioner/nfs-subdir-external-provisioner \
+    --set nfs.server=$(hostname -I | awk '{print $1}') \
+    --set nfs.path=/srv/nfs \
+    --set storageClass.defaultClass=true
+```
+  Проверим, что StorageClass создан:  
+  ![image5](https://github.com/user-attachments/assets/a88a2a4b-5810-42cb-9462-74c5b8be4822)  
+  2. Создаем [**deployment-nfs.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/07/deployment-nfs.yaml) и [**nfs-pvc.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/07/nfs-pvc.yaml) и запускаем их:  
+  ![image6](https://github.com/user-attachments/assets/405cf02f-2678-443a-8013-8688abd70fc8)  
+  Проверяем, что все успешно создалось:  
+  ![image7](https://github.com/user-attachments/assets/e461d8cb-dff4-4a80-8824-71ed8d124c10)  
+  3. Запишем в файл из пода командой ```microk8s kubectl exec -it multitool-nfs-5b87784887-jpmw4 -- sh -c "echo 'Hello world' > /shared-data/test.txt"``` затем проверим командой ```microk8s kubectl exec -it multitool-nfs-5b87784887-jpmw4 -- cat /shared-data/test.txt```
+  ![image8](https://github.com/user-attachments/assets/d2341942-8bde-4bd5-ab67-0f70a43e23f2)  
+  Проверим файл на сервере:  
+  ![image9](https://github.com/user-attachments/assets/cb1a928d-b4ae-4cab-99db-ee3b368e5313)
+
+

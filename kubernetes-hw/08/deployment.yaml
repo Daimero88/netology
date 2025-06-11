@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web-app
+  name: nginx-multitool
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web-app
+      app: nginx-multitool
   template:
     metadata:
       labels:
-        app: web-app
+        app: nginx-multitool
     spec:
       containers:
       - name: nginx
@@ -18,26 +18,22 @@ spec:
         ports:
         - containerPort: 80
         volumeMounts:
-        - name: nginx-conf
-          mountPath: /etc/nginx/conf.d/default.conf
-          subPath: default.conf
         - name: html-volume
           mountPath: /usr/share/nginx/html
       - name: multitool
         image: wbitt/network-multitool
         ports:
         - containerPort: 8080
-        volumeMounts:
-        - name: multitool-conf
-          mountPath: /etc/nginx/conf.d/default.conf
-          subPath: nginx.conf
+        env:
+        - name: HTTP_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: multitool-config
+              key: HTTP_PORT
       volumes:
-      - name: nginx-conf
-        configMap:
-          name: nginx-config
       - name: html-volume
         configMap:
-          name: html-content
-      - name: multitool-conf
-        configMap:
-          name: multitool-config
+          name: nginx-html
+          items:
+          - key: index.html
+            path: index.html

@@ -3,13 +3,4 @@ kind: ConfigMap
 metadata:
   name: multitool-config
 data:
-  nginx.conf: |
-    server {
-        listen       8080;
-        server_name  localhost;
-
-        location / {
-            root   /usr/share/nginx/html;
-            index  index.html;
-        }
-    }
+  HTTP_PORT: "8080"

@@ -30,7 +30,10 @@
 
 
 **Решение**  
-1. Создаем
-
-Проверяем с помощью curl, что страница доступна через https:  
-![image3](https://github.com/user-attachments/assets/a71ce912-db86-4b6a-bb47-49b8eb572161)
+1. Создаем [**Deployment.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/08/deployment2.yaml), состоящего из nginx.
+2. Создаем страницу через [**ConfigMap**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/08/nginx-html.yaml) и подключаем ее к Deployment через volume по пути```mountPath: /usr/share/nginx/html```
+3. Генерируем самоподписной сертификат SSL командой ```openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt -subj "/CN=my-nginx/O=netology"``` и создаем Secret для его использования:  
+  ![image3](https://github.com/user-attachments/assets/50e49949-b8c3-4ab2-b145-8a52fa30fdf7)  
+и подключаем к Deployment через volume по пути ```mountPath: /etc/nginx/certs```
+4. Создаем [**Ingress**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/08/ingress.yaml) и [**Service**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/08/service2.yaml), применяем их и проверяем с помощью curl, что страница доступна через https:    
+![image4](https://github.com/user-attachments/assets/a71ce912-db86-4b6a-bb47-49b8eb572161)

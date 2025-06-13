@@ -20,5 +20,6 @@
    ![image3](https://github.com/user-attachments/assets/cc8f644e-a348-4a60-9c6f-b4aa66525a96)
    Проверяем командой ```kubectl --context=ssilchin-context get pods```, что контекст создан, но получаем ошибку доступа, т.к. RBAC еще не настроен:  
    ![image4](https://github.com/user-attachments/assets/3bdeb228-3d76-46be-b492-01a59fd13c46)  
-3. 
-
+3. Создаем [**role.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/09/role.yaml) и [**rolebinding.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/09/rolebinding.yaml) для пользователя и применяем их.
+4. Проверяем что под пользователем мы можем просматривать поды, читать их логи и описание, но, например, при запросе информации о нодах уже получим ошибку доступа:  
+   ![image5](https://github.com/user-attachments/assets/8bdc4ac6-b4f2-44de-839e-a65ee277d111)  

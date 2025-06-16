@@ -7,7 +7,7 @@
 3. В переменных чарта измените образ приложения для изменения версии.
 
 **Решение**
-1. Создаем чарт командой ```helm create myapp-chart```, наполняем его файлами для деплоя nginx и redis.
+1. Создаем чарт командой ```helm create myapp-chart```, наполняем его templates файлами для деплоя nginx ([**nginx-deployment.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/10/myapp-chart/templates/nginx-deployment.yaml), [**nginx-service.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/10/myapp-chart/templates/nginx-service.yaml)) и redis([**redis-statefulset.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/10/myapp-chart/templates/redis-statefulset.yaml), [**redis-service.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/10/myapp-chart/templates/redis-service.yaml)). Также изменяем файлы [**Chart.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/10/myapp-chart/Chart.yaml) и [**values.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/10/myapp-chart/values.yaml).  
 2. Находясь в папке с чартом, устанавливаем его командой ```helm install myapp .```:  
    ![image1](https://github.com/user-attachments/assets/274ea367-fb2b-4501-9f4b-c8558e177abd)  
    Проверяем, что все создалось:  

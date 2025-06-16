@@ -1,0 +1,18 @@
+appName: "{{ .Release.Name }}-myapp"
+
+nginx:
+  image: nginx:latest
+  replicaCount: 1
+  service:
+    type: ClusterIP
+    port: 80
+
+redis:
+  image: redis:latest
+  replicaCount: 1
+  service:
+    type: NodePort
+    port: 6379
+  persistence:
+    enabled: false
+    hostPath: "/mnt/redis-data"

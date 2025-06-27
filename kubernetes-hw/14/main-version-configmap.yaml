@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: main-version-config
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Main Version</title>
+    </head>
+    <body>
+      <h1>Welcome to MAIN VERSION</h1>
+    </body>
+    </html>

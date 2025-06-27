@@ -60,3 +60,11 @@ Canary – Тоже требует дополнительных ресурсов
 1. Создать два deployment'а приложения nginx.
 2. При помощи разных ConfigMap сделать две версии приложения — веб-страницы.
 3. С помощью ingress создать канареечный деплоймент, чтобы можно было часть трафика перебросить на разные версии приложения.
+
+### Решение:  
+1. Создаем [**main-deployment.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/14/main-deployment.yaml) и [**canary-deployment.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/14/canary-deployment.yaml). Также создаем сервисы: [**main-service.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/14/main-service.yaml) и [**canary-service.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/14/canary-service.yaml)
+2. Создаем [**main-configmap.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/14/main-version-configmap.yaml) и [**canary-configmap.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/14/canary-version-configmap.yaml) с разными версиями страницы
+3. Создаем [**nginx-main-ingress.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/14/nginx-main-ingress.yaml) и [**nginx-canary-ingress.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/14/nginx-canary-ingress.yaml)  
+   Проверяем, что запросы распределяют трафик между основной и канареечной версиями согласно заданному весу (80/20):  
+   ![image8](https://github.com/user-attachments/assets/64a85252-91e9-4b7d-be74-cc919bcf8c61)
+

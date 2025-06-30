@@ -12,7 +12,8 @@ kubectl apply -f https://raw.githubusercontent.com/netology-code/kuber-homeworks
 
 ### Решение  
 1. Чтобы приложение установилось, необходимо создать 2 namespace web и data командами ```kubectl create namespace web``` и ```kubectl create namespace data```
-2. Проблема заключается в том, что под web-consumer из неймспейса web пытается обращаться к сервису auth-db в неймспейсе data просто по имени (```curl auth-db```), но это не будет работать, так как по умолчанию kubernetes ищет сервисы в том же неймспейсе, где находится под, который делает запрос. Текущая команда ```curl auth-db``` будет искать сервис auth-db в неймспейсе web и не найдет его, так как этот сервис находится в неймспейсе data.
-3. Для доступа к сервису в другом неймспейсе нужно использовать полное доменное имя сервиса: auth-db.data.svc.cluster.local
+2. Проблема заключается в том, что под web-consumer из неймспейса web пытается обращаться к сервису auth-db в неймспейсе data просто по имени (```curl auth-db```), но это не будет работать, так как по умолчанию kubernetes ищет сервисы в том же неймспейсе, где находится под, который делает запрос. Текущая команда ```curl auth-db``` будет искать сервис auth-db в неймспейсе web и не найдет его, так как этот сервис находится в неймспейсе data:
+   ![image1](https://github.com/user-attachments/assets/1ff7830b-a6e1-4048-bff9-54ec6a85318b)
+3. Для доступа к сервису в другом неймспейсе нужно использовать полное доменное имя сервиса: auth-db.data.svc.cluster.local, исправим это в [**task.yaml**](https://github.com/Daimero88/netology/blob/main/kubernetes-hw/15/task.yaml)
 4. 
 

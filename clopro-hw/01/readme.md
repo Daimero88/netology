@@ -15,7 +15,7 @@
 
 
 ### Решение  
-1. После применения командой ```terraform apply``` создаются 3 VM:  
+1. После применения командой ```terraform apply``` создаются VPC, route table, и 3 VM (public-vm, private-vm, nat-instance):  
 ![image1](https://github.com/user-attachments/assets/e4951410-0e1d-41cb-bab9-bed82c8f15ac)  
 ![image2](https://github.com/user-attachments/assets/bdae5f8e-afbe-469d-89b2-05750837c042)  
 2. Проверяем подключение к public-vm ```ssh ubuntu@89.169.131.121``` и проверяем доступ в интернет:

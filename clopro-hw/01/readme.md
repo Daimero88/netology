@@ -15,4 +15,12 @@
 
 
 ### Решение  
-
+1. После применения командой ```terraform apply``` создаются 3 VM:  
+![image1](https://github.com/user-attachments/assets/e4951410-0e1d-41cb-bab9-bed82c8f15ac)  
+![image2](https://github.com/user-attachments/assets/bdae5f8e-afbe-469d-89b2-05750837c042)  
+2. Проверяем подключение к public-vm ```ssh ubuntu@89.169.131.121``` и проверяем доступ в интернет:
+![image3](https://github.com/user-attachments/assets/fc5fb3e4-5019-44a4-9e5f-01c196154123)  
+3. Для того чтобы с public-vm подключиться к private-vm по ее локальному IP используем ssh agent forwarding, подключаемся к public-vm с форвардингом агента (ключ -A), далее подключаемся с public-vm к private-vm и проверяем с нее доступ в интернет:  
+![image4](https://github.com/user-attachments/assets/bf075110-d0f6-451e-b89a-f607c4c6c79c)  
+Также можно убедиться по трассировке, что трафик идет через NAT-инстанс с IP 192.168.10.254:  
+![image](https://github.com/user-attachments/assets/ff06134d-28ab-4b45-9e67-d23ef89efcf0)

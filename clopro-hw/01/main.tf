@@ -21,7 +21,7 @@ resource "yandex_compute_instance" "nat" {
 
   boot_disk {
     initialize_params {
-      image_id = "fd80mrhj8fl2oe87o4e1" # NAT instance image
+      image_id = "fd80mrhj8fl2oe87o4e1"
     }
   }
 

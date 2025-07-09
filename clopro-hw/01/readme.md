@@ -30,3 +30,4 @@
 ![image7](https://github.com/user-attachments/assets/ff06134d-28ab-4b45-9e67-d23ef89efcf0)
 И проверим, что у private-vm внешний IP соответствует NAT-инстансу:  
 ![image](https://github.com/user-attachments/assets/94216bb9-e0e6-49e8-8437-c32532199626)
+5. Файлы *.tf закоммичены, кроме terraform.tfvars, где содержатся переменные для подключения yc_token, ус_cloud_id, ус_folder_id и yc_zone.

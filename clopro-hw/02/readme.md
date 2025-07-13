@@ -23,3 +23,13 @@
 
 ## Решение  
 
+1. Проверяем ```terraform plan```, что создадутся все необходимые ресурсы:  
+ <img width="729" height="113" alt="image1" src="https://github.com/user-attachments/assets/07d79217-ef1c-4e2d-a5aa-2172634b9046" />
+
+ В том числе s3:  
+ <img width="462" height="486" alt="image2" src="https://github.com/user-attachments/assets/60adf195-7b22-4fd6-a759-fb36a27b21e8" />  
+
+После применения, проверяем, что создался сервисный аккаунт для s3:  
+
+
+и картинка доступна из интернета по адресу https://ssilchin-110725.storage.yandexcloud.net/image.jpg:

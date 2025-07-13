@@ -1,7 +1,7 @@
 resource "yandex_compute_instance_group" "lamp-group" {
   name               = "lamp-instance-group"
   folder_id          = var.yc_folder_id
-  service_account_id = yandex_iam_service_account.sa.id
+  service_account_id = yandex_iam_service_account.vm-sa.id
 
   instance_template {
     platform_id = "standard-v3"
@@ -55,9 +55,5 @@ resource "yandex_compute_instance_group" "lamp-group" {
       port = 80
       path = "/"
     }
-  }
-
-  application_load_balancer {
-    target_group_name = "lamp-target-group"
   }
 }

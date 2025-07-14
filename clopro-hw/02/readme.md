@@ -39,7 +39,7 @@
  
 ---
 
-2. Убеждаемся, что создалась группа из трех ВМ в publuc подсети:
+2. Убеждаемся, что создалась группа из трех ВМ в public подсети:
    <img width="1121" height="249" alt="image5" src="https://github.com/user-attachments/assets/19f9a3d5-0faf-43ab-9cdb-6a36baadb2b4" />
    <img width="1258" height="324" alt="image6" src="https://github.com/user-attachments/assets/bb204140-267b-4827-9e44-a573215d2639" />
    <img width="1385" height="337" alt="image7" src="https://github.com/user-attachments/assets/f124b61e-e278-4456-9e36-097217eaf47d" />

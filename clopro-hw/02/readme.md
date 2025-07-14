@@ -24,12 +24,15 @@
 ## Решение  
 
 1. Проверяем ```terraform plan```, что создадутся все необходимые ресурсы:  
- <img width="729" height="113" alt="image1" src="https://github.com/user-attachments/assets/07d79217-ef1c-4e2d-a5aa-2172634b9046" />
+ <img width="731" height="125" alt="image1" src="https://github.com/user-attachments/assets/5de30e88-9444-41f9-b9d1-cf50ffac7120" />  
 
  В том числе s3:  
- <img width="462" height="486" alt="image2" src="https://github.com/user-attachments/assets/60adf195-7b22-4fd6-a759-fb36a27b21e8" />  
+ <img width="448" height="420" alt="image2" src="https://github.com/user-attachments/assets/6096f023-d450-42c7-b2db-92aaa369a122" />  
 
-После применения, проверяем, что создался сервисный аккаунт для s3:  
+ После применения убеждаемся, что s3 создался и картинка в нем:  
+ <img width="955" height="317" alt="image3" src="https://github.com/user-attachments/assets/4ffeae9b-5c61-4c16-97fc-b5b531dc76f2" />  
 
+ И картинка доступна из интернета по адресу https://ssilchin-110725.storage.yandexcloud.net/image.jpg (скриншот сделан в telegram, где при указании ссылки она сразу же загружается):  
+ <img width="424" height="433" alt="image4" src="https://github.com/user-attachments/assets/15dfabd3-607d-4312-9bd5-9d9aca824955" />  
 
-и картинка доступна из интернета по адресу https://ssilchin-110725.storage.yandexcloud.net/image.jpg:
+2. 

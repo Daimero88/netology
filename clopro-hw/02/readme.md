@@ -28,7 +28,7 @@
 1. Проверяем ```terraform plan```, что создадутся все необходимые ресурсы:  
  <img width="731" height="125" alt="image1" src="https://github.com/user-attachments/assets/5de30e88-9444-41f9-b9d1-cf50ffac7120" />  
 
- В том числе s3:  
+ В том числе s3 из [**bucket.tf**](https://github.com/Daimero88/netology/blob/main/clopro-hw/02/bucket.tf):  
  <img width="448" height="420" alt="image2" src="https://github.com/user-attachments/assets/6096f023-d450-42c7-b2db-92aaa369a122" />  
 
  После применения убеждаемся, что s3 создался и картинка в нем:  
@@ -39,7 +39,7 @@
  
 ---
 
-2. Убеждаемся, что создалась группа из трех ВМ в public подсети:
+2. Убеждаемся, что создалась группа из трех ВМ в public подсети:  
    <img width="1121" height="249" alt="image5" src="https://github.com/user-attachments/assets/19f9a3d5-0faf-43ab-9cdb-6a36baadb2b4" />
    <img width="1258" height="324" alt="image6" src="https://github.com/user-attachments/assets/bb204140-267b-4827-9e44-a573215d2639" />
    <img width="1385" height="337" alt="image7" src="https://github.com/user-attachments/assets/f124b61e-e278-4456-9e36-097217eaf47d" />

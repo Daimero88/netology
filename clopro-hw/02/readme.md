@@ -55,7 +55,8 @@
  <img width="1159" height="326" alt="image11" src="https://github.com/user-attachments/assets/c43d111e-8fb8-4c89-9602-dd59eb6cf662" />
  <img width="989" height="283" alt="image12" src="https://github.com/user-attachments/assets/74fbb6ea-1c9d-41ec-820e-0b9de320c87d" />  
  И проверим, что страница открывается по публичному IP балансировщика:  
- <img width="563" height="265" alt="image13" src="https://github.com/user-attachments/assets/db6d03aa-f71d-43d8-b5c4-361861255bc0" />  
+ <img width="563" height="265" alt="image13" src="https://github.com/user-attachments/assets/db6d03aa-f71d-43d8-b5c4-361861255bc0" />
+
  При остановке одной из машин, все продолжает работать:  
  <img width="598" height="191" alt="image14" src="https://github.com/user-attachments/assets/c8a9ae79-b486-4a9a-9c58-65f213b73108" />
 

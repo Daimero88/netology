@@ -43,9 +43,3 @@ variable "subnet_cidr" {
   type        = string
   default     = "192.168.10.0/24"
 }
-
-variable "service_account_name" {
-  description = "Name for the service account"
-  type        = string
-  default     = "s3-service-account"
-}

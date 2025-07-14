@@ -13,7 +13,12 @@ resource "yandex_lb_network_load_balancer" "nlb" {
     target_group_id = yandex_lb_target_group.lamp-tg.id
 
     healthcheck {
-      name = "http"
+      name                = "http-healthcheck"
+      interval            = 5
+      timeout             = 2
+      healthy_threshold   = 2
+      unhealthy_threshold = 2
+      
       http_options {
         port = 80
         path = "/"

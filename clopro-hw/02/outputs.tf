@@ -3,7 +3,7 @@ output "bucket_url" {
 }
 
 output "nlb_ip" {
-  value = try([for spec in yandex_lb_network_load_balancer.nlb.listener[*].external_address_spec : spec[0].address][0], null)
+  value = try(yandex_lb_network_load_balancer.nlb.listener[*].external_address_spec[*].address[0], "NLB not created")
 }
 
 output "instance_group_instances" {

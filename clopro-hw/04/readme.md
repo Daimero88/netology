@@ -27,3 +27,9 @@
 
 ## Решение  
 
+1. Настроим с помощью Terraform кластер баз данных MySQL:
+
+   - Описываем переменные в [**variables.tf**](https://github.com/Daimero88/netology/blob/main/clopro-hw/04/variables.tf), где указываем private и public сети во всех 3 зонах яндекса. Далее в файле [**vpc.tf**](https://github.com/Daimero88/netology/blob/main/clopro-hw/04/vpc.tf) опишем создание ресурсов сетей, nat шлюза и таблицы маршрутизации.
+   - В файле [**mysql.tf**](https://github.com/Daimero88/netology/blob/main/clopro-hw/04/mysql.tf) описываем создание кластера с необходимыми параметрами и созданием БД.  
+     
+После применения конфигурации, проверим, что все ресурсы создались в облаке:  

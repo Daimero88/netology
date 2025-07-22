@@ -63,4 +63,7 @@
     <img width="848" height="496" alt="image9" src="https://github.com/user-attachments/assets/5c5a53fd-4175-4a7e-acda-8d6c399614d6" />
   - Ключ шифрования:  
     <img width="559" height="412" alt="image10" src="https://github.com/user-attachments/assets/70ee5a9a-8453-4203-abc7-e9fe816fdbd1" />
+  - Кластер:  
+    <img width="540" height="466" alt="image11" src="https://github.com/user-attachments/assets/88c70153-0a30-4af5-91ba-b614195b1fb9" />
+  - 
 

@@ -33,3 +33,12 @@
    - В файле [**mysql.tf**](https://github.com/Daimero88/netology/blob/main/clopro-hw/04/mysql.tf) описываем создание кластера с необходимыми параметрами и созданием БД.  
      
 После применения конфигурации, проверим, что все ресурсы создались в облаке:  
+
+
+2. Настроим с помощью Terraform кластер Kubernetes:
+
+   - Опишем создание кластера с сервисными аккаунтами в [**k8s.tf**](https://github.com/Daimero88/netology/blob/main/clopro-hw/04/k8s.tf), добавим в [**variables.tf**](https://github.com/Daimero88/netology/blob/main/clopro-hw/04/variables.tf) необходимые переменные
+   - Добавим возможность шифрования ключом из [**kms.tf**](https://github.com/Daimero88/netology/blob/main/clopro-hw/04/kms.tf)  
+
+После применения конфигурации, проверим, что все ресурсы создались в облаке:  
+

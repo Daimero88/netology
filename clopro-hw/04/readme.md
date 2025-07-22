@@ -61,4 +61,6 @@
     <img width="764" height="239" alt="image8" src="https://github.com/user-attachments/assets/446e3a0a-55f6-452c-925f-ce95a87cbb38" />
   - Группа безопасности:  
     <img width="848" height="496" alt="image9" src="https://github.com/user-attachments/assets/5c5a53fd-4175-4a7e-acda-8d6c399614d6" />
+  - Ключ шифрования:  
+    <img width="559" height="412" alt="image10" src="https://github.com/user-attachments/assets/70ee5a9a-8453-4203-abc7-e9fe816fdbd1" />
 

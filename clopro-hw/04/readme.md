@@ -34,6 +34,24 @@
      
 После применения конфигурации, проверим, что все ресурсы создались в облаке:  
 
+  - Сети в разных зонах:  
+    <img width="1529" height="716" alt="image1" src="https://github.com/user-attachments/assets/b3ff430f-756d-4e10-8591-cce5867e75a9" />
+  - Кластер MySQL:  
+    <img width="546" height="735" alt="image2" src="https://github.com/user-attachments/assets/87bb9958-9974-46e3-85c0-04e34fcb95a6" />  
+    <img width="405" height="278" alt="image3" src="https://github.com/user-attachments/assets/570eab48-d2e7-4446-8a36-afaaeb498fea" />
+  - Хосты:  
+    <img width="1046" height="268" alt="image4" src="https://github.com/user-attachments/assets/b4a13f64-baf2-4eb6-8388-a9c29b2f3e91" />
+  - Пользователи:  
+    <img width="511" height="179" alt="image5" src="https://github.com/user-attachments/assets/25b490ca-c45a-43b3-afa0-06bea5964186" />  
+  - База данных:  
+    <img width="517" height="181" alt="image6" src="https://github.com/user-attachments/assets/fe6bafe5-501a-4d9f-bb23-eaf464d2a95a" />  
+
+
+
+    
+
+
+
 
 2. Настроим с помощью Terraform кластер Kubernetes:
 

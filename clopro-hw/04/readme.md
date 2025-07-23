@@ -64,6 +64,13 @@
   - Ключ шифрования:  
     <img width="559" height="412" alt="image10" src="https://github.com/user-attachments/assets/70ee5a9a-8453-4203-abc7-e9fe816fdbd1" />
   - Кластер:  
-    <img width="540" height="466" alt="image11" src="https://github.com/user-attachments/assets/88c70153-0a30-4af5-91ba-b614195b1fb9" />
+    <img width="511" height="471" alt="image11" src="https://github.com/user-attachments/assets/dfbc5d3c-76ec-427f-962f-3a678c7eacf3" />  
+  - Группы узлов с автомасштабированием:  
+    <img width="590" height="236" alt="image" src="https://github.com/user-attachments/assets/dc8fd15d-595d-4425-ac08-ab9f455cd9cc" />  
+  - Ноды:  
+    <img width="560" height="381" alt="image12" src="https://github.com/user-attachments/assets/577beb76-0fc9-40fa-8566-97ad1c6c231b" />
+  - Подключаемся к кластеру с помощью kubectl и проверяем список нод:
+    <img width="516" height="89" alt="image13" src="https://github.com/user-attachments/assets/0d4fd0f7-d17c-412a-a6cd-a57898753b20" />  
   - 
+
 

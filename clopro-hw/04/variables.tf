@@ -85,7 +85,7 @@ variable "mysql_password" {
 variable "k8s_version" {
   description = "Kubernetes version"
   type        = string
-  default     = "1.24"
+  default     = "1.32"
 }
 
 variable "k8s_sa_name" {

@@ -6,7 +6,7 @@ resource "yandex_mdb_mysql_cluster" "mysql" {
   deletion_protection = true
 
   resources {
-    resource_preset_id = "b1.medium"
+    resource_preset_id = "b2.medium"
     disk_type_id      = "network-ssd"
     disk_size         = 20
   }

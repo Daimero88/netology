@@ -173,10 +173,7 @@ resource "kubernetes_deployment" "phpmyadmin" {
     }
   }
 
-  depends_on = [
-    yandex_kubernetes_cluster.k8s,
-    yandex_kubernetes_node_group.k8s_nodes
-  ]
+  depends_on = [yandex_kubernetes_cluster.k8s]
 }
 
 resource "kubernetes_service" "phpmyadmin" {

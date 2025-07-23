@@ -68,9 +68,18 @@
   - Группы узлов с автомасштабированием:  
     <img width="590" height="236" alt="image" src="https://github.com/user-attachments/assets/dc8fd15d-595d-4425-ac08-ab9f455cd9cc" />  
   - Ноды:  
-    <img width="560" height="381" alt="image12" src="https://github.com/user-attachments/assets/577beb76-0fc9-40fa-8566-97ad1c6c231b" />
-  - Подключаемся к кластеру с помощью kubectl и проверяем список нод:
+    <img width="560" height="381" alt="image12" src="https://github.com/user-attachments/assets/577beb76-0fc9-40fa-8566-97ad1c6c231b" />  
+  - Подключаемся к кластеру с помощью kubectl и проверяем список нод:  
     <img width="516" height="89" alt="image13" src="https://github.com/user-attachments/assets/0d4fd0f7-d17c-412a-a6cd-a57898753b20" />  
-  - 
+  - Создание микросервиса phpmyadmin с сервисом Load Balancer описываем также в [**k8s.tf**](https://github.com/Daimero88/netology/blob/main/clopro-hw/04/k8s.tf), из [**outputs.tf**](https://github.com/Daimero88/netology/blob/main/clopro-hw/04/outputs.tf) берем IP балансера и адрес базы данных:  
+    <img width="425" height="217" alt="image14" src="https://github.com/user-attachments/assets/7d41c4aa-b1ad-4849-a0a0-2e406a46508b" />  
+    Проверяем что страница доступна:  
+    <img width="918" height="605" alt="image15" src="https://github.com/user-attachments/assets/5f276867-ac3f-4613-99fd-277a4906a5e5" />  
+    И подключаемся к базе данных:  
+    <img width="844" height="301" alt="image" src="https://github.com/user-attachments/assets/0e9f2e02-1c7b-4e2d-b17d-dca94d78638f" />  
+
+    
+
+
 
 

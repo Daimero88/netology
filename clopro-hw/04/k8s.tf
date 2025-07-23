@@ -108,14 +108,67 @@ resource "yandex_vpc_security_group" "k8s_master" {
   ingress {
     protocol       = "TCP"
     description    = "Kubernetes API server"
-    port          = 6443
+    port           = 6443
+    v4_cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    protocol       = "TCP"
+    description    = "etcd client and peer communication"
+    from_port      = 2379
+    to_port        = 2380
+    v4_cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    protocol       = "TCP"
+    description    = "Kubelet API"
+    port           = 10250
+    v4_cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    protocol       = "TCP"
+    description    = "Kube-scheduler"
+    port           = 10259
+    v4_cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    protocol       = "TCP"
+    description    = "Kube-controller-manager"
+    port           = 10257
     v4_cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
     protocol       = "TCP"
     description    = "SSH access"
-    port          = 22
+    port           = 22
+    v4_cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    protocol       = "TCP"
+    description    = "NodePort Services"
+    from_port      = 30000
+    to_port        = 32767
+    v4_cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    protocol       = "TCP"
+    description    = "Internal node communication"
+    from_port      = 1
+    to_port        = 65535
+    v4_cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    protocol       = "UDP"
+    description    = "Internal node communication"
+    from_port      = 1
+    to_port        = 65535
     v4_cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -153,7 +206,7 @@ resource "kubernetes_deployment" "phpmyadmin" {
       spec {
         container {
           name  = "phpmyadmin"
-          image = "phpmyadmin/phpmyadmin"
+          image = "phpmyadmin/phpmyadmin:latest"
 
           env {
             name  = "PMA_HOST"
@@ -163,6 +216,11 @@ resource "kubernetes_deployment" "phpmyadmin" {
           env {
             name  = "PMA_PORT"
             value = "3306"
+          }
+
+          env {
+            name  = "PMA_ARBITRARY"
+            value = "1"
           }
 
           port {
@@ -180,18 +238,25 @@ resource "kubernetes_deployment" "phpmyadmin" {
 }
 
 resource "kubernetes_service" "phpmyadmin" {
+  depends_on = [kubernetes_deployment.phpmyadmin]
+
   metadata {
     name = "phpmyadmin"
+    labels = {
+      app = "phpmyadmin"
+    }
   }
 
   spec {
     selector = {
-      app = kubernetes_deployment.phpmyadmin.spec.0.template.0.metadata.0.labels.app
+      app = "phpmyadmin"
     }
 
     port {
+      name        = "http"
       port        = 80
       target_port = 80
+      protocol    = "TCP"
     }
 
     type = "LoadBalancer"

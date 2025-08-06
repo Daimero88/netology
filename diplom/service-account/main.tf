@@ -14,7 +14,7 @@ provider "yandex" {
 }
 
 resource "yandex_iam_service_account" "terraform" {
-  name        = "terraform-diplom"
+  name        = "tf-sa-diplom"
   description = "Service account for Terraform"
 }
 

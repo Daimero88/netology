@@ -36,7 +36,6 @@
 3. Создайте конфигурацию Terrafrom, используя созданный бакет ранее как бекенд для хранения стейт файла. Конфигурации Terraform для создания сервисного аккаунта и бакета и основной инфраструктуры следует сохранить в разных папках.
 4. Создайте VPC с подсетями в разных зонах доступности.
 5. Убедитесь, что теперь вы можете выполнить команды `terraform destroy` и `terraform apply` без дополнительных ручных действий.
-6. В случае использования [Terraform Cloud](https://app.terraform.io/) в качестве [backend](https://developer.hashicorp.com/terraform/language/backend) убедитесь, что применение изменений успешно проходит, используя web-интерфейс Terraform cloud.
 
 Ожидаемые результаты:
 
@@ -44,7 +43,12 @@
 2. Полученная конфигурация инфраструктуры является предварительной, поэтому в ходе дальнейшего выполнения задания возможны изменения.
 
 ### Решение создания облачной инфраструктуры:  
-1. 
+1. Создаем сервисный аккаунт из папки [**service-account**](https://github.com/Daimero88/netology/tree/main/diplom/service-account) с правами editor. Для дальнейшей работы из под этого сервисного аккаунта понадобятся его id и ключ, их выводим в output как sensitive данные. Они нам понадобятся в дальнейшем в terraform.tfvars файлах:  
+   <img width="1116" height="685" alt="image1" src="https://github.com/user-attachments/assets/26c2a12f-20c2-4820-8c53-a9b84f6e28e6" />
+   Убеждаемся, что сервисный аккаунт создан:  
+   <img width="478" height="107" alt="image2" src="https://github.com/user-attachments/assets/ceb6425a-b716-4f9c-9040-87024eec7bda" />  
+
+2. Подготавливаем папку [**backend**](https://github.com/Daimero88/netology/tree/main/diplom/backend)
 ---
 ### Создание Kubernetes кластера
 

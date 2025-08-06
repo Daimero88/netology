@@ -52,9 +52,11 @@
    <img width="505" height="536" alt="image3" src="https://github.com/user-attachments/assets/9952db07-5b79-4b7a-acf8-89597ec72950" />
    <img width="696" height="135" alt="image4" src="https://github.com/user-attachments/assets/614fa4b6-34ce-43f4-a212-3818fda70e3d" />
 
-3. Подготавливаем папку [**infrastructure**](https://github.com/Daimero88/netology/tree/main/diplom/infrastructure), где в [**main.tf**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/main.tf) описываем ранее созданный бакет как бекенд для хранения стейт файла terraform.tfstate. Так как мы не можем использовать переменные в блоке backend "s3", то запишем значения ключей в файл backend.hcl, и запустим инициализацию с ключом ```terraform init -backend-config=backend.hcl```
-4. Также в [**main.tf**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/main.tf) описываем создание VPC с подсетями в разных зонах доступности (ru-central1-a,ru-central1-b,ru-central1-d).
-5. 
+3. Подготавливаем папку [**infrastructure**](https://github.com/Daimero88/netology/tree/main/diplom/infrastructure), где в [**main.tf**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/main.tf) описываем ранее созданный бакет как бекенд для хранения стейт файла terraform.tfstate. Так как мы не можем использовать переменные в блоке backend "s3", то запишем значения ключей в файл backend.hcl (пример в [**backend.hcl.example**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/backend.hcl.example)), и запустим инициализацию с ключом ```terraform init -backend-config=backend.hcl```. После применения убедимся, что файл terraform.tfstate создался в нашем бакете:  
+  <img width="892" height="243" alt="image5" src="https://github.com/user-attachments/assets/0f7d3c61-3e13-4cb6-a173-0b92072448c4" />
+
+5. Также в [**main.tf**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/main.tf) описываем создание VPC с подсетями в разных зонах доступности (ru-central1-a,ru-central1-b,ru-central1-d) и применяем его:  
+   <img width="479" height="164" alt="image6" src="https://github.com/user-attachments/assets/30c93db4-1e54-4757-a616-1fdf9cbd4296" />  
 
 
 ---

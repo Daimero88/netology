@@ -52,7 +52,7 @@
    <img width="505" height="536" alt="image3" src="https://github.com/user-attachments/assets/9952db07-5b79-4b7a-acf8-89597ec72950" />
    <img width="696" height="135" alt="image4" src="https://github.com/user-attachments/assets/614fa4b6-34ce-43f4-a212-3818fda70e3d" />
 
-3. Подготавливаем папку [**infrastructure**](https://github.com/Daimero88/netology/tree/main/diplom/infrastructure), где будем хранить terraform.tfstate файл.
+3. Подготавливаем папку [**infrastructure**](https://github.com/Daimero88/netology/tree/main/diplom/infrastructure), где в [**main.tf**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/main.tf) описываем ранее созданный бакет как бекенд для хранения стейт файла terraform.tfstate.
 4. 
 
 

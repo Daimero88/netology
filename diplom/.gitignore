@@ -4,8 +4,7 @@
 **/*.tfstate.*
 **/*.tfvars
 **/.terraform.lock.hcl
-**/key.json
-
+**/backend.hcl
 # Ansible
 **/inventory/mycluster/credentials.yml
 **/secrets.ini

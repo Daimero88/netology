@@ -72,9 +72,6 @@
    а. При помощи Terraform подготовить как минимум 3 виртуальных машины Compute Cloud для создания Kubernetes-кластера. Тип виртуальной машины следует выбрать самостоятельно с учётом требовании к производительности и стоимости. Если в дальнейшем поймете, что необходимо сменить тип инстанса, используйте Terraform для внесения изменений.  
    б. Подготовить [ansible](https://www.ansible.com/) конфигурации, можно воспользоваться, например [Kubespray](https://kubernetes.io/docs/setup/production-environment/tools/kubespray/)  
    в. Задеплоить Kubernetes на подготовленные ранее инстансы, в случае нехватки каких-либо ресурсов вы всегда можете создать их при помощи Terraform.
-2. Альтернативный вариант: воспользуйтесь сервисом [Yandex Managed Service for Kubernetes](https://cloud.yandex.ru/services/managed-kubernetes)  
-  а. С помощью terraform resource для [kubernetes](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/kubernetes_cluster) создать **региональный** мастер kubernetes с размещением нод в разных 3 подсетях      
-  б. С помощью terraform resource для [kubernetes node group](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/kubernetes_node_group)
   
 Ожидаемый результат:
 
@@ -83,7 +80,14 @@
 3. Команда `kubectl get pods --all-namespaces` отрабатывает без ошибок.
 
 ### Решение создания Kubernetes кластера  
-1. 
+1. Описываем в [**main.tf**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-infra/main.tf) в папке [**k8s-infra**](https://github.com/Daimero88/netology/tree/main/diplom/k8s-infra) создание виртуальных машин, размещенных в ранее созданных сетях:
+   <img width="278" height="153" alt="image8" src="https://github.com/user-attachments/assets/990a7915-9365-45d3-ac8a-e2da3622ddf2" />  
+   Убедимся, что виртуальные машины созданы:  
+   <img width="1304" height="335" alt="image9" src="https://github.com/user-attachments/assets/e80a96fd-5519-411a-86f7-2db8d4142c44" />
+2. Воспользуемся Kubespray для деплоя кластера. Для этого склонируем его репозиторий ```git clone https://github.com/kubernetes-sigs/kubespray```, перейдем в скачанную папку, включим виртуальное окружение и установим необходимые зависимости из файла requirements.txt. После чего отредактируем файл 
+
+   
+
 
 ---
 ### Создание тестового приложения

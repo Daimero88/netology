@@ -56,11 +56,9 @@
   <img width="892" height="243" alt="image5" src="https://github.com/user-attachments/assets/0f7d3c61-3e13-4cb6-a173-0b92072448c4" />
 
 5. Также в [**main.tf**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/main.tf) описываем создание VPC с подсетями в разных зонах доступности (ru-central1-a,ru-central1-b,ru-central1-d) и применяем его:  
-   <img width="479" height="164" alt="image6" src="https://github.com/user-attachments/assets/30c93db4-1e54-4757-a616-1fdf9cbd4296" />
-   Убеждаемся, что сети созданы в различных зонах:
+   <img width="479" height="164" alt="image6" src="https://github.com/user-attachments/assets/30c93db4-1e54-4757-a616-1fdf9cbd4296" />  
+   Убеждаемся, что сети созданы в различных зонах:  
    <img width="1037" height="543" alt="image7" src="https://github.com/user-attachments/assets/c865f675-09d6-41c6-81ea-ce86d0dc26a9" />  
-
-
 
 ---
 ### Создание Kubernetes кластера

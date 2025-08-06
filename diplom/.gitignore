@@ -1,0 +1,10 @@
+# Terraform
+**/.terraform/*
+**/*.tfstate
+**/*.tfstate.backup
+**/*.tfvars
+**/key.json
+
+# Ansible
+**/inventory/mycluster/credentials.yml
+**/secrets.ini

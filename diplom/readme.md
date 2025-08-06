@@ -43,12 +43,19 @@
 2. Полученная конфигурация инфраструктуры является предварительной, поэтому в ходе дальнейшего выполнения задания возможны изменения.
 
 ### Решение создания облачной инфраструктуры:  
-1. Создаем сервисный аккаунт из папки [**service-account**](https://github.com/Daimero88/netology/tree/main/diplom/service-account) с правами editor. Для дальнейшей работы из под этого сервисного аккаунта понадобятся его id и ключ, их выводим в output как sensitive данные. Они нам понадобятся в дальнейшем в terraform.tfvars файлах:  
+1. Создаем сервисный аккаунт из папки [**service-account**](https://github.com/Daimero88/netology/tree/main/diplom/service-account) с правами editor. Для дальнейшей работы из под этого сервисного аккаунта понадобятся его id и ключ, их выводим в output как sensitive данные, которые можно будет затем увидеть командами ```terraform output -json service_account_keys | jq -r '.access_key'``` и ```terraform output -json service_account_keys | jq -r '.secret_key'``` . Они нам понадобятся в дальнейшем в terraform.tfvars файлах:  
    <img width="1116" height="685" alt="image1" src="https://github.com/user-attachments/assets/26c2a12f-20c2-4820-8c53-a9b84f6e28e6" />
    Убеждаемся, что сервисный аккаунт создан:  
    <img width="478" height="107" alt="image2" src="https://github.com/user-attachments/assets/ceb6425a-b716-4f9c-9040-87024eec7bda" />  
 
-2. Подготавливаем папку [**backend**](https://github.com/Daimero88/netology/tree/main/diplom/backend)
+2. Подготавливаем папку [**backend**](https://github.com/Daimero88/netology/tree/main/diplom/backend), где в файле terraform.tfvars вставляем полученные ранее id и ключ при создании сервисного аккаунта (пример в [**terraform.tfvars.example**](https://github.com/Daimero88/netology/blob/main/diplom/backend/terraform.tfvars.example)). В [**main.tf**](https://github.com/Daimero88/netology/blob/main/diplom/backend/main.tf) создаем s3-bucket с именем ssilchin-diplom:
+   <img width="505" height="536" alt="image3" src="https://github.com/user-attachments/assets/9952db07-5b79-4b7a-acf8-89597ec72950" />
+   <img width="696" height="135" alt="image4" src="https://github.com/user-attachments/assets/614fa4b6-34ce-43f4-a212-3818fda70e3d" />
+
+3. Подготавливаем папку [**infrastructure**](https://github.com/Daimero88/netology/tree/main/diplom/infrastructure), где будем хранить terraform.tfstate файл.
+4. 
+
+
 ---
 ### Создание Kubernetes кластера
 

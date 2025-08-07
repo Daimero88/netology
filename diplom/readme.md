@@ -80,7 +80,7 @@
 3. Команда `kubectl get pods --all-namespaces` отрабатывает без ошибок.
 
 ### Решение создания Kubernetes кластера  
-1. Описываем в [**main.tf**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-infra/main.tf) в папке [**k8s-infra**](https://github.com/Daimero88/netology/tree/main/diplom/k8s-infra) создание виртуальных машин, размещенных в ранее созданных сетях:
+1. Описываем в [**k8s-nodes.tf**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/k8s-nodes.tf) создание виртуальных машин, размещенных в ранее созданных сетях:
    <img width="278" height="153" alt="image8" src="https://github.com/user-attachments/assets/990a7915-9365-45d3-ac8a-e2da3622ddf2" />  
    Убедимся, что виртуальные машины созданы:  
    <img width="1304" height="335" alt="image9" src="https://github.com/user-attachments/assets/e80a96fd-5519-411a-86f7-2db8d4142c44" />

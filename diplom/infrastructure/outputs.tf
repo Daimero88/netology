@@ -11,3 +11,10 @@ output "subnet_ids" {
   }
   description = "Map of subnet IDs by availability zone"
 }
+
+output "k8s_nodes_ips" {
+  value = {
+    for name, instance in yandex_compute_instance.k8s_nodes :
+    name => instance.network_interface.0.nat_ip_address
+  }
+}

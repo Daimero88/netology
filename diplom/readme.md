@@ -82,8 +82,9 @@
    После скопируем папку ```cp -rfp inventory/sample inventory/mycluster``` и отредактируем файлы inventory/mycluster/inventory.ini, куда добавим IP адреса созданных ВМ, в group_vars/all/all.yml добавим версию ```kube_version: 1.32.0```, а в inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml добавим ```supplementary_addresses_in_ssl_keys:```, который будет содержать значение внешнего IP-адреса мастера в сертификате.
 3. После запуска ```ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -b -v``` получаем успешный результат:
    <img width="922" height="82" alt="image9" src="https://github.com/user-attachments/assets/67415302-b58e-4f60-9e0f-164738b3769c" />   
-4. Забираем файл конфигурации с сервера для подключения к кластеру ```ssh ubuntu@51.250.71.224 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config``` и даем на него права ```chmod 600 ~/.kube/config```. После чего проверяем доступ командой `kubectl get pods --all-namespaces`:  
-   <img width="749" height="211" alt="image10" src="https://github.com/user-attachments/assets/5ffbe812-eec7-463a-a50c-d0bef405ff56" />  
+4. Забираем файл конфигурации с сервера для подключения к кластеру ```ssh ubuntu@51.250.71.224 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config``` и даем на него права ```chmod 600 ~/.kube/config```. После чего проверяем доступ командой `kubectl get pods -n kube-system`:  
+   <img width="479" height="310" alt="image10" src="https://github.com/user-attachments/assets/0c5ba3e3-d5f7-4ced-a8b4-c994abe62f7f" />
+  
 
 ---
 ### Создание тестового приложения

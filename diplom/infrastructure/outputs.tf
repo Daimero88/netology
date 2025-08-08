@@ -15,6 +15,14 @@ output "subnet_ids" {
 output "k8s_nodes_ips" {
   value = {
     for name, instance in yandex_compute_instance.k8s_nodes :
-    name => instance.network_interface.0.nat_ip_address
+    name => {
+      public_ip  = instance.network_interface.0.nat_ip_address
+      private_ip = instance.network_interface.0.ip_address
+    }
   }
+  description = "Public and private IP addresses of K8s nodes"
+}
+
+output "container_registry_url" {
+  value = "cr.yandex/${yandex_container_registry.this.id}"
 }

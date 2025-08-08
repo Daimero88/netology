@@ -14,14 +14,8 @@ variable "yc_folder_id" {
   description = "Yandex.Cloud Folder ID"
 }
 
-#variable "sa_access_key" {
-#  type        = string
-#  description = "Service account access key"
-#  sensitive   = true
-#}
-
-#variable "sa_secret_key" {
-#  type        = string
-#  description = "Service account secret key"
-#  sensitive   = true
-#}
+variable "ycr_name" {
+  type        = string
+  description = "Yandex Container Registry Name"
+  default     = "ssilchin-registry"
+}

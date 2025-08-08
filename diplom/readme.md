@@ -81,13 +81,13 @@
 
 ### Решение создания Kubernetes кластера  
 1. Описываем в [**k8s-nodes.tf**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/k8s-nodes.tf) создание виртуальных машин, размещенных в ранее созданных сетях:
-   <img width="278" height="153" alt="image8" src="https://github.com/user-attachments/assets/990a7915-9365-45d3-ac8a-e2da3622ddf2" />  
-   Убедимся, что виртуальные машины созданы:  
-   <img width="1304" height="335" alt="image9" src="https://github.com/user-attachments/assets/e80a96fd-5519-411a-86f7-2db8d4142c44" />
-2. Воспользуемся Kubespray для деплоя кластера. Для этого склонируем его репозиторий ```git clone https://github.com/kubernetes-sigs/kubespray```, перейдем в скачанную папку, включим виртуальное окружение и установим необходимые зависимости из файла requirements.txt. После чего отредактируем файл 
-
-   
-
+   <img width="576" height="232" alt="image8" src="https://github.com/user-attachments/assets/b15bbce6-1097-401e-9eb1-c553bb531ed2" />
+2. Воспользуемся Kubespray для деплоя кластера. Для этого склонируем его репозиторий ```git clone https://github.com/kubernetes-sigs/kubespray```, перейдем в скачанную папку, включим виртуальное окружение и установим необходимые зависимости ```pip install -r requirements.txt```.
+   После скопируем папку ```cp -rfp inventory/sample inventory/mycluster``` и отредактируем файлы inventory/mycluster/inventory.ini, куда добавим IP адреса созданных ВМ, в group_vars/all/all.yml добавим версию ```kube_version: 1.32.0```, а в inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml добавим ```supplementary_addresses_in_ssl_keys:```, который будет содержать значение внешнего IP-адреса мастера
+3. После запуска ```ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -b -v``` получаем успешный результат:
+   <img width="922" height="82" alt="image9" src="https://github.com/user-attachments/assets/67415302-b58e-4f60-9e0f-164738b3769c" />   
+4. Забираем файл конфигурации с сервера для подключения к кластеру ```ssh ubuntu@51.250.71.224 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config``` и даем на него права ```chmod 600 ~/.kube/config```. После чего проверяем доступ:  
+<img width="749" height="211" alt="image10" src="https://github.com/user-attachments/assets/5ffbe812-eec7-463a-a50c-d0bef405ff56" />  
 
 ---
 ### Создание тестового приложения

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: test-nginx
+  template:
+    metadata:
+      labels:
+        app: test-nginx
+    spec:
+      containers:
+      - name: test-nginx
+        image: cr.yandex/crpioun7qsj9frieeebv/test-nginx:1.1
+        ports:
+        - containerPort: 80

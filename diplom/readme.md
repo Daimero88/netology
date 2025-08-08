@@ -127,7 +127,9 @@
    Задеплоим систему мониторинга `kubectl apply -f manifests/` и проверим, что все поды в namespace monitoring запустились:  
    <img width="800" height="263" alt="image12" src="https://github.com/user-attachments/assets/d87e1524-be7b-469d-8151-784a6d041cb0" />  
 2. Для деплоя тестового приложения папке [k8s-configs**](https://github.com/Daimero88/netology/tree/main/diplom/k8s-configs) создадим [**deployment.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/deployment.yaml) и [**service.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/service.yaml) и применим их:  
-   <img width="576" height="71" alt="image13" src="https://github.com/user-attachments/assets/d443ebdd-0c6e-4864-8ad9-3baa02e04c92" />  
+   <img width="765" height="72" alt="image13" src="https://github.com/user-attachments/assets/d1d6cadb-bf85-42d0-bb45-69a997403f60" />
+
+
    Проверим по внешнему IP-адресу нашего кластера, что страница доступна:
    <img width="469" height="187" alt="image14" src="https://github.com/user-attachments/assets/b49988af-ac84-4916-8838-f1d7222c33b0" />  
 

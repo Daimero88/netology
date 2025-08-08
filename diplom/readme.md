@@ -64,9 +64,7 @@
 ---
 ### Создание Kubernetes кластера
 
-На этом этапе необходимо создать [Kubernetes](https://kubernetes.io/ru/docs/concepts/overview/what-is-kubernetes/) кластер на базе предварительно созданной инфраструктуры.   Требуется обеспечить доступ к ресурсам из Интернета.
-
-Это можно сделать двумя способами:
+На этом этапе необходимо создать [Kubernetes](https://kubernetes.io/ru/docs/concepts/overview/what-is-kubernetes/) кластер на базе предварительно созданной инфраструктуры. Требуется обеспечить доступ к ресурсам из Интернета.
 
 1. Рекомендуемый вариант: самостоятельная установка Kubernetes кластера.  
    а. При помощи Terraform подготовить как минимум 3 виртуальных машины Compute Cloud для создания Kubernetes-кластера. Тип виртуальной машины следует выбрать самостоятельно с учётом требовании к производительности и стоимости. Если в дальнейшем поймете, что необходимо сменить тип инстанса, используйте Terraform для внесения изменений.  
@@ -83,11 +81,11 @@
 1. Описываем в [**k8s-nodes.tf**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/k8s-nodes.tf) создание виртуальных машин, размещенных в ранее созданных сетях:
    <img width="576" height="232" alt="image8" src="https://github.com/user-attachments/assets/b15bbce6-1097-401e-9eb1-c553bb531ed2" />
 2. Воспользуемся Kubespray для деплоя кластера. Для этого склонируем его репозиторий ```git clone https://github.com/kubernetes-sigs/kubespray```, перейдем в скачанную папку, включим виртуальное окружение и установим необходимые зависимости ```pip install -r requirements.txt```.
-   После скопируем папку ```cp -rfp inventory/sample inventory/mycluster``` и отредактируем файлы inventory/mycluster/inventory.ini, куда добавим IP адреса созданных ВМ, в group_vars/all/all.yml добавим версию ```kube_version: 1.32.0```, а в inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml добавим ```supplementary_addresses_in_ssl_keys:```, который будет содержать значение внешнего IP-адреса мастера
+   После скопируем папку ```cp -rfp inventory/sample inventory/mycluster``` и отредактируем файлы inventory/mycluster/inventory.ini, куда добавим IP адреса созданных ВМ, в group_vars/all/all.yml добавим версию ```kube_version: 1.32.0```, а в inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml добавим ```supplementary_addresses_in_ssl_keys:```, который будет содержать значение внешнего IP-адреса мастера в сертификате.
 3. После запуска ```ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -b -v``` получаем успешный результат:
    <img width="922" height="82" alt="image9" src="https://github.com/user-attachments/assets/67415302-b58e-4f60-9e0f-164738b3769c" />   
-4. Забираем файл конфигурации с сервера для подключения к кластеру ```ssh ubuntu@51.250.71.224 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config``` и даем на него права ```chmod 600 ~/.kube/config```. После чего проверяем доступ:  
-<img width="749" height="211" alt="image10" src="https://github.com/user-attachments/assets/5ffbe812-eec7-463a-a50c-d0bef405ff56" />  
+4. Забираем файл конфигурации с сервера для подключения к кластеру ```ssh ubuntu@51.250.71.224 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config``` и даем на него права ```chmod 600 ~/.kube/config```. После чего проверяем доступ командой `kubectl get pods --all-namespaces`:  
+   <img width="749" height="211" alt="image10" src="https://github.com/user-attachments/assets/5ffbe812-eec7-463a-a50c-d0bef405ff56" />  
 
 ---
 ### Создание тестового приложения

@@ -2,11 +2,8 @@
   * [Цели:](#цели)
   * [Этапы выполнения:](#этапы-выполнения)
      * [Создание облачной инфраструктуры](#создание-облачной-инфраструктуры)
-     * [Решение создания облачной инфраструктуры](#Решение-создания-облачной-инфраструктуры)
      * [Создание Kubernetes кластера](#создание-kubernetes-кластера)
-     * [Решение создания Kubernetes кластера](#Решение-создания-kubernetes-кластера)
      * [Создание тестового приложения](#создание-тестового-приложения)
-     * [Решение создания тестового приложения](#Решение-создания-тестового-приложения)
      * [Подготовка cистемы мониторинга и деплой приложения](#подготовка-cистемы-мониторинга-и-деплой-приложения)
      * [Установка и настройка CI/CD](#установка-и-настройка-cicd)
   * [Что необходимо для сдачи задания?](#что-необходимо-для-сдачи-задания)
@@ -122,6 +119,15 @@
 
 Способ выполнения:
 1. Воспользоваться пакетом [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus), который уже включает в себя [Kubernetes оператор](https://operatorhub.io/) для [grafana](https://grafana.com/), [prometheus](https://prometheus.io/), [alertmanager](https://github.com/prometheus/alertmanager) и [node_exporter](https://github.com/prometheus/node_exporter). Альтернативный вариант - использовать набор helm чартов от [bitnami](https://github.com/bitnami/charts/tree/main/bitnami).
+
+### Решение подготовки cистемы мониторинга  
+1. Скачаем репозиторий `git clone https://github.com/prometheus-operator/kube-prometheus.git`, и перейдем в папку `cd kube-prometheus`.  
+   Запустим установку CRD командой `kubectl apply --server-side -f manifests/setup`  
+   Задеплоим систему мониторинга `kubectl apply -f manifests/` и проверим, что все поды в namespace monitoring запустились:  
+   <img width="800" height="263" alt="image" src="https://github.com/user-attachments/assets/d87e1524-be7b-469d-8151-784a6d041cb0" />
+2. 
+
+
 
 ### Деплой инфраструктуры в terraform pipeline
 

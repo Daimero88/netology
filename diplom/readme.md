@@ -98,8 +98,6 @@
 1. Рекомендуемый вариант:  
    а. Создайте отдельный git репозиторий с простым nginx конфигом, который будет отдавать статические данные.  
    б. Подготовьте Dockerfile для создания образа приложения.  
-2. Альтернативный вариант:  
-   а. Используйте любой другой код, главное, чтобы был самостоятельно создан Dockerfile.
 
 Ожидаемый результат:
 
@@ -107,7 +105,10 @@
 2. Регистри с собранным docker image. В качестве регистри может быть DockerHub или [Yandex Container Registry](https://cloud.yandex.ru/services/container-registry), созданный также с помощью terraform.
 
 ### Решение создания тестового приложения  
-1.
+1. Добавим файл [**ycr.tf**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/ycr.tf), который создаст Yandex Container Registry.
+2. Создадим новый репозиторий [**test-nginx-app**](https://github.com/Daimero88/test-nginx-app), который наполним файлами [**Dockerfile**](https://github.com/Daimero88/test-nginx-app/blob/main/Dockerfile), [**index.html**](https://github.com/Daimero88/test-nginx-app/blob/main/index.html) и [**nginx.conf**](https://github.com/Daimero88/test-nginx-app/blob/main/nginx.conf)
+3. Соберем локально образ ```docker build -t cr.yandex/crpioun7qsj9frieeebv/test-nginx:1.1 .``` и запушим его в наш регистри ```docker push cr.yandex/crpioun7qsj9frieeebv/test-nginx:1.1```
+
 
 ---
 ### Подготовка cистемы мониторинга и деплой приложения

@@ -82,7 +82,7 @@
    После скопируем папку ```cp -rfp inventory/sample inventory/mycluster``` и отредактируем файлы inventory/mycluster/inventory.ini, куда добавим IP адреса созданных ВМ, в group_vars/all/all.yml добавим версию ```kube_version: 1.32.0```, а в inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml добавим ```supplementary_addresses_in_ssl_keys:```, который будет содержать значение внешнего IP-адреса мастера в сертификате.
 3. После запуска ```ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -b -v``` получаем успешный результат:
    <img width="922" height="82" alt="image9" src="https://github.com/user-attachments/assets/67415302-b58e-4f60-9e0f-164738b3769c" />   
-4. Забираем файл конфигурации с сервера для подключения к кластеру ```ssh ubuntu@51.250.71.224 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config``` и даем на него права ```chmod 600 ~/.kube/config```. После чего проверяем доступ командой `kubectl get pods -n kube-system`:  
+4. Забираем файл конфигурации с сервера для подключения к кластеру `ssh ubuntu@51.250.71.224 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config`, меняем внутри адрес сервера 127.0.0.1 на наш внешний ip мастера и даем на него права `chmod 600 ~/.kube/config`. После чего проверяем доступ командой `kubectl get pods -n kube-system`:  
    <img width="479" height="310" alt="image10" src="https://github.com/user-attachments/assets/0c5ba3e3-d5f7-4ced-a8b4-c994abe62f7f" />
   
 
@@ -126,7 +126,7 @@
    Запустим установку CRD командой `kubectl apply --server-side -f manifests/setup`  
    Задеплоим систему мониторинга `kubectl apply -f manifests/` и проверим, что все поды в namespace monitoring запустились:  
    <img width="800" height="263" alt="image12" src="https://github.com/user-attachments/assets/d87e1524-be7b-469d-8151-784a6d041cb0" />  
-2. Для деплоя тестового приложения папке [k8s-configs**](https://github.com/Daimero88/netology/tree/main/diplom/k8s-configs) создадим [**namespace.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/namespace.yaml),[**deployment.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/deployment.yaml) и [**service.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/service.yaml) и применим их:  
+2. Для деплоя тестового приложения папке [**k8s-configs**](https://github.com/Daimero88/netology/tree/main/diplom/k8s-configs) создадим [**namespace.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/namespace.yaml),[**deployment.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/deployment.yaml) и [**service.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/service.yaml) и применим их:  
    <img width="765" height="72" alt="image13" src="https://github.com/user-attachments/assets/d1d6cadb-bf85-42d0-bb45-69a997403f60" />  
    Проверим по внешнему IP-адресу нашего кластера, что страница доступна:  
    <img width="469" height="187" alt="image14" src="https://github.com/user-attachments/assets/b49988af-ac84-4916-8838-f1d7222c33b0" />  

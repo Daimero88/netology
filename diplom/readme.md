@@ -122,14 +122,14 @@
 1. Воспользоваться пакетом [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus), который уже включает в себя [Kubernetes оператор](https://operatorhub.io/) для [grafana](https://grafana.com/), [prometheus](https://prometheus.io/), [alertmanager](https://github.com/prometheus/alertmanager) и [node_exporter](https://github.com/prometheus/node_exporter). Альтернативный вариант - использовать набор helm чартов от [bitnami](https://github.com/bitnami/charts/tree/main/bitnami).
 
 ### Решение подготовки cистемы мониторинга  
-1. Скачаем репозиторий `git clone https://github.com/prometheus-operator/kube-prometheus.git`, и перейдем в папку `cd kube-prometheus`.  
-   Запустим установку CRD командой `kubectl apply --server-side -f manifests/setup`  
-   Задеплоим систему мониторинга `kubectl apply -f manifests/` и проверим, что все поды в namespace monitoring запустились:  
+1. Добавим helm репозиторий `helm repo add prometheus-community https://prometheus-community.github.io/helm-charts`, и запустим установку командой `helm install kube-prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --create-namespace`  
+   Проверим, что все поды в namespace monitoring запустились:  
    <img width="800" height="263" alt="image12" src="https://github.com/user-attachments/assets/d87e1524-be7b-469d-8151-784a6d041cb0" />  
 2. Для деплоя тестового приложения папке [**k8s-configs**](https://github.com/Daimero88/netology/tree/main/diplom/k8s-configs) создадим [**namespace.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/namespace.yaml),[**deployment.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/deployment.yaml) и [**service.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/service.yaml) и применим их:  
    <img width="765" height="72" alt="image13" src="https://github.com/user-attachments/assets/d1d6cadb-bf85-42d0-bb45-69a997403f60" />  
    Проверим по внешнему IP-адресу нашего кластера, что страница доступна:  
-   <img width="469" height="187" alt="image14" src="https://github.com/user-attachments/assets/b49988af-ac84-4916-8838-f1d7222c33b0" />  
+   <img width="469" height="187" alt="image14" src="https://github.com/user-attachments/assets/b49988af-ac84-4916-8838-f1d7222c33b0" />
+3. Для того чтобы и grafana и наше приложение работали по одному 80 порту, установим ingress-nginx контроллер https://kubernetes.github.io/ingress-nginx. 
 
 
 ### Деплой инфраструктуры в terraform pipeline

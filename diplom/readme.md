@@ -147,12 +147,15 @@
 
 ### Деплой инфраструктуры в terraform pipeline
 1. Добавим официальный helm atlantis `helm repo add runatlantis https://runatlantis.github.io/helm-charts`, создадим файл values.yaml с данными нашего репозитория и токеном.
-2. Создадим
-3. Создадим pv-atlantis.yaml и применим его
+2. Установим atlantis `helm install atlantis runatlantis/atlantis --namespace atlantis --create-namespace -f atlantis/values.yaml`
+3. Т.к. после запуска pod висит в pending из-за ожидания с PVC (atlantis необходимо где-то хранить данные), то создадим pv-atlantis.yaml и применим его
 4. Убедимся, что atlantis запустился успешно:
    <img width="951" height="381" alt="image" src="https://github.com/user-attachments/assets/63098d32-7de2-4e22-b89e-69594a3e65db" />  
 5. Добавим webhook в настройках репозитория, где укажем в url: http://<внешний_ip>:32001/events  
-  <img width="405" height="777" alt="image" src="https://github.com/user-attachments/assets/b2cfa01d-2b49-4620-9141-3b73fab652db" />  
+  <img width="405" height="777" alt="image" src="https://github.com/user-attachments/assets/b2cfa01d-2b49-4620-9141-3b73fab652db" />
+6. Проверим что тестовый push проходит успешно:
+   <img width="779" height="249" alt="image" src="https://github.com/user-attachments/assets/aa07b84d-a2d5-4348-b9e3-28d66baeb32e" />
+
 
 
 ---

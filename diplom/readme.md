@@ -146,8 +146,13 @@
 5. Atlantis или terraform cloud или ci/cd-terraform
 
 ### Деплой инфраструктуры в terraform pipeline
-1. Добавим официальный helm atlantis `helm repo add runatlantis https://runatlantis.github.io/helm-charts`
-2. Создадим namespace командой `kubectl create namespace atlantis`
+1. Добавим официальный helm atlantis `helm repo add runatlantis https://runatlantis.github.io/helm-charts`, создадим файл values.yaml с данными нашего репозитория и токеном.
+2. Создадим
+3. Создадим pv-atlantis.yaml и применим его
+4. Убедимся, что atlantis запустился успешно:
+   <img width="951" height="381" alt="image" src="https://github.com/user-attachments/assets/63098d32-7de2-4e22-b89e-69594a3e65db" />  
+5. Добавим webhook в настройках репозитория, где укажем в url: http://<внешний_ip>:32001/events  
+  <img width="405" height="777" alt="image" src="https://github.com/user-attachments/assets/b2cfa01d-2b49-4620-9141-3b73fab652db" />  
 
 
 ---

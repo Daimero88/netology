@@ -1,0 +1,10 @@
+service:
+  type: NodePort
+  nodePort: 32001
+
+github:
+  user: "<your_user>"
+  token: "<your_token>"
+  secret: "<your_secret_for_webhook>"
+
+orgAllowlist: "<your_repo>"

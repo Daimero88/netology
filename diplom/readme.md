@@ -78,11 +78,11 @@
 ### Решение создания Kubernetes кластера  
 1. Описываем в [**k8s-nodes.tf**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/k8s-nodes.tf) создание виртуальных машин, размещенных в ранее созданных сетях:
    <img width="576" height="232" alt="image8" src="https://github.com/user-attachments/assets/b15bbce6-1097-401e-9eb1-c553bb531ed2" />
-2. Воспользуемся Kubespray для деплоя кластера. Для этого склонируем его репозиторий ```git clone https://github.com/kubernetes-sigs/kubespray```, перейдем в скачанную папку, включим виртуальное окружение и установим необходимые зависимости ```pip install -r requirements.txt```.
-   После скопируем папку ```cp -rfp inventory/sample inventory/mycluster``` и отредактируем файлы inventory/mycluster/inventory.ini, куда добавим IP адреса созданных ВМ, в group_vars/all/all.yml добавим версию ```kube_version: 1.32.0```, а в inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml добавим ```supplementary_addresses_in_ssl_keys:```, который будет содержать значение внешнего IP-адреса мастера в сертификате.
-3. После запуска ```ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -b -v``` получаем успешный результат:
+2. Воспользуемся Kubespray для деплоя кластера. Для этого склонируем его репозиторий ```git clone https://github.com/kubernetes-sigs/kubespray```, перейдем в скачанную папку, включим виртуальное окружение и установим необходимые зависимости `pip install -r requirements.txt`.
+   После скопируем папку `cp -rfp inventory/sample inventory/mycluster` и отредактируем файлы inventory/mycluster/inventory.ini, куда добавим IP адреса созданных ВМ, в group_vars/all/all.yml добавим версию `kube_version: 1.32.0`, а в inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml добавим `supplementary_addresses_in_ssl_keys:`, который будет содержать значение внешнего IP-адреса мастера в сертификате.
+3. После запуска `ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -b -v` получаем успешный результат:
    <img width="922" height="82" alt="image9" src="https://github.com/user-attachments/assets/67415302-b58e-4f60-9e0f-164738b3769c" />   
-4. Забираем файл конфигурации с сервера для подключения к кластеру `ssh ubuntu@51.250.71.224 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config`, меняем внутри адрес сервера 127.0.0.1 на наш внешний ip мастера и даем на него права `chmod 600 ~/.kube/config`. После чего проверяем доступ командой `kubectl get pods -n kube-system`:  
+4. Забираем файл конфигурации с сервера для подключения к кластеру `ssh ubuntu@51.250.71.224 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config`, меняем внутри файла адрес сервера 127.0.0.1 на наш внешний ip мастера и даем на него права `chmod 600 ~/.kube/config`. После чего проверяем доступ командой `kubectl get pods -n kube-system`:  
    <img width="479" height="310" alt="image10" src="https://github.com/user-attachments/assets/0c5ba3e3-d5f7-4ced-a8b4-c994abe62f7f" />  
   
 
@@ -144,6 +144,12 @@
 3. Дашборды в grafana отображающие состояние Kubernetes кластера.
 4. Http доступ на 80 порту к тестовому приложению.
 5. Atlantis или terraform cloud или ci/cd-terraform
+
+### Деплой инфраструктуры в terraform pipeline
+1. Добавим официальный helm atlantis `helm repo add runatlantis https://runatlantis.github.io/helm-charts`
+2. Создадим namespace командой `kubectl create namespace atlantis`
+
+
 ---
 ### Установка и настройка CI/CD
 

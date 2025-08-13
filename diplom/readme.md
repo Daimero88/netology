@@ -105,7 +105,7 @@
 ### Решение создания тестового приложения  
 1. Добавим файл [**ycr.tf**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/ycr.tf), который создаст Yandex Container Registry.
 2. Создадим новый репозиторий [**test-nginx-app**](https://github.com/Daimero88/test-nginx-app), который наполним файлами [**Dockerfile**](https://github.com/Daimero88/test-nginx-app/blob/main/Dockerfile), [**index.html**](https://github.com/Daimero88/test-nginx-app/blob/main/index.html) и [**nginx.conf**](https://github.com/Daimero88/test-nginx-app/blob/main/nginx.conf)
-3. Соберем локально образ ```docker build -t cr.yandex/crpioun7qsj9frieeebv/test-nginx:1.1 .``` и запушим его в наш регистри ```docker push cr.yandex/crpioun7qsj9frieeebv/test-nginx:1.1```
+3. Соберем локально образ ```docker build -t cr.yandex/crpvsmu99smr232mo9ci/test-nginx:1.1 .``` и запушим его в наш регистри ```docker push cr.yandex/crpvsmu99smr232mo9ci/test-nginx:1.1```
 
 
 ---

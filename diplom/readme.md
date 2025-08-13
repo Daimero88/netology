@@ -83,7 +83,7 @@
 3. После запуска ```ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -b -v``` получаем успешный результат:
    <img width="922" height="82" alt="image9" src="https://github.com/user-attachments/assets/67415302-b58e-4f60-9e0f-164738b3769c" />   
 4. Забираем файл конфигурации с сервера для подключения к кластеру `ssh ubuntu@51.250.71.224 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config`, меняем внутри адрес сервера 127.0.0.1 на наш внешний ip мастера и даем на него права `chmod 600 ~/.kube/config`. После чего проверяем доступ командой `kubectl get pods -n kube-system`:  
-   <img width="479" height="310" alt="image10" src="https://github.com/user-attachments/assets/0c5ba3e3-d5f7-4ced-a8b4-c994abe62f7f" />
+   <img width="479" height="310" alt="image10" src="https://github.com/user-attachments/assets/0c5ba3e3-d5f7-4ced-a8b4-c994abe62f7f" />  
   
 
 ---
@@ -130,11 +130,8 @@
 3. Для того чтобы и grafana и наше приложение работали по одному 80 порту, установим ingress-nginx контроллер из helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx и запустим со следующими параметрами `helm install my-nginx-ingress-controller ingress-nginx/ingress-nginx --namespace ingress-nginx --create-namespace --set controller.hostNetwork=true --set controller.service.enabled=false`. Далее напишем app-ingress.yaml и grafana-ingress.yaml и применим их.
    Убедимся, что по внешнему IP открывается grafana:  
    <img width="1900" height="832" alt="image15" src="https://github.com/user-attachments/assets/0e8e8749-34d9-4127-938d-81f984d2f474" />  
-   А по адресу http:<ip>/app откроется наша статичная страница:
-   <img width="478" height="151" alt="image" src="https://github.com/user-attachments/assets/5e83fbf9-13df-4063-a580-e06e678a8f49" />
-
-
-
+   А по адресу http:<ip>/app откроется наша статичная страница:  
+   <img width="478" height="151" alt="image" src="https://github.com/user-attachments/assets/5e83fbf9-13df-4063-a580-e06e678a8f49" />  
 
 
 ### Деплой инфраструктуры в terraform pipeline

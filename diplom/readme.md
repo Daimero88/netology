@@ -78,12 +78,12 @@
 ### Решение создания Kubernetes кластера  
 1. Описываем в [**k8s-nodes.tf**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/k8s-nodes.tf) создание виртуальных машин, размещенных в ранее созданных сетях:
    <img width="576" height="232" alt="image8" src="https://github.com/user-attachments/assets/b15bbce6-1097-401e-9eb1-c553bb531ed2" />
-2. Воспользуемся Kubespray для деплоя кластера. Для этого склонируем его репозиторий ```git clone https://github.com/kubernetes-sigs/kubespray```, перейдем в скачанную папку, включим виртуальное окружение и установим необходимые зависимости ```pip install -r requirements.txt```.
-   После скопируем папку ```cp -rfp inventory/sample inventory/mycluster``` и отредактируем файлы inventory/mycluster/inventory.ini, куда добавим IP адреса созданных ВМ, в group_vars/all/all.yml добавим версию ```kube_version: 1.32.0```, а в inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml добавим ```supplementary_addresses_in_ssl_keys:```, который будет содержать значение внешнего IP-адреса мастера в сертификате.
-3. После запуска ```ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -b -v``` получаем успешный результат:
+2. Воспользуемся Kubespray для деплоя кластера. Для этого склонируем его репозиторий ```git clone https://github.com/kubernetes-sigs/kubespray```, перейдем в скачанную папку, включим виртуальное окружение и установим необходимые зависимости `pip install -r requirements.txt`.
+   После скопируем папку `cp -rfp inventory/sample inventory/mycluster` и отредактируем файлы inventory/mycluster/inventory.ini, куда добавим IP адреса созданных ВМ, в group_vars/all/all.yml добавим версию `kube_version: 1.32.0`, а в inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml добавим `supplementary_addresses_in_ssl_keys:`, который будет содержать значение внешнего IP-адреса мастера в сертификате.
+3. После запуска `ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -b -v` получаем успешный результат:
    <img width="922" height="82" alt="image9" src="https://github.com/user-attachments/assets/67415302-b58e-4f60-9e0f-164738b3769c" />   
-4. Забираем файл конфигурации с сервера для подключения к кластеру ```ssh ubuntu@51.250.71.224 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config``` и даем на него права ```chmod 600 ~/.kube/config```. После чего проверяем доступ командой `kubectl get pods -n kube-system`:  
-   <img width="479" height="310" alt="image10" src="https://github.com/user-attachments/assets/0c5ba3e3-d5f7-4ced-a8b4-c994abe62f7f" />
+4. Забираем файл конфигурации с сервера для подключения к кластеру `ssh ubuntu@51.250.71.224 "sudo cat /etc/kubernetes/admin.conf" > ~/.kube/config`, меняем внутри файла адрес сервера 127.0.0.1 на наш внешний ip мастера и даем на него права `chmod 600 ~/.kube/config`. После чего проверяем доступ командой `kubectl get pods -n kube-system`:  
+   <img width="479" height="310" alt="image10" src="https://github.com/user-attachments/assets/0c5ba3e3-d5f7-4ced-a8b4-c994abe62f7f" />  
   
 
 ---
@@ -105,7 +105,7 @@
 ### Решение создания тестового приложения  
 1. Добавим файл [**ycr.tf**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/ycr.tf), который создаст Yandex Container Registry.
 2. Создадим новый репозиторий [**test-nginx-app**](https://github.com/Daimero88/test-nginx-app), который наполним файлами [**Dockerfile**](https://github.com/Daimero88/test-nginx-app/blob/main/Dockerfile), [**index.html**](https://github.com/Daimero88/test-nginx-app/blob/main/index.html) и [**nginx.conf**](https://github.com/Daimero88/test-nginx-app/blob/main/nginx.conf)
-3. Соберем локально образ ```docker build -t cr.yandex/crpioun7qsj9frieeebv/test-nginx:1.1 .``` и запушим его в наш регистри ```docker push cr.yandex/crpioun7qsj9frieeebv/test-nginx:1.1```
+3. Соберем локально образ ```docker build -t cr.yandex/crpvsmu99smr232mo9ci/test-nginx:1.1 .``` и запушим его в наш регистри ```docker push cr.yandex/crpvsmu99smr232mo9ci/test-nginx:1.1```
 
 
 ---
@@ -122,14 +122,16 @@
 1. Воспользоваться пакетом [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus), который уже включает в себя [Kubernetes оператор](https://operatorhub.io/) для [grafana](https://grafana.com/), [prometheus](https://prometheus.io/), [alertmanager](https://github.com/prometheus/alertmanager) и [node_exporter](https://github.com/prometheus/node_exporter). Альтернативный вариант - использовать набор helm чартов от [bitnami](https://github.com/bitnami/charts/tree/main/bitnami).
 
 ### Решение подготовки cистемы мониторинга  
-1. Скачаем репозиторий `git clone https://github.com/prometheus-operator/kube-prometheus.git`, и перейдем в папку `cd kube-prometheus`.  
-   Запустим установку CRD командой `kubectl apply --server-side -f manifests/setup`  
-   Задеплоим систему мониторинга `kubectl apply -f manifests/` и проверим, что все поды в namespace monitoring запустились:  
+1. Добавим helm репозиторий `helm repo add prometheus-community https://prometheus-community.github.io/helm-charts`, и запустим установку командой `helm install kube-prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --create-namespace`  
+   Проверим, что все поды в namespace monitoring запустились:  
    <img width="800" height="263" alt="image12" src="https://github.com/user-attachments/assets/d87e1524-be7b-469d-8151-784a6d041cb0" />  
-2. Для деплоя тестового приложения папке [k8s-configs**](https://github.com/Daimero88/netology/tree/main/diplom/k8s-configs) создадим [**namespace.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/namespace.yaml),[**deployment.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/deployment.yaml) и [**service.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/service.yaml) и применим их:  
+2. Для деплоя тестового приложения папке [**k8s-configs**](https://github.com/Daimero88/netology/tree/main/diplom/k8s-configs) создадим [**namespace.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/namespace.yaml),[**deployment.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/deployment.yaml) и [**service.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/service.yaml) и применим их:  
    <img width="765" height="72" alt="image13" src="https://github.com/user-attachments/assets/d1d6cadb-bf85-42d0-bb45-69a997403f60" />  
-   Проверим по внешнему IP-адресу нашего кластера, что страница доступна:  
-   <img width="469" height="187" alt="image14" src="https://github.com/user-attachments/assets/b49988af-ac84-4916-8838-f1d7222c33b0" />  
+3. Для того чтобы и grafana и наше приложение работали по одному 80 порту, установим ingress-nginx контроллер из helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx и запустим со следующими параметрами `helm install my-nginx-ingress-controller ingress-nginx/ingress-nginx --namespace ingress-nginx --create-namespace --set controller.hostNetwork=true --set controller.service.enabled=false`. Далее напишем app-ingress.yaml и grafana-ingress.yaml и применим их.
+   Убедимся, что по внешнему IP открывается grafana:  
+   <img width="1900" height="832" alt="image15" src="https://github.com/user-attachments/assets/0e8e8749-34d9-4127-938d-81f984d2f474" />  
+   А по адресу http:<ip>/app откроется наша статичная страница:  
+   <img width="478" height="151" alt="image" src="https://github.com/user-attachments/assets/5e83fbf9-13df-4063-a580-e06e678a8f49" />  
 
 
 ### Деплой инфраструктуры в terraform pipeline
@@ -142,6 +144,20 @@
 3. Дашборды в grafana отображающие состояние Kubernetes кластера.
 4. Http доступ на 80 порту к тестовому приложению.
 5. Atlantis или terraform cloud или ci/cd-terraform
+
+### Деплой инфраструктуры в terraform pipeline
+1. Добавим официальный helm atlantis `helm repo add runatlantis https://runatlantis.github.io/helm-charts`, создадим файл values.yaml с данными нашего репозитория и токеном.
+2. Установим atlantis `helm install atlantis runatlantis/atlantis --namespace atlantis --create-namespace -f atlantis/values.yaml`
+3. Т.к. после запуска pod висит в pending из-за ожидания с PVC (atlantis необходимо где-то хранить данные), то создадим pv-atlantis.yaml и применим его
+4. Убедимся, что atlantis запустился успешно:
+   <img width="951" height="381" alt="image" src="https://github.com/user-attachments/assets/63098d32-7de2-4e22-b89e-69594a3e65db" />  
+5. Добавим webhook в настройках репозитория, где укажем в url: http://<внешний_ip>:32001/events  
+  <img width="405" height="777" alt="image" src="https://github.com/user-attachments/assets/b2cfa01d-2b49-4620-9141-3b73fab652db" />
+6. Проверим что тестовый push проходит успешно:
+   <img width="779" height="249" alt="image" src="https://github.com/user-attachments/assets/aa07b84d-a2d5-4348-b9e3-28d66baeb32e" />
+
+
+
 ---
 ### Установка и настройка CI/CD
 

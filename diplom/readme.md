@@ -129,7 +129,14 @@
    <img width="765" height="72" alt="image13" src="https://github.com/user-attachments/assets/d1d6cadb-bf85-42d0-bb45-69a997403f60" />  
    Проверим по внешнему IP-адресу нашего кластера, что страница доступна:  
    <img width="469" height="187" alt="image14" src="https://github.com/user-attachments/assets/b49988af-ac84-4916-8838-f1d7222c33b0" />
-3. Для того чтобы и grafana и наше приложение работали по одному 80 порту, установим ingress-nginx контроллер из helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx и запустим со следующими параметрами `helm install my-nginx-ingress-controller ingress-nginx/ingress-nginx   --namespace ingress-nginx --create-namespace   --set controller.hostNetwork=true   --set controller.service.enabled=false`. Далее напишем ingress.yaml 
+3. Для того чтобы и grafana и наше приложение работали по одному 80 порту, установим ingress-nginx контроллер из helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx и запустим со следующими параметрами `helm install my-nginx-ingress-controller ingress-nginx/ingress-nginx --namespace ingress-nginx --create-namespace --set controller.hostNetwork=true --set controller.service.enabled=false`. Далее напишем app-ingress.yaml и grafana-ingress.yaml и применим их.
+   Убедимся, что по внешнему IP открывается grafana:  
+   <img width="1900" height="832" alt="image15" src="https://github.com/user-attachments/assets/0e8e8749-34d9-4127-938d-81f984d2f474" />  
+   А по адресу http:<ip>/app откроется наша статичная страница:
+   <img width="478" height="151" alt="image" src="https://github.com/user-attachments/assets/5e83fbf9-13df-4063-a580-e06e678a8f49" />
+
+
+
 
 
 ### Деплой инфраструктуры в terraform pipeline

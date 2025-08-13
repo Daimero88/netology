@@ -145,7 +145,7 @@
 4. Http доступ на 80 порту к тестовому приложению.
 5. Atlantis или terraform cloud или ci/cd-terraform
 
-### Деплой инфраструктуры в terraform pipeline
+### Решение деплоя инфраструктуры в terraform pipeline
 1. Добавим официальный helm atlantis `helm repo add runatlantis https://runatlantis.github.io/helm-charts`, создадим файл values.yaml с данными нашего репозитория и токеном.
 2. Установим atlantis `helm install atlantis runatlantis/atlantis --namespace atlantis --create-namespace -f atlantis/values.yaml`
 3. Т.к. после запуска pod висит в pending из-за ожидания с PVC (atlantis необходимо где-то хранить данные), то создадим pv-atlantis.yaml и применим его

@@ -8,3 +8,5 @@
 # Ansible
 **/inventory/mycluster/credentials.yml
 **/secrets.ini
+#Atlantis
+**/secrets.yaml

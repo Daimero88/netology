@@ -19,3 +19,7 @@ variable "ycr_name" {
   description = "Yandex Container Registry Name"
   default     = "ssilchin-registry"
 }
+
+variable "ssh_public_key" {
+  type = string
+}

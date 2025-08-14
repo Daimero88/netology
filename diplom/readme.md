@@ -148,7 +148,7 @@
 5. Atlantis или terraform cloud или ci/cd-terraform
 
 ### Решение деплоя инфраструктуры в terraform pipeline
-1. Модифицируем официальный yaml файл [**atlantis.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/atlantis.yaml) из-за санкций, также опишем необходимые переменные в [**secrets.yaml.example**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/secrets.yaml.example). Применяем через `kubectl apply -f` вначале [**atlantis-ns.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/atlantis-ns.yaml), затем [**secrets.yaml.example**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/secrets.yaml.example) затем [**atlantis.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/atlantis.yaml).
+1. Модифицируем официальный yaml файл [**atlantis.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/atlantis.yaml) из-за санкций, также опишем необходимые переменные в [**secrets.yaml.example**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/secrets.yaml.example). Применяем через `kubectl apply -f` вначале [**atlantis-ns.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/atlantis-ns.yaml), затем [**secrets.yaml.example**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/secrets.yaml.example), затем [**atlantis.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/atlantis.yaml).
 2. Добавим webhook в настройках нашего репозитория, где укажем в url: http://158.160.44.46:32001/events  
   <img width="344" height="363" alt="image" src="https://github.com/user-attachments/assets/d0431ce1-b4a0-493a-b1fa-a927a55142cd" />  
 3. Проверим что тестовый push проходит успешно:

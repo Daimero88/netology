@@ -149,10 +149,13 @@
 
 ### Решение деплоя инфраструктуры в terraform pipeline
 1. Модифицируем официальный yaml файл [**atlantis.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/atlantis.yaml) из-за санкций, также опишем необходимые переменные в [**secrets.yaml.example**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/secrets.yaml.example). Применяем через `kubectl apply -f` вначале [**atlantis-ns.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/atlantis-ns.yaml), затем [**secrets.yaml.example**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/secrets.yaml.example), затем [**atlantis.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/atlantis.yaml).
+   
 2. Добавим webhook в настройках нашего репозитория, где укажем в url: http://158.160.44.46:32001/events  
-  <img width="344" height="363" alt="image" src="https://github.com/user-attachments/assets/d0431ce1-b4a0-493a-b1fa-a927a55142cd" />  
+  <img width="344" height="363" alt="image" src="https://github.com/user-attachments/assets/d0431ce1-b4a0-493a-b1fa-a927a55142cd" />
+
 3. Проверим что тестовый push проходит успешно:  
-   <img width="353" height="280" alt="image" src="https://github.com/user-attachments/assets/7ae4bf89-6929-4bac-800e-51328d46852c" />  
+   <img width="353" height="280" alt="image" src="https://github.com/user-attachments/assets/7ae4bf89-6929-4bac-800e-51328d46852c" />
+   
 4. Создадим в отдельной ветке тестовый файл test.tf, запушим его, создадим pull request и убедимся, что все проверки atlantis прошли успешно:  
    <img width="927" height="609" alt="image" src="https://github.com/user-attachments/assets/b02f4be1-f793-4acc-98c3-7f1bda20789e" />  
    <img width="1320" height="665" alt="image" src="https://github.com/user-attachments/assets/1a30c4b6-0cb3-4cb1-a7cc-893a5f1523ec" />  

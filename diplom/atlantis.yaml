@@ -14,3 +14,15 @@ projects:
       - approved
       - mergeable
     workflow: default
+    workflows:
+      custom:
+        plan:
+          steps:
+            - run: mkdir -p /tmp/terraform-plugins
+            - init:
+                extra_args: ["-backend-config=backend.hcl"]
+                extra_args: ["-plugin-dir=/tmp/terraform-plugins"]
+            - plan
+          apply:
+            steps:
+            - apply

@@ -154,9 +154,9 @@
 3. Проверим что тестовый push проходит успешно:  
    <img width="353" height="280" alt="image" src="https://github.com/user-attachments/assets/7ae4bf89-6929-4bac-800e-51328d46852c" />  
 4. Создадим в отдельной ветке тестовый файл test.tf, запушим его, создадим pull request и убедимся, что все проверки atlantis прошли успешно:  
-   <img width="927" height="609" alt="image" src="https://github.com/user-attachments/assets/b02f4be1-f793-4acc-98c3-7f1bda20789e" />
-   <img width="1320" height="665" alt="image" src="https://github.com/user-attachments/assets/1a30c4b6-0cb3-4cb1-a7cc-893a5f1523ec" />
-   <img width="1182" height="728" alt="image" src="https://github.com/user-attachments/assets/c9f20bdc-a56f-45ab-9443-4ffc007e7c7d" />
+   <img width="927" height="609" alt="image" src="https://github.com/user-attachments/assets/b02f4be1-f793-4acc-98c3-7f1bda20789e" />  
+   <img width="1320" height="665" alt="image" src="https://github.com/user-attachments/assets/1a30c4b6-0cb3-4cb1-a7cc-893a5f1523ec" />  
+   <img width="1182" height="728" alt="image" src="https://github.com/user-attachments/assets/c9f20bdc-a56f-45ab-9443-4ffc007e7c7d" />  
 
 
 ---

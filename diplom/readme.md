@@ -122,7 +122,7 @@
 Способ выполнения:
 1. Воспользоваться пакетом [kube-prometheus](https://github.com/prometheus-operator/kube-prometheus), который уже включает в себя [Kubernetes оператор](https://operatorhub.io/) для [grafana](https://grafana.com/), [prometheus](https://prometheus.io/), [alertmanager](https://github.com/prometheus/alertmanager) и [node_exporter](https://github.com/prometheus/node_exporter). Альтернативный вариант - использовать набор helm чартов от [bitnami](https://github.com/bitnami/charts/tree/main/bitnami).
 
-### Решение подготовки cистемы мониторинга  
+### Решение подготовки cистемы мониторинга и деплоя приложения  
 1. Добавим helm репозиторий `helm repo add prometheus-community https://prometheus-community.github.io/helm-charts`, и запустим установку командой `helm install kube-prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --create-namespace`  
    Проверим, что все поды в namespace monitoring запустились:  
    <img width="800" height="263" alt="image12" src="https://github.com/user-attachments/assets/d87e1524-be7b-469d-8151-784a6d041cb0" />  

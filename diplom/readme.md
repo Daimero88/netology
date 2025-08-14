@@ -77,7 +77,7 @@
 
 ### Решение создания Kubernetes кластера  
 1. Описываем в [**k8s-nodes.tf**](https://github.com/Daimero88/netology/blob/main/diplom/infrastructure/k8s-nodes.tf) создание виртуальных машин, размещенных в ранее созданных сетях:
-   <img width="576" height="232" alt="image8" src="https://github.com/user-attachments/assets/b15bbce6-1097-401e-9eb1-c553bb531ed2" />
+   <img width="422" height="247" alt="image" src="https://github.com/user-attachments/assets/9cf2a0a4-8f71-4aa0-b3f9-a4610abd4a03" />
 2. Воспользуемся Kubespray для деплоя кластера. Для этого склонируем его репозиторий ```git clone https://github.com/kubernetes-sigs/kubespray```, перейдем в скачанную папку, включим виртуальное окружение и установим необходимые зависимости `pip install -r requirements.txt`.
    После скопируем папку `cp -rfp inventory/sample inventory/mycluster` и отредактируем файлы inventory/mycluster/inventory.ini, куда добавим IP адреса созданных ВМ, в group_vars/all/all.yml добавим версию `kube_version: 1.32.0`, а в inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml добавим `supplementary_addresses_in_ssl_keys:`, который будет содержать значение внешнего IP-адреса мастера в сертификате.
 3. После запуска `ansible-playbook -i inventory/mycluster/inventory.ini cluster.yml -b -v` получаем успешный результат:

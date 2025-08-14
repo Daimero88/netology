@@ -146,15 +146,18 @@
 5. Atlantis или terraform cloud или ci/cd-terraform
 
 ### Решение деплоя инфраструктуры в terraform pipeline
-1. Добавим официальный helm atlantis `helm repo add runatlantis https://runatlantis.github.io/helm-charts`, создадим файл values.yaml с данными нашего репозитория и токеном.
-2. Установим atlantis `helm install atlantis runatlantis/atlantis --namespace atlantis --create-namespace -f atlantis/values.yaml`
-3. Т.к. после запуска pod висит в pending из-за ожидания с PVC (atlantis необходимо где-то хранить данные), то создадим pv-atlantis.yaml и применим его
-4. Убедимся, что atlantis запустился успешно:
-   <img width="951" height="381" alt="image" src="https://github.com/user-attachments/assets/63098d32-7de2-4e22-b89e-69594a3e65db" />  
-5. Добавим webhook в настройках репозитория, где укажем в url: http://<внешний_ip>:32001/events  
+1. Модифицируем официальный yaml файл atlantis из-за санкций, также опишем необходимые переменные.
+2. Добавим webhook в настройках нашего репозитория, где укажем в url: http://<внешний_ip>:32001/events  
   <img width="405" height="777" alt="image" src="https://github.com/user-attachments/assets/b2cfa01d-2b49-4620-9141-3b73fab652db" />
-6. Проверим что тестовый push проходит успешно:
+3. Проверим что тестовый push проходит успешно:
    <img width="779" height="249" alt="image" src="https://github.com/user-attachments/assets/aa07b84d-a2d5-4348-b9e3-28d66baeb32e" />
+4. Создадим в отдельной ветке тестовый файл test.tf, запушим его и убедимся, что в pull request все проверки atlantis прошли успешно:  
+   <img width="927" height="609" alt="image" src="https://github.com/user-attachments/assets/b02f4be1-f793-4acc-98c3-7f1bda20789e" />
+   <img width="1320" height="665" alt="image" src="https://github.com/user-attachments/assets/1a30c4b6-0cb3-4cb1-a7cc-893a5f1523ec" />
+   <img width="1182" height="728" alt="image" src="https://github.com/user-attachments/assets/c9f20bdc-a56f-45ab-9443-4ffc007e7c7d" />
+
+   
+
 
 
 

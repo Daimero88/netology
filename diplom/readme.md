@@ -129,9 +129,9 @@
 2. Для деплоя тестового приложения папке [**k8s-configs**](https://github.com/Daimero88/netology/tree/main/diplom/k8s-configs) создадим [**namespace.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/namespace.yaml),[**deployment.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/deployment.yaml) и [**service.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/k8s-configs/service.yaml) и применим их:  
    <img width="765" height="72" alt="image13" src="https://github.com/user-attachments/assets/d1d6cadb-bf85-42d0-bb45-69a997403f60" />  
 3. Для того чтобы и grafana и наше приложение работали по одному 80 порту, установим ingress-nginx контроллер из helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx и запустим со следующими параметрами `helm install my-nginx-ingress-controller ingress-nginx/ingress-nginx --namespace ingress-nginx --create-namespace --set controller.hostNetwork=true --set controller.service.enabled=false`. Далее напишем app-ingress.yaml и grafana-ingress.yaml и применим их.
-   Убедимся, что по внешнему IP открывается grafana (логин admin, пароль prom-operator):  
+   Убедимся, что по внешнему IP http://158.160.44.46 открывается grafana (логин admin, пароль prom-operator), и дашборды мониторинга с данными присутствуют:  
    <img width="1662" height="823" alt="image" src="https://github.com/user-attachments/assets/25d25d2b-d2ba-4436-b4f9-617febf182c2" />  
-   А по адресу http:<ip>/app откроется наша статичная страница:  
+   А по адресу http://158.160.44.46/app откроется наша статичная страница:  
    <img width="477" height="155" alt="image" src="https://github.com/user-attachments/assets/cb0a38d5-a4f1-4f42-af1f-cd68f1d58d72" />  
   
 
@@ -147,12 +147,12 @@
 5. Atlantis или terraform cloud или ci/cd-terraform
 
 ### Решение деплоя инфраструктуры в terraform pipeline
-1. Модифицируем официальный yaml файл atlantis из-за санкций, также опишем необходимые переменные в .  
-2. Добавим webhook в настройках нашего репозитория, где укажем в url: http://<внешний_ip>:32001/events  
-  <img width="344" height="363" alt="image" src="https://github.com/user-attachments/assets/d0431ce1-b4a0-493a-b1fa-a927a55142cd" />
+1. Модифицируем официальный yaml файл [**atlantis.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/atlantis.yaml) из-за санкций, также опишем необходимые переменные в [**secrets.yaml.example**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/secrets.yaml.example). Применяем через `kubectl apply -f` вначале [**atlantis-ns.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/atlantis-ns.yaml), затем [**secrets.yaml.example**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/secrets.yaml.example) затем [**atlantis.yaml**](https://github.com/Daimero88/netology/blob/main/diplom/atlantis/atlantis.yaml).
+2. Добавим webhook в настройках нашего репозитория, где укажем в url: http://158.160.44.46:32001/events  
+  <img width="344" height="363" alt="image" src="https://github.com/user-attachments/assets/d0431ce1-b4a0-493a-b1fa-a927a55142cd" />  
 3. Проверим что тестовый push проходит успешно:
    <img width="353" height="280" alt="image" src="https://github.com/user-attachments/assets/7ae4bf89-6929-4bac-800e-51328d46852c" />
-4. Создадим в отдельной ветке тестовый файл test.tf, запушим его и убедимся, что в pull request все проверки atlantis прошли успешно:  
+4. Создадим в отдельной ветке тестовый файл test.tf, запушим его, создадим pull request и убедимся, что все проверки atlantis прошли успешно:  
    <img width="927" height="609" alt="image" src="https://github.com/user-attachments/assets/b02f4be1-f793-4acc-98c3-7f1bda20789e" />
    <img width="1320" height="665" alt="image" src="https://github.com/user-attachments/assets/1a30c4b6-0cb3-4cb1-a7cc-893a5f1523ec" />
    <img width="1182" height="728" alt="image" src="https://github.com/user-attachments/assets/c9f20bdc-a56f-45ab-9443-4ffc007e7c7d" />

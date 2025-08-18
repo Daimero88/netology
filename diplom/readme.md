@@ -186,14 +186,15 @@
 
 
 ### Решение установки и настройки CI/CD  
-1. Так как репозиторий находится в GitHub, было решено развернуть CI/CD систему через GitHub Actions. Создаем сервисный аккаунт, используя cicd-sa.tf, с правами container-registry.images.pusher и container-registry.images.puller.  
-2. Создадим в репозитории test-nginx-app папку .github, в которой в папке workflows создадим 2 workflow: [**build.yaml**](https://github.com/Daimero88/test-nginx-app/blob/main/.github/workflows/build.yaml) и [**deploy.yaml**](https://github.com/Daimero88/test-nginx-app/blob/main/.github/workflows/deploy.yaml). Добавим в secrets в настройках репозитория переменные, содержащие конфигурацию для подключения к кластеру, id registry, и YC_SA_KEY, куда положим json ключ для авторизации под сервисным аккаунтом:  
+1. Так как репозиторий находится в GitHub, было решено развернуть CI/CD систему через GitHub Actions. Создаем сервисный аккаунт, используя [**cicd-sa.tf**](https://github.com/Daimero88/netology/blob/main/diplom/service-account/cicd-sa.tf), с правами container-registry.images.pusher и container-registry.images.puller.  
+2. Создадим в репозитории [**test-nginx-app**](https://github.com/Daimero88/test-nginx-app) папку .github, в которой в папке workflows создадим 2 workflow: [**build.yaml**](https://github.com/Daimero88/test-nginx-app/blob/main/.github/workflows/build.yaml) и [**deploy.yaml**](https://github.com/Daimero88/test-nginx-app/blob/main/.github/workflows/deploy.yaml).  
+   Добавим в secrets в настройках репозитория переменные, содержащие конфигурацию для подключения к кластеру, id registry, и YC_SA_KEY, куда положим json ключ для авторизации под сервисным аккаунтом:  
    <img width="144" height="221" alt="image" src="https://github.com/user-attachments/assets/b0a95ef8-7005-4be9-97ff-0639835e41ba" />  
 3. Сделаем тестовый коммит, убедимся, что workflow отработал:  
    <img width="666" height="326" alt="image" src="https://github.com/user-attachments/assets/9f29f338-4428-44fc-9d71-8d6a413130c3" />  
    и новый образ создался с тэгом latest в нашем registry:  
    <img width="411" height="242" alt="image" src="https://github.com/user-attachments/assets/9c794fd3-8c13-4b12-afb0-ff2af522f7e3" />  
-4. Для наглядности добавим строку с номером версии страницы. Создадим тэг командой `git tag v1.2 -m "Release version 1.2"`, запушим его `git push origin v1.2` в наш репозиторий. Убедимся, что workflow отработал:  
+4. Для наглядности добавим строку с номером версии на странице. Создадим тэг командой `git tag v1.2 -m "Release version 1.2"`, запушим его `git push origin v1.2` в наш репозиторий. Убедимся, что workflow отработал:  
    <img width="713" height="218" alt="image" src="https://github.com/user-attachments/assets/3410dbc6-6fbb-4165-bf67-62f62183ad72" />  
    В регистри создался docker образ с новым тэгом:  
    <img width="414" height="333" alt="image" src="https://github.com/user-attachments/assets/c16fbce7-18a3-4def-8ddd-da2e4864306f" />  

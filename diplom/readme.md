@@ -187,7 +187,7 @@
 
 ### Решение установки и настройки CI/CD  
 1. Так как репозиторий находится в GitHub, было решено развернуть CI/CD систему через GitHub Actions. Создаем сервисный аккаунт, используя cicd-sa.tf, с правами container-registry.images.pusher и container-registry.images.puller.  
-2. Создадим в репозитории test-nginx-app папку .github, в которой в папке workflows создадим 2 workflow: build.yaml и deploy.yaml. Добавим в secrets в настройках репозитория переменные, содержащие конфигурацию для подключения к кластеру, id registry, и YC_SA_KEY, куда положим json ключ для авторизации под сервисным аккаунтом:  
+2. Создадим в репозитории test-nginx-app папку .github, в которой в папке workflows создадим 2 workflow: [**build.yaml**](https://github.com/Daimero88/test-nginx-app/blob/main/.github/workflows/build.yaml) и [**deploy.yaml**](https://github.com/Daimero88/test-nginx-app/blob/main/.github/workflows/deploy.yaml). Добавим в secrets в настройках репозитория переменные, содержащие конфигурацию для подключения к кластеру, id registry, и YC_SA_KEY, куда положим json ключ для авторизации под сервисным аккаунтом:  
    <img width="144" height="221" alt="image" src="https://github.com/user-attachments/assets/b0a95ef8-7005-4be9-97ff-0639835e41ba" />  
 3. Сделаем тестовый коммит, убедимся, что workflow отработал:  
    <img width="666" height="326" alt="image" src="https://github.com/user-attachments/assets/9f29f338-4428-44fc-9d71-8d6a413130c3" />  
@@ -195,22 +195,11 @@
    <img width="411" height="242" alt="image" src="https://github.com/user-attachments/assets/9c794fd3-8c13-4b12-afb0-ff2af522f7e3" />  
 4. Для наглядности добавим строку с номером версии страницы. Создадим тэг командой `git tag v1.2 -m "Release version 1.2"`, запушим его `git push origin v1.2` в наш репозиторий. Убедимся, что workflow отработал:  
    <img width="713" height="218" alt="image" src="https://github.com/user-attachments/assets/3410dbc6-6fbb-4165-bf67-62f62183ad72" />  
-   Проверим, что на сайте поменялась версия с 1.1 на 1.2. Вначале убедимся, что поды в кластере k8s используют новую версию образа приложения:  
+   В регистри создался docker образ с новым тэгом:  
+   <img width="414" height="333" alt="image" src="https://github.com/user-attachments/assets/c16fbce7-18a3-4def-8ddd-da2e4864306f" />  
+   Поды в кластере k8s используют новую версию образа приложения:  
    <img width="1079" height="136" alt="image" src="https://github.com/user-attachments/assets/cd1f1591-ea1f-4191-896b-e36c4ef77d3a" />  
-   И проверим на странице, что у нас новая версия сайта. Было:  
+   И проверим на странице, что у нас новая версия сайта. Было 1.1:  
    <img width="470" height="192" alt="image" src="https://github.com/user-attachments/assets/abd8bd2e-ed2d-4282-b543-a67cac84e834" />  
-   Стало:  
+   Стало v1.2:  
    <img width="476" height="211" alt="image" src="https://github.com/user-attachments/assets/230a870f-13cc-47f5-9bac-be6cafce6089" />  
-
-   
-
----
-## Что необходимо для сдачи задания?
-
-1. Репозиторий с конфигурационными файлами Terraform и готовность продемонстрировать создание всех ресурсов с нуля.
-2. Пример pull request с комментариями созданными atlantis'ом или снимки экрана из Terraform Cloud или вашего CI-CD-terraform pipeline.
-3. Репозиторий с конфигурацией ansible, если был выбран способ создания Kubernetes кластера при помощи ansible.
-4. Репозиторий с Dockerfile тестового приложения и ссылка на собранный docker image.
-5. Репозиторий с конфигурацией Kubernetes кластера.
-6. Ссылка на тестовое приложение и веб интерфейс Grafana с данными доступа.
-7. Все репозитории рекомендуется хранить на одном ресурсе (github, gitlab)

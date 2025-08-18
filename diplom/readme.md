@@ -184,6 +184,26 @@
 2. При любом коммите в репозиторие с тестовым приложением происходит сборка и отправка в регистр Docker образа.
 3. При создании тега (например, v1.0.0) происходит сборка и отправка с соответствующим label в регистри, а также деплой соответствующего Docker образа в кластер Kubernetes.
 
+
+### Решение установки и настройки CI/CD  
+1. Так как репозиторий находится в GitHub, было решено развернуть CI/CD систему через GitHub Actions. Создаем сервисный аккаунт, используя cicd-sa.tf, с правами container-registry.images.pusher и container-registry.images.puller.  
+2. Создадим в репозитории test-nginx-app папку .github, в которой в папке workflows создадим 2 workflow: build.yaml и deploy.yaml. Добавим в secrets в настройках репозитория переменные, содержащие конфигурацию для подключения к кластеру, id registry, и YC_SA_KEY, куда положим json ключ для авторизации под сервисным аккаунтом:  
+   <img width="144" height="221" alt="image" src="https://github.com/user-attachments/assets/b0a95ef8-7005-4be9-97ff-0639835e41ba" />  
+3. Сделаем тестовый коммит, убедимся, что workflow отработал:  
+   <img width="666" height="326" alt="image" src="https://github.com/user-attachments/assets/9f29f338-4428-44fc-9d71-8d6a413130c3" />  
+   и новый образ создался с тэгом latest в нашем registry:  
+   <img width="411" height="242" alt="image" src="https://github.com/user-attachments/assets/9c794fd3-8c13-4b12-afb0-ff2af522f7e3" />  
+4. Для наглядности добавим строку с номером версии страницы. Создадим тэг командой `git tag v1.2 -m "Release version 1.2"`, запушим его `git push origin v1.2` в наш репозиторий. Убедимся, что workflow отработал:  
+   <img width="713" height="218" alt="image" src="https://github.com/user-attachments/assets/3410dbc6-6fbb-4165-bf67-62f62183ad72" />  
+   Проверим, что на сайте поменялась версия с 1.1 на 1.2. Вначале убедимся, что поды в кластере k8s используют новую версию образа приложения:  
+   <img width="1079" height="136" alt="image" src="https://github.com/user-attachments/assets/cd1f1591-ea1f-4191-896b-e36c4ef77d3a" />  
+   И проверим на странице, что у нас новая версия сайта. Было:  
+   <img width="470" height="192" alt="image" src="https://github.com/user-attachments/assets/abd8bd2e-ed2d-4282-b543-a67cac84e834" />  
+   Стало:  
+   <img width="476" height="211" alt="image" src="https://github.com/user-attachments/assets/230a870f-13cc-47f5-9bac-be6cafce6089" />  
+
+   
+
 ---
 ## Что необходимо для сдачи задания?
 
